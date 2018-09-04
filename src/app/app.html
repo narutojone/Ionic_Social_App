@@ -1,0 +1,33 @@
+<ion-menu [content]="rootNav" type="push">
+  <ion-content>
+    <div class="icon-menu">
+          <img src="assets/img/logo.png"/>
+    </div>
+    <ion-list>
+      <button ion-item menuClose class="button-menu" (click)='notifications$()'>
+        {{'MENU.NOTIFICATIONS' | translate}}
+        <ion-badge class="badge-menu" *ngIf="user && user.getUnReadNumberNotifications() > 0">{{ user.getUnReadNumberNotifications() }}</ion-badge>
+      </button>
+      <button ion-item menuClose class="button-menu" (click)='topPather$()'>
+        {{'MENU.TOPPATHER' | translate}}
+      </button>
+      <button ion-item menuClose class="button-menu" (click)='recommendedPather$()'>
+        {{'MENU.RECOMMENDEDPATHER' | translate}}
+      </button>
+      <button ion-item menuClose class="button-menu" (click)='tutorial$()'>
+        {{'MENU.TUTORIAL' | translate}}
+      </button>
+      <button ion-item menuClose class="button-menu" (click)='language$()'>
+        {{'MENU.LANGUAGE' | translate}}
+      </button>
+      <button ion-item menuClose class="button-menu" (click)='policy$()'>
+        {{'MENU.POLICY' | translate}}
+      </button>
+      <button ion-item menuClose class="button-menu" (click)='logout$()'>
+        {{'MENU.LOGOUT' | translate}}
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav #rootNav [root]="rootPage$"></ion-nav>

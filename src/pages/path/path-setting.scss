@@ -1,0 +1,108 @@
+$place-creation-padding: 12px;
+$place-creation-filter-margin-right: 16px;
+$place-creation-content-height: 85px;
+$place-creation-filter-size: 50px;
+
+page-path-setting {
+  ion-navbar {
+    ion-title {
+      color: white;
+      .toolbar-title-ios {
+        color: white;
+      }
+    }
+  }
+  ion-content {
+    display: block;
+
+    .item-inner {
+      padding-right: 0px!important;
+    } 
+
+    h3 {
+      color: map-get($colors, primary);
+      margin: 0px;
+    }
+
+    .validate-section-scroll {
+      height: 80px;
+      width: 100%;
+      margin-left: 16px;
+      .scroll-zoom-wrapper {
+        display: flex;
+        .validate-scroll-container {
+          text-align: center;
+          margin-right: 10px;
+          width: 50px;
+          ion-icon {
+            font-size: 50px !important;
+            line-height: 52px;
+            height: 50px;
+          }
+          span {
+            font-size: xx-small;
+            width: 50px;
+            white-space: nowrap;
+            overflow: hidden;
+            display: block;
+            color: map-get($colors, info);
+          }
+        }
+      }
+    }
+
+    .validate-steps {
+      height: 80px;
+      width: 80%;
+      margin-left: 10%;
+      .scroll-zoom-wrapper {
+        display: flex;
+        justify-content: center;
+        .validate-steps-container {
+          display: flex;
+        }
+        .validate-step {
+          display: flex;
+          flex-direction: column;
+          img {
+            height: 50px;
+            border-radius: 50px;
+            width: 50px;
+          }
+          span {
+            font-size: xx-small;
+            width: 50px;
+            overflow: auto;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            text-align: center;
+          }
+          span.validate-step-name {
+            color: map-get($colors, primary);
+          }
+          span.validate-step-category {}
+        }
+        .validate-step-dash {
+          width: 25px;
+          height: 1px;
+          display: block;
+          border: 1px solid red;
+          margin-top: 25px;
+          border-style: dashed;
+          margin-left: 5px;
+          margin-right: 5px;
+        }
+      }
+    }
+
+
+    .validateButton {
+      margin-left: calc(50% - 90px);
+      width: 180px;
+    }
+
+    .scroll-content {
+      padding: 0px !important;
+    }
+  }
+}

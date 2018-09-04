@@ -1,0 +1,18 @@
+<ion-card class="card-v2" padding no-padding-right>
+
+  <ion-row *ngIf="news">
+    <ion-col col-2 no-padding>
+      <ion-avatar (tap)="goProfile(u)">
+        <div class="user-icon-image">
+          <img [src]="u.getProfilePicture()">
+          <ion-icon class="user-icon-info" name="icon-multiple-19-2"></ion-icon>
+        </div>
+      </ion-avatar>
+    </ion-col>
+    <ion-col col-10 class="follow-card-user">
+      <h5><strong (tap)="goProfile(u)">{{u.firstname}} {{u.lastname}}</strong> {{ 'NEWS_FEED.FOLLOW' | translate }} <strong (tap)="goProfile(news.data)">{{news.data.firstname}} {{news.data.lastname}}</strong></h5>
+      <h6>{{news.date | date: 'dd/MM/yyyy hh:mm' }}</h6>
+    </ion-col>
+  </ion-row>
+
+</ion-card>

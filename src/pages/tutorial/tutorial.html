@@ -1,0 +1,26 @@
+<ion-content class="walkpagetwo">
+
+
+  <ion-slides #tourSlideTwo pager (ionSlideWillChange)="onSlideChangeStart($event)">
+    <ion-slide *ngFor="let slide of slides">
+      <h2 class="slide-title" [innerHTML]="slide.title"></h2>
+      <p class="desc" [innerHTML]="slide.sub_title"></p>
+      <div class="img-wrap">
+        <img [src]="slide.img" class="slide-image" />
+      </div>
+    </ion-slide>
+  </ion-slides>
+  <div class="redbg">
+
+
+  </div>
+  <button ion-button class="prev-button" light *ngIf="!isFirstPage" (click)="movePrevious()">
+    {{'TUTORIAL.PREV' | translate}}
+  </button>
+  <button ion-button class="next-button" light *ngIf="!isLastPage" (click)="moveNext()">
+    {{'TUTORIAL.NEXT' | translate}}
+  </button>
+  <button ion-button class="finish-button" light *ngIf="isLastPage" (click)="completeTutorial()">
+    {{'TUTORIAL.LETSGO' | translate}}
+  </button>
+</ion-content>

@@ -1,0 +1,78 @@
+page-comment-place {
+  ion-navbar {
+    ion-title {
+      color: white;
+      .toolbar-title-ios {
+        color: white;
+      }
+    }
+  }
+
+  .creation-section-content {
+    text-align: center;
+    button.full-width-button {
+      width: 90%;
+      padding: 0 !important;
+      span {
+        font-size: 20px;
+      }
+      ion-icon {
+        margin-left: -15px;
+        margin-right: 10px;
+        font-size: 20px !important;
+      }
+    }
+    ion-textarea {
+      border: solid 1px;
+      border-color: map-get($colors, light_grey);
+      border-radius: 5px;
+    }
+  }
+
+  ion-content {
+    .item-inner {
+      padding-right: 0px!important;
+    } 
+
+    h2 {
+      text-align: center;
+      color: map-get($colors, primary);
+    }
+
+    .validateButton {
+      margin-left: calc(50% - 70px);
+      width: 140px;
+    }
+
+    .comment-images {
+      margin-left: 3vw;
+      position: relative;
+      width: 40vw;
+      float: left;
+      img {
+        width: 40vw;
+        height: 40vw;
+        background-color: map-get($colors, secondary);
+        padding:1px;
+        border:1px solid map-get($colors, secondary);
+        background-color: map-get($colors, primary);;
+        
+      }
+      .delete-icon{
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        z-index: 10;
+        color: white;
+        font-size: 30px;
+        background-color: rgba(0, 0, 0, 0.55);
+        width: 30px;
+        height: 30px;
+      }
+      ion-icon {
+        margin-left: 7.5px;
+        margin-top: -5px;
+      }
+    }
+  } 
+}

@@ -1,0 +1,483 @@
+@font-face {
+  font-family: 'PathTimeServerIcon';
+  src:  url('../assets/icon/PathTimeServerIcon/fonts/PathTimeServerIcon.eot?vayo8q');
+  src:  url('../assets/icon/PathTimeServerIcon/fonts/PathTimeServerIcon.eot?vayo8q#iefix') format('embedded-opentype'),
+    url('../assets/icon/PathTimeServerIcon/fonts/PathTimeServerIcon.ttf?vayo8q') format('truetype'),
+    url('../assets/icon/PathTimeServerIcon/fonts/PathTimeServerIcon.woff?vayo8q') format('woff'),
+    url('../assets/icon/PathTimeServerIcon/fonts/PathTimeServerIcon.svg?vayo8q#PathTimeServerIcon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.ion-md-pt-adventurer,
+.ion-md-pt-adventurer-outline,
+.ion-md-pt-african,
+.ion-md-pt-african-outline,
+.ion-md-pt-asian,
+.ion-md-pt-asian-outline,
+.ion-md-pt-beer,
+.ion-md-pt-beer-outline,
+.ion-md-pt-burger,
+.ion-md-pt-burger-outline,
+.ion-md-pt-carnivorous,
+.ion-md-pt-carnivorous-outline,
+.ion-md-pt-chill,
+.ion-md-pt-chill-outline,
+.ion-md-pt-club,
+.ion-md-pt-club-outline,
+.ion-md-pt-coktail,
+.ion-md-pt-coktail-outline,
+.ion-md-pt-commercial,
+.ion-md-pt-commercial-outline,
+.ion-md-pt-culture,
+.ion-md-pt-culture-outline,
+.ion-md-pt-curious,
+.ion-md-pt-curious-outline,
+.ion-md-pt-dance,
+.ion-md-pt-dance-outline,
+.ion-md-pt-domestic,
+.ion-md-pt-domestic-outline,
+.ion-md-pt-ephemeral,
+.ion-md-pt-ephemeral-outline,
+.ion-md-pt-explorer,
+.ion-md-pt-explorer-outline,
+.ion-md-pt-fast-food,
+.ion-md-pt-fast-food-outline,
+.ion-md-pt-festive,
+.ion-md-pt-festive-outline,
+.ion-md-pt-french,
+.ion-md-pt-french-outline,
+.ion-md-pt-gallery,
+.ion-md-pt-gallery-outline,
+.ion-md-pt-garden,
+.ion-md-pt-garden-outline,
+.ion-md-pt-greed,
+.ion-md-pt-greed-outline,
+.ion-md-pt-greedy,
+.ion-md-pt-greedy-outline,
+.ion-md-pt-heritage,
+.ion-md-pt-heritage-outline,
+.ion-md-pt-hiphop,
+.ion-md-pt-hiphop-outline,
+.ion-md-pt-indian,
+.ion-md-pt-indian-outline,
+.ion-md-pt-italian,
+.ion-md-pt-italian-outline,
+.ion-md-pt-jazz,
+.ion-md-pt-jazz-outline,
+.ion-md-pt-lounge,
+.ion-md-pt-lounge-outline,
+.ion-md-pt-market,
+.ion-md-pt-market-outline,
+.ion-md-pt-museum,
+.ion-md-pt-museum-outline,
+.ion-md-pt-nature,
+.ion-md-pt-nature-outline,
+.ion-md-pt-night,
+.ion-md-pt-night-outline,
+.ion-md-pt-oriental,
+.ion-md-pt-oriental-outline,
+.ion-md-pt-outdoors,
+.ion-md-pt-outdoors-outline,
+.ion-md-pt-park,
+.ion-md-pt-park-outline,
+.ion-md-pt-pub,
+.ion-md-pt-pub-outline,
+.ion-md-pt-relaxation,
+.ion-md-pt-relaxation-outline,
+.ion-md-pt-religion,
+.ion-md-pt-religion-outline,
+.ion-md-pt-restaurant,
+.ion-md-pt-restaurant-outline,
+.ion-md-pt-rock,
+.ion-md-pt-rock-outline,
+.ion-md-pt-romantic,
+.ion-md-pt-romantic-outline,
+.ion-md-pt-shot,
+.ion-md-pt-shot-outline,
+.ion-md-pt-spa,
+.ion-md-pt-spa-outline,
+.ion-md-pt-sport,
+.ion-md-pt-sport-outline,
+.ion-md-pt-street,
+.ion-md-pt-street-outline,
+.ion-md-pt-street-food,
+.ion-md-pt-street-food-outline,
+.ion-md-pt-strip,
+.ion-md-pt-strip-outline,
+.ion-md-pt-surprise,
+.ion-md-pt-surprise-outline,
+.ion-md-pt-techno,
+.ion-md-pt-techno-outline,
+.ion-md-pt-unusual,
+.ion-md-pt-unusual-outline,
+.ion-md-pt-unusual2,
+.ion-md-pt-unusual-outline2,
+.ion-md-pt-urban,
+.ion-md-pt-urban-outline,
+.ion-md-pt-vegan,
+.ion-md-pt-vegan-outline,
+.ion-md-pt-vine,
+.ion-md-pt-vine-outline,
+.ion-md-pt-walk,
+.ion-md-pt-walk-outline,
+.ion-md-pt-walker,
+.ion-md-pt-walker-outline
+{
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'PathTimeServerIcon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ion-md-pt-adventurer:before {
+  content: "\e801";
+}
+.ion-md-pt-adventurer-outline:before {
+  content: "\e802";
+}
+.ion-md-pt-african:before {
+  content: "\e900";
+}
+.ion-md-pt-african-outline:before {
+  content: "\e901";
+}
+.ion-md-pt-asian:before {
+  content: "\e902";
+}
+.ion-md-pt-asian-outline:before {
+  content: "\e903";
+}
+.ion-md-pt-beer:before {
+  content: "\e803";
+}
+.ion-md-pt-beer-outline:before {
+  content: "\e804";
+}
+.ion-md-pt-burger:before {
+  content: "\e904";
+}
+.ion-md-pt-burger-outline:before {
+  content: "\e905";
+}
+.ion-md-pt-carnivorous:before {
+  content: "\e805";
+}
+.ion-md-pt-carnivorous-outline:before {
+  content: "\e806";
+}
+.ion-md-pt-chill:before {
+  content: "\e807";
+}
+.ion-md-pt-chill-outline:before {
+  content: "\e808";
+}
+.ion-md-pt-club:before {
+  content: "\e846";
+}
+.ion-md-pt-club-outline:before {
+  content: "\e847";
+}
+.ion-md-pt-coktail:before {
+  content: "\e809";
+}
+.ion-md-pt-coktail-outline:before {
+  content: "\e80a";
+}
+.ion-md-pt-commercial:before {
+  content: "\e848";
+}
+.ion-md-pt-commercial-outline:before {
+  content: "\e849";
+}
+.ion-md-pt-culture:before {
+  content: "\e80b";
+}
+.ion-md-pt-culture-outline:before {
+  content: "\e80c";
+}
+.ion-md-pt-curious:before {
+  content: "\e80d";
+}
+.ion-md-pt-curious-outline:before {
+  content: "\e80e";
+}
+.ion-md-pt-dance:before {
+  content: "\e80f";
+}
+.ion-md-pt-dance-outline:before {
+  content: "\e810";
+}
+.ion-md-pt-domestic:before {
+  content: "\e839";
+}
+.ion-md-pt-domestic-outline:before {
+  content: "\e83a";
+}
+.ion-md-pt-ephemeral:before {
+  content: "\e84a";
+}
+.ion-md-pt-ephemeral-outline:before {
+  content: "\e84b";
+}
+.ion-md-pt-explorer:before {
+  content: "\e811";
+}
+.ion-md-pt-explorer-outline:before {
+  content: "\e812";
+}
+.ion-md-pt-fast-food:before {
+  content: "\e906";
+}
+.ion-md-pt-fast-food-outline:before {
+  content: "\e907";
+}
+.ion-md-pt-festive:before {
+  content: "\e813";
+}
+.ion-md-pt-festive-outline:before {
+  content: "\e814";
+}
+.ion-md-pt-french:before {
+  content: "\e908";
+}
+.ion-md-pt-french-outline:before {
+  content: "\e909";
+}
+.ion-md-pt-gallery:before {
+  content: "\e815";
+}
+.ion-md-pt-gallery-outline:before {
+  content: "\e816";
+}
+.ion-md-pt-garden:before {
+  content: "\e817";
+}
+.ion-md-pt-garden-outline:before {
+  content: "\e818";
+}
+.ion-md-pt-greed:before {
+  content: "\e90a";
+}
+.ion-md-pt-greed-outline:before {
+  content: "\e90b";
+}
+.ion-md-pt-greedy:before {
+  content: "\e819";
+}
+.ion-md-pt-greedy-outline:before {
+  content: "\e81a";
+}
+.ion-md-pt-heritage:before {
+  content: "\e81b";
+}
+.ion-md-pt-heritage-outline:before {
+  content: "\e81c";
+}
+.ion-md-pt-hiphop:before {
+  content: "\e83e";
+}
+.ion-md-pt-hiphop-outline:before {
+  content: "\e83f";
+}
+.ion-md-pt-indian:before {
+  content: "\e90c";
+}
+.ion-md-pt-indian-outline:before {
+  content: "\e90d";
+}
+.ion-md-pt-italian:before {
+  content: "\e90e";
+}
+.ion-md-pt-italian-outline:before {
+  content: "\e90f";
+}
+.ion-md-pt-jazz:before {
+  content: "\e840";
+}
+.ion-md-pt-jazz-outline:before {
+  content: "\e841";
+}
+.ion-md-pt-lounge:before {
+  content: "\e81d";
+}
+.ion-md-pt-lounge-outline:before {
+  content: "\e81e";
+}
+.ion-md-pt-market:before {
+  content: "\e81f";
+}
+.ion-md-pt-market-outline:before {
+  content: "\e820";
+}
+.ion-md-pt-museum:before {
+  content: "\e821";
+}
+.ion-md-pt-museum-outline:before {
+  content: "\e822";
+}
+.ion-md-pt-nature:before {
+  content: "\e910";
+}
+.ion-md-pt-nature-outline:before {
+  content: "\e911";
+}
+.ion-md-pt-night:before {
+  content: "\e823";
+}
+.ion-md-pt-night-outline:before {
+  content: "\e824";
+}
+.ion-md-pt-oriental:before {
+  content: "\e912";
+}
+.ion-md-pt-oriental-outline:before {
+  content: "\e913";
+}
+.ion-md-pt-outdoors:before {
+  content: "\e825";
+}
+.ion-md-pt-outdoors-outline:before {
+  content: "\e826";
+}
+.ion-md-pt-park:before {
+  content: "\e827";
+}
+.ion-md-pt-park-outline:before {
+  content: "\e828";
+}
+.ion-md-pt-pub:before {
+  content: "\e829";
+}
+.ion-md-pt-pub-outline:before {
+  content: "\e82a";
+}
+.ion-md-pt-relaxation:before {
+  content: "\e914";
+}
+.ion-md-pt-relaxation-outline:before {
+  content: "\e915";
+}
+.ion-md-pt-religion:before {
+  content: "\e84c";
+}
+.ion-md-pt-religion-outline:before {
+  content: "\e84d";
+}
+.ion-md-pt-restaurant:before {
+  content: "\e916";
+}
+.ion-md-pt-restaurant-outline:before {
+  content: "\e917";
+}
+.ion-md-pt-rock:before {
+  content: "\e842";
+}
+.ion-md-pt-rock-outline:before {
+  content: "\e843";
+}
+.ion-md-pt-romantic:before {
+  content: "\e82b";
+}
+.ion-md-pt-romantic-outline:before {
+  content: "\e82c";
+}
+.ion-md-pt-shot:before {
+  content: "\e82d";
+}
+.ion-md-pt-shot-outline:before {
+  content: "\e82e";
+}
+.ion-md-pt-spa:before {
+  content: "\e918";
+}
+.ion-md-pt-spa-outline:before {
+  content: "\e919";
+}
+.ion-md-pt-sport:before {
+  content: "\e852";
+}
+.ion-md-pt-sport-outline:before {
+  content: "\e853";
+}
+.ion-md-pt-street:before {
+  content: "\e91a";
+}
+.ion-md-pt-street-food:before {
+  content: "\e91b";
+}
+.ion-md-pt-street-food-outline:before {
+  content: "\e91c";
+}
+.ion-md-pt-street-outline:before {
+  content: "\e830";
+}
+.ion-md-pt-strip:before {
+  content: "\e850";
+}
+.ion-md-pt-strip-outline:before {
+  content: "\e851";
+}
+.ion-md-pt-surprise:before {
+  content: "\e91d";
+}
+.ion-md-pt-surprise-outline:before {
+  content: "\e91e";
+}
+.ion-md-pt-techno:before {
+  content: "\e844";
+}
+.ion-md-pt-techno-outline:before {
+  content: "\e845";
+}
+.ion-md-pt-unusual:before {
+  content: "\e831";
+}
+.ion-md-pt-unusual-outline:before {
+  content: "\e832";
+}
+.ion-md-pt-unusual-outline2:before {
+  content: "\e83c";
+}
+.ion-md-pt-unusual2:before {
+  content: "\e83b";
+}
+.ion-md-pt-urban:before {
+  content: "\e84e";
+}
+.ion-md-pt-urban-outline:before {
+  content: "\e84f";
+}
+.ion-md-pt-vegan:before {
+  content: "\e91f";
+}
+.ion-md-pt-vegan-outline:before {
+  content: "\e920";
+}
+.ion-md-pt-vine:before {
+  content: "\e833";
+}
+.ion-md-pt-vine-outline:before {
+  content: "\e834";
+}
+.ion-md-pt-walk:before {
+  content: "\e835";
+}
+.ion-md-pt-walk-outline:before {
+  content: "\e836";
+}
+.ion-md-pt-walker:before {
+  content: "\e837";
+}
+.ion-md-pt-walker-outline:before {
+  content: "\e838";
+}

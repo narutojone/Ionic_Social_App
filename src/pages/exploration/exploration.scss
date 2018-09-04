@@ -1,0 +1,293 @@
+$exploration-margin-top: 20px;
+
+/* Page - Header height - Tabs height - (Margin top + bottom) - Validate bar height - 5 rows*/
+
+$exploration-filter-height-md: 90px;
+$exploration-filter-height-ios: 90px;
+$exploration-filter-icon-margin-left: 16px;
+$exploration-filter-icon-margin-right: 16px;
+$exploration-filter-icon-margin: 0 $exploration-filter-icon-margin-right 0 $exploration-filter-icon-margin-left;
+$exploration-filter-icon-size-md: 75px;
+$exploration-filter-icon-size-ios: 75px;
+$exploration-filter-content-icon-size-md: 56px;
+$exploration-filter-content-icon-size-ios: 56px;
+$exploration-filter-content-item-width-md: 65px;
+$exploration-filter-content-item-width-ios: 65px;
+$filter-validate-button-size: 70px;
+$exploration-category-popover-top-md: $exploration-filter-height-md;
+$exploration-category-popover-top-ios: $exploration-filter-height-ios;
+$exploration-category-popover-left-md: 125px;
+$exploration-category-popover-left-ios: 125px;
+ion-app.ios page-exploration {
+  .filter {
+    height: $exploration-filter-height-ios;
+    .filter-icon {
+      font-size: $exploration-filter-icon-size-ios !important;
+    }
+    pt-popover-category {
+      top: $exploration-category-popover-top-ios;
+      left: 16px;
+      width: 92vw;
+    }
+    pt-popover-pather {
+      top: $exploration-category-popover-top-ios;
+      left: 16px;
+      width: 92vw;
+    }
+    .filter-content {
+      .filter-content-item {
+        max-width: $exploration-filter-content-item-width-ios;
+        min-width: $exploration-filter-content-item-width-ios;
+        position: relative;
+        ion-icon {
+          font-size: $exploration-filter-content-icon-size-ios !important;
+        }
+        img {
+          height: $exploration-filter-content-icon-size-ios;
+          width: $exploration-filter-content-icon-size-ios;
+          border-radius: 50%;
+        }
+      }
+      .filter-budget-1 {
+        font-size: calc(0.2 * #{$exploration-filter-height-ios});
+      }
+      .filter-budget-2 {
+        font-size: calc(0.3 * #{$exploration-filter-height-ios});
+      }
+      .filter-budget-3 {
+        font-size: calc(0.4 * #{$exploration-filter-height-ios});
+      }
+      .filter-budget-4 {
+        font-size: calc(0.5 * #{$exploration-filter-height-ios});
+      }
+      .filter-budget-5 {
+        font-size: calc(0.6 * #{$exploration-filter-height-ios});
+      }
+    }
+  }
+}
+
+ion-app.md page-exploration {
+  .filter {
+    height: $exploration-filter-height-md;
+    .filter-icon {
+      font-size: $exploration-filter-icon-size-md;
+    }
+    pt-popover-category {
+      top: $exploration-category-popover-top-md;
+      left: 16px;
+      width: 92vw;
+    }
+    pt-popover-pather {
+      top: $exploration-category-popover-top-ios;
+      left: 16px;
+      width: 92vw;
+    }
+    .filter-content {
+      .filter-content-item {
+        max-width: $exploration-filter-content-item-width-ios;
+        min-width: $exploration-filter-content-item-width-ios;
+        position: relative;
+        ion-icon {
+          font-size: $exploration-filter-content-icon-size-md;
+        }
+        img {
+          height: $exploration-filter-content-icon-size-ios;
+          width: $exploration-filter-content-icon-size-ios;
+          border-radius: 50%;
+        }
+      }
+      .filter-budget-1 {
+        font-size: calc(0.2 * #{$exploration-filter-height-md});
+      }
+      .filter-budget-2 {
+        font-size: calc(0.3 * #{$exploration-filter-height-md});
+      }
+      .filter-budget-3 {
+        font-size: calc(0.4 * #{$exploration-filter-height-md});
+      }
+      .filter-budget-4 {
+        font-size: calc(0.5 * #{$exploration-filter-height-md});
+      }
+      .filter-budget-5 {
+        font-size: calc(0.6 * #{$exploration-filter-height-md});
+      }
+    }
+  }
+}
+
+page-exploration {
+  .pop-over-search {
+    position: absolute;
+    width: 100%;
+    padding: 0 15px;
+    .search-pather-exploration {
+      display: block;
+      z-index: 10;
+      background: map-get($colors, primary);
+      padding: 12px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 6px;
+      /*ion-searchbar {
+        //margin-bottom: 12px;
+      }*/
+      .filter-content {
+        margin-top: 12px;
+        width: 100%;
+        white-space: nowrap;
+        display: inline-flex;
+        overflow: scroll;
+        .filter-content-item {
+          float: left;
+          margin-right: 10px;
+          width: 75px;
+          max-width: 75px;
+          text-align: center;
+          img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+          }
+          span {
+            font-size: x-small;
+            display: block;
+            overflow: hidden;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+  .filter:first-child {
+    margin-top: $exploration-margin-top;
+  }
+  .filter-search-city {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-right: 12px;
+  }
+  .filter {
+    display: flex;
+    align-items: center;
+    position: relative;
+    ion-icon {
+      line-height: 110%;
+    }
+    .filter-icon {
+      margin: $exploration-filter-icon-margin;
+      opacity: 1;
+    }
+    h4 {
+      display: none;
+      color: map-get($colors, primary);
+    }
+    .filter-content {
+      display: flex;
+      flex-grow: 1;
+      overflow: scroll;
+      ion-searchbar {
+        padding-left: 0;
+      }
+      .filter-content-item {
+        text-align: center;
+        span {
+          font-size: x-small;
+          display: block;
+          overflow: hidden;
+        }
+      }
+      ion-icon[class^='filter-budget'],
+      ion-icon[class*='filter-budget'] {
+        flex: 1 0;
+        align-self: center;
+      }
+      .filter-content-price-opac {
+        opacity: 0.7;
+      }
+    }
+  }
+  .filter-no-focus {
+    .filter-icon {
+      opacity: 0.7 !important;
+    }
+    h4 {
+      display: block !important;
+    }
+    .filter-content-focus {
+      display: none !important;
+    }
+  }
+  .filter-validate {
+    width: 100%;
+    background-color: map-get($colors, primary);
+    position: relative;
+    height: 150px;
+    z-index: 10;
+    overflow: hidden;
+  }
+  .filter-validate-button {
+    min-width: 100px;
+    margin-left: 15vw;
+    padding: 0;
+    margin-right: -35px;
+    background-color: transparent;
+  }
+  .filter-validate-icon {
+    width: $filter-validate-button-size;
+    height: $filter-validate-button-size;
+    font-size: $filter-validate-button-size;
+  }
+  .filter-validate-button p {
+    padding: 0;
+    margin: 0;
+    margin-top: 2%;
+    color: map-get($colors, light);
+    font-size: large;
+    width: 33vw;
+    z-index: 11;
+    position: relative;
+  }
+  .filter-validate-display {
+    color: map-get($colors, light);
+    font-size: 25px;
+    width: 100%;
+    text-align: center;
+  }
+  .deletePlace {
+    position: absolute;
+    top: 0px;
+    left: 4px;
+    border-radius: 50%;
+    height: 56px;
+    width: 56px;
+    background: rgba(0, 0, 0, 0.60);
+    ion-icon {
+      padding-top: 0px !important;
+      padding-left: 0px;
+      width: 45px;
+    }
+  }
+  .main-filter {
+    overflow-y: scroll;
+    display: block;
+    position: relative;
+  }
+  ion-footer {
+    -webkit-box-shadow: 0px -2px 8px 0px rgba(156, 147, 156, 1);
+    -moz-box-shadow: 0px -2px 8px 0px rgba(156, 147, 156, 1);
+    box-shadow: 0px -2px 8px 0px rgba(156, 147, 156, 1);
+    border-bottom: solid grey 1px;
+    button {
+      width: 100%;
+      padding: 0 !important;
+      span {
+        font-size: 14px;
+      }
+      ion-icon {
+        margin-left: -15px;
+        margin-right: 10px;
+        font-size: 16px !important;
+      }
+    }
+  }
+}

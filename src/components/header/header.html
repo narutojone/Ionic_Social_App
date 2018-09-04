@@ -1,0 +1,18 @@
+<div class="header" linear-bg>
+  <div class="header-menu">
+    <button ion-button icon-only menuToggle>
+    <ion-icon name="menu" color="light"></ion-icon>
+    <ion-badge class="header-badge" *ngIf="user && user.getUnReadNumberNotifications() > 0">{{ user.getUnReadNumberNotifications() }}</ion-badge>
+  </button>
+  </div>
+
+  <ion-icon class="header-logo" name="md-pt-logo" color="light"></ion-icon>
+
+  <div class="header-profile" (tap)="goProfile()">
+    <div class="header-profile-infos">
+      <span class="header-profile-info-name"><b>{{ user.getName() }}</b></span>
+      <span class="header-profile-info-points">{{user.getRank()}} | {{ user.getPoints() }} Pts</span>
+    </div>
+    <img [src]="user.getProfilePicture()" />
+  </div>
+</div>

@@ -1,0 +1,40 @@
+$pt-star-icon-margin: 5px;
+
+pt-star-rating {
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+pt-star-rating .star-rating-half-full {
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+pt-star-rating ion-icon {
+  margin-right: $pt-star-icon-margin;
+}
+
+.star-rating-full-div {
+  vertical-align: middle;
+  ion-icon{font-size: 42px;}
+}
+
+.star-rating-other-div{
+  vertical-align: middle;
+  margin-left: -2.5px;
+  ion-icon{font-size: 42px;}
+}
+
+.star-rating-full {
+  font-size: 42px;
+}
+
+.star-rating-empty {
+  font-size: 42px;
+}
+
+.star-rating-half {
+  font-size: 42px;
+}
+

@@ -1,0 +1,16 @@
+<div *ngIf="!newsCardSection">
+  <ion-icon class="star-rating-full" name="star" color="{{ color }}" *ngFor="let f of full" (tap)="changeRate(f)"></ion-icon>
+  <ion-icon class="star-rating-half" name="star-half-outline" color="{{ color }}" *ngIf="halfPresent" (tap)="changeRate(e)"></ion-icon>
+  <ion-icon class="star-rating-empty" name="star" color="{{ colorEmpty }}" *ngFor="let e of empty" (tap)="changeRate(e)"></ion-icon>
+</div>
+<div *ngIf="newsCardSection">
+  <div class="star-rating-full-div">
+    <ion-icon class="star-rating-full" name="star" color="{{ colorNewsCard }}" *ngFor="let f of full" (tap)="changeRate(f)"></ion-icon>
+  </div>
+  <div class="star-rating-other-div">
+    <ion-icon class="star-rating-half" name="star-half-outline" color="{{ colorNewsCard }}" *ngIf="halfPresent" (tap)="changeRate(e)"></ion-icon>
+  </div>
+  <div class="star-rating-other-div">
+    <ion-icon class="star-rating-empty" name="star" color="{{ colorNewsCardEmpty }}" *ngFor="let e of empty" (tap)="changeRate(e)"></ion-icon>
+  </div>
+</div>

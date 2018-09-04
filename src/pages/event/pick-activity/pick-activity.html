@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <pt-header></pt-header>
+  </ion-toolbar>
+  <ion-navbar #profilNavBar class="profile-header sub-header-profile">
+    <div *ngIf="list_origin == 'todos'">
+      <ion-icon class="profile-header-icon-left" name="md-pt-record" color="white"></ion-icon>
+      <h2>{{ 'EMPTY.TODOS.TITLE' | translate }}</h2>
+    </div>
+    <div *ngIf="list_origin == 'historic'">
+      <ion-icon class="profile-header-icon-left" name="md-pt-historic" color="white"></ion-icon>
+      <h2>{{ 'EMPTY.HISTORIC.TITLE' | translate }}</h2>
+    </div>
+    <div *ngIf="list_origin == 'pathList'">
+      <ion-icon class="profile-header-icon-left" name="md-pt-pathlist" color="white"></ion-icon>
+      <h2>{{ 'EMPTY.PATHLIST.TITLE' | translate }}</h2>
+    </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <div *ngIf="activities.length > 0">
+    <div class="creation-section-title">
+      <div class="creation-section-number">1</div>
+      <h3>{{ 'EVENT.CREATION.PICK' | translate }}</h3>
+    </div>
+
+    <div *ngIf="list_origin == 'todos'">
+      <div *ngFor="let pto of activities;">
+        <!-- PATH-BEGIN-->
+        <pt-card-path *ngIf="pto.places" [path]="pto" [needSelectionAction]="true"  (selectAction)="selectActivity(pto)"></pt-card-path>
+        <!-- PATH-END-->
+        <!-- PLACE-BEGIN-->
+        <pt-card-place *ngIf="!pto.places" [place]="pto" [needSelectionAction]="true"  (selectAction)="selectActivity(pto)"></pt-card-place>
+        <!-- PLACE-END-->
+      </div>
+    </div>
+
+    <div *ngIf="list_origin == 'historic'">
+      <div *ngFor="let comment of activities;">
+        <!-- PATH-BEGIN-->
+        <pt-card-path *ngIf="comment.object.places" [path]="comment.object" [needSelectionAction]="true"  (selectAction)="selectActivity(comment.object)"></pt-card-path>
+        <!-- PATH-END-->
+        <!-- PLACE-BEGIN-->
+        <pt-card-place *ngIf="!comment.object.places" [place]="comment.object" [needSelectionAction]="true"  (selectAction)="selectActivity(comment.object)"></pt-card-place>
+        <!-- PLACE-END-->
+      </div>
+    </div>
+
+    <div *ngIf="list_origin == 'pathList'">
+      <div *ngFor="let pto of activities;">
+        <!-- PATH-BEGIN-->
+        <pt-card-path *ngIf="pto.places" [path]="pto" [needSelectionAction]="true"  (selectAction)="selectActivity(pto)"></pt-card-path>
+        <!-- PATH-END-->
+        <!-- PLACE-BEGIN-->
+        <pt-card-place *ngIf="!pto.places" [place]="pto" [needSelectionAction]="true"  (selectAction)="selectActivity(pto)"></pt-card-place>
+        <!-- PLACE-END-->
+      </div>
+    </div>
+
+
+  </div>
+
+  <pt-page-empty *ngIf="activities.length === 0 && list_origin == 'todos'" page="TODOS" image="assets/img/path-details-page.png"></pt-page-empty>
+  <pt-page-empty *ngIf="activities.length === 0 && list_origin == 'historic'" page="HISTORIC" image="assets/img/comment-page.png"></pt-page-empty>
+  <pt-page-empty *ngIf="activities.length === 0 && list_origin == 'pathList'" page="PATHLIST" image="assets/img/comment-page.png"></pt-page-empty>
+
+
+</ion-content>

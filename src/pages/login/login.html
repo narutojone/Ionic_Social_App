@@ -1,0 +1,21 @@
+<ion-content class="login-content">
+
+<div class="login-top">
+  <img top-per-5 src="assets/img/logo.png"/>
+  <h1 margin-top text-center>{{ 'LOGIN.TITLE' | translate }}</h1>
+  <!--h4 text-center>{{ 'LOGIN.TEXT' | translate }}</h4-->
+</div>
+<img top-per-5 class="login-image" src="assets/img/login_picture.jpg"/>
+<div top-per-5 class="login-button">
+  <button ion-button color="facebook" round (click)="facebookLogin$()">
+    <ion-icon ios="logo-facebook" md="logo-facebook"></ion-icon>
+    {{ 'LOGIN.FACEBOOK' | translate }}
+  </button>
+</div>
+<div class="login-footer">
+  <span class="app-name">{{appName$}}</span>
+  <!--<span class="app-policy" (click)="showPolicy$()">{{'LOGIN.POLICY' | translate}}</span>-->
+  <span class="app-version">v {{appVersion$}}</span>
+</div>
+
+</ion-content>

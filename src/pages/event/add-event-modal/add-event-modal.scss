@@ -1,0 +1,67 @@
+add-event-modal {
+  top: 20vw !important;
+  left: 15vw !important;
+  width: 70vw !important;
+  height: 300px !important;
+  position: absolute;
+  border-radius: 30px;
+  .add-event-modal-title {
+    height: 30px;
+    h2 {
+      font-size: 20px;
+      padding: 5px;
+    }
+  }
+  .add-event-modal-pick {
+    background-color: map-get($colors, 'primary');
+    color: white;
+    width: 100%;
+    height: 150px;
+    margin: 0;
+    margin-top: -18px;
+    border-radius: 30px 30px 0 0;
+    .add-event-modal-choice {
+      background-color: map-get($colors, 'primary');
+    }
+  }
+  .add-event-modal-create {
+    background-color: map-get($colors, 'secondary');
+    color: white;
+    width: 100%;
+    height: 150px;
+    margin: 0;
+    margin-top: -18px;
+    border-radius: 0 0 30px 30px;
+    .add-event-modal-choice {
+      background-color: map-get($colors, 'secondary');
+    }
+  }
+  .add-event-modal-choice {
+    width: 49%;
+    height: 100px;
+    margin-top: 10px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 30px;
+    border: solid 1px white;
+    ion-icon {
+      font-size: 60px !important;
+      margin-top: 5px;
+    }
+    &:hover {
+      transform: translate(0px, -10px) scale(1.2);
+    }
+  }
+}
+
+ion-modal.add-event-modal ion-backdrop {
+  visibility: visible !important;
+  z-index: 0;
+}
+
+ion-modal.add-event-modal .modal-wrapper {
+  top: 20%;
+  width: 60%;
+  height: 300px;
+  position: absolute;
+}

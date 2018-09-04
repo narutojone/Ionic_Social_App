@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <pt-header></pt-header>
+  </ion-toolbar>
+  <ion-navbar #creationPlaceNavBar class="sub-header sub-header-creationPlace">
+    <h2 text-center>{{ 'CREATION.MENU.PLACE' | translate }}</h2>
+  </ion-navbar>
+</ion-header>
+
+<ion-content text-center>
+  <ion-searchbar #creationPlaceSearch
+                 id="creationPlaceSearch"
+                 placeholder="{{ 'CREATION.SEARCH' | translate }}" >
+  </ion-searchbar>
+  <div #creationPlaceMap id="creationPlaceMap" ></div>
+  <button ion-button class="validateButton" color="primary" (tap)="addPlace(tempPlace)">{{ 'CREATION.VALIDATEPLACE' | translate }}</button>
+
+</ion-content>

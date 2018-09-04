@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-toolbar>
+    <pt-header></pt-header>
+  </ion-toolbar>
+  <!--<ion-navbar #profilNavBar class="sub-header-feed">
+    <ng-template #userFeed let-attrs="attrs" (touchstart)="focusTenmplate()">
+      <ion-row class="user-item-search" (click)="goProfile(attrs.data)">
+        <ion-col col-3>
+          <img src="{{attrs.data.getProfilePicture()}}" class="profile-picture"/>
+        </ion-col>
+        <ion-col col-9>
+          <h3>{{attrs.data.firstname}} {{attrs.data.lastname}}</h3>
+          <p>{{attrs.data.rank}} | {{attrs.data.points}} Pts</p>
+        </ion-col>
+      </ion-row>
+    </ng-template>
+    <ion-auto-complete [options]="{ placeholder : 'Search Pather' }" [dataProvider]="completeFeedService" [template]="userFeed" #searchUser></ion-auto-complete>
+  </ion-navbar>-->
+</ion-header>
+
+<ion-content default-grey-background>
+  <div class="search-pather-feed" linear-bg>
+    <ion-searchbar [(ngModel)]="patherSearch" placeholder="Search Pather" (ionInput)="setFilteredItems()" [showCancelButton]="true"
+      (ionCancel)="onCancelSearch()">
+    </ion-searchbar>
+    <div *ngFor="let pather of pathers;">
+      <ion-row class="user-item-search" (tap)="goProfile(pather)">
+        <ion-col col-3>
+          <img src="{{pather.getProfilePicture()}}" class="profile-picture" />
+        </ion-col>
+        <ion-col col-9>
+          <h3>{{pather.firstname}} {{pather.lastname}}</h3>
+          <p>{{pather.rank}} | {{pather.points}} Pts</p>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+
+  <ion-refresher (ionRefresh)="refresh$($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <div pull-right class="new-creation-div" ion-fixed>
+    <ion-icon name="md-add-circle" (tap)="openCreationModal()" class="open-creation-icon" color="primary"></ion-icon>
+  </div>
+
+  <pt-page-empty *ngIf="!news$" page="FEEDLOADING" image="assets/img/user-search.png"></pt-page-empty>
+
+  <pt-page-empty *ngIf="news$ && news$.length === 0" page="FEED" image="assets/img/user-search.png"></pt-page-empty>
+
+  <div *ngFor="let new$ of news$;" margin-top>
+    <!-- FOLLOWS-BEGIN-->
+    <pt-card-new-follow [u]="new$.user" [news]="new$" *ngIf="new$.newsType === 6"></pt-card-new-follow>
+
+    <!-- FOLLOWS-END-->
+
+    <!-- PATH-BEGIN-->
+    <pt-card-path [u]="new$.user" [news]="new$" [path]="new$.data" *ngIf="new$.newsType === 1 || new$.newsType === 8"></pt-card-path>
+
+    <pt-card-path [u]="new$.user" [news]="new$" [path]="new$.data.object" [comment]="new$.data" *ngIf="new$.newsType === 3 || new$.newsType === 5"></pt-card-path>
+    <!-- PATH-END-->
+
+    <!-- PLACE-BEGIN-->
+
+    <pt-card-place [u]="new$.user" [place]="new$.data.object" [news]="new$" [comment]="new$.data" *ngIf="new$.newsType === 2 || new$.newsType === 4"></pt-card-place>
+
+    <pt-card-place [u]="new$.user" [place]="new$.data" [news]="new$" *ngIf="new$.newsType === 7 || new$.newsType === 9"></pt-card-place>
+
+    <!-- PLACE-END-->
+
+  </div>
+
+  <div style="width: 100%" *ngIf="lastNews && lastNews.length > 0" text-center>
+    <button margin-top margin-bottom text-center ion-button round outline color="primary"
+      (tap)="getMoreNews($event)">{{ 'LOADMORE' | translate }}</button>
+  </div>
+
+  <!--<ion-infinite-scroll (ionInfinite)="getMoreNews($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>-->
+</ion-content>
+<div #feedGoogleDiv id="feedGoogleDiv"></div>

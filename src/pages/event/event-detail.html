@@ -1,0 +1,239 @@
+<ion-header>
+  <ion-toolbar>
+    <pt-header></pt-header>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content overflow-scroll="true">
+  <div class="red-content-navbar">
+    <button class="back-nav-button" ion-button (tap)="back()">
+        <ion-icon name="md-arrow-back" color="white"></ion-icon>
+      </button>
+    <h2 underline-text (tap)="goToEventSettings()">{{ event.name }}</h2>
+  </div>
+
+  <div class="event-details-main" image-border>
+    <img image-display [src]="event.activity.getCover()">
+  </div>
+
+  <h2 text-center margin-top> {{ 'EVENT.DETAILS.ORGANIZER' | translate }} </h2>
+  <ion-item class="user-ion-item">
+    <div padding>
+      <ion-row>
+        <ion-col col-3 (click)="goProfile(event.user)">
+          <img src="{{event.user.getProfilePicture()}}" />
+        </ion-col>
+        <ion-col col-6 padding-top (click)="goProfile(event.user)">
+          <h3>{{event.user.firstname}} {{event.user.lastname}}</h3>
+          <p>{{event.user.rank}} | {{event.user.points}} Pts</p>
+        </ion-col>
+        <ion-col col-3>
+          <pt-follow [u]="event.user" primary-color></pt-follow>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-item>
+
+  <h2 text-center margin-top> Informations </h2>
+  <ion-item *ngIf="event.date">
+    <div padding>
+      <h3 text-center> Date </h3>
+      <p text-wrap text-center>{{event.date | date: 'dd/MM/yyyy hh:mm' }}</p>
+    </div>
+  </ion-item>
+  <ion-item *ngIf="event.description">
+    <div padding>
+      <h3 text-center> Description </h3>
+      <p text-wrap text-center>{{event.description}}</p>
+    </div>
+  </ion-item>
+
+  <ion-item *ngIf="event.event_type == 'Path' || event.event_type == 'UndonePath'">
+      <!-- PATH-BEGIN-->
+      <pt-card-path [path]="event.activity"></pt-card-path>
+
+      <!--<ion-card class="path-card" (tap)="goPathDetail(event.activity)">
+        <div class="left-content-path" image-border>
+          <img image-display [src]="event.activity.getCover()">
+
+          <div class="card-path-position">
+            <img class="left-content-path-img" src="{{event.activity.user.getProfilePicture()}}" />
+            <div class="card-path-step">
+              <p *ngFor="let s of event.activity.places">
+                <ion-icon name="{{s.activity_types[0].getIcon()}}" class="display-steps-category"></ion-icon>
+                <strong> {{s.name}}</strong>
+              </p>
+            </div>
+          </div>
+          <img *ngIf="event.activity.stepsNumber() === 2" style="width: 40% !important;" class="card-image-path" src="assets/icon/1-2.png"
+          />
+          <img *ngIf="event.activity.stepsNumber() === 3" style="width: 50% !important;" class="card-image-path" src="assets/icon/1-2-3.png"
+          />
+          <img *ngIf="event.activity.stepsNumber() > 3" style="width: 60% !important;" class="card-image-path" src="assets/icon/1-2-3-4.png"
+          />
+          <div class="card-image-overlay"></div>
+        </div>
+        <div class="right-content" *ngIf="event.activity.moods && event.activity.moods.length > 0">
+          <h2 text-wrap><strong>{{event.activity.name}}</strong></h2>
+          <p text-wrap *ngFor="let mood of event.activity.moods">
+            {{mood.name}}
+          </p>
+        </div>
+        <div class="right-content" *ngIf="!event.activity.moods || (event.activity.moods && event.activity.moods.length === 0)">
+          <h2 text-wrap><strong>{{event.activity.name}}</strong></h2>
+          <p text-wrap *ngFor="let mood of event.activity.getMoodsFromSteps().slice(0, 4)">
+            {{mood.name}}
+          </p>
+        </div>
+      </ion-card>-->
+      <!-- PATH-END-->
+  </ion-item>
+
+  <ion-item *ngIf="event.event_type == 'Place' || event.event_type == 'UndonePlace'">
+    <!-- PLACE-BEGIN-->
+    <!--<ion-card class="place-card" (tap)="goPlaceDetail(event.activity)">
+      <div class="left-content-place" image-border>
+        <img image-display [src]="event.activity.getCover()">
+        <div class="nb-likes">
+          <span>{{event.activity.nb_likes}}</span>
+          <ion-icon name="ios-heart-outline" color="light"></ion-icon>
+        </div>
+        <div class="place-card-step-categories">
+          <div *ngFor="let ac of event.activity.activity_types">
+            <ion-icon name="{{ac.getIcon()}}" class="display-steps-category"></ion-icon>
+          </div>
+        </div>
+      </div>
+      <div class="right-content">
+        <h2 text-wrap><strong>{{event.activity.name}}</strong></h2>
+        <p text-wrap *ngFor="let mood of event.activity.moods.slice(0, 3)">
+          {{mood.name}}
+        </p>
+        <p text-wrap>{{event.activity.address}}</p>
+      </div>
+    </ion-card>-->
+    <pt-card-place [place]="event.activity"></pt-card-place>
+    <!-- PLACE-END-->
+  </ion-item>
+
+  <h2 text-center margin-top> Location </h2>
+  <div padding *ngIf="event.event_type == 'Path' || event.event_type == 'UndonePath'" (tap)="goPathMap()" class="details-location"
+    [style.background-image]="'url(' + event.activity.getMapImage() + ')'">
+  </div>
+  <ion-item *ngIf="event.event_type == 'Place' || event.event_type == 'UndonePlace'">
+    <div padding>
+      <p text-wrap text-center>{{event.activity.address}}</p>
+    </div>
+  </ion-item>
+  <div padding *ngIf="event.event_type == 'Place' || event.event_type == 'UndonePlace'" class="place-details-location" (tap)="goPlaceMap()"
+    class="details-location" [style.background-image]="'url(' + event.activity.getMapImage() + ')'">
+  </div>
+
+  <div *ngIf="event.responses.length > 0">
+    <h2 text-center margin-top> {{ 'EVENT.DETAILS.PEOPLE' | translate }} </h2>
+    <div margin>
+      <div *ngFor="let ur of event.orderedResponses()" class="event-people">
+        <div class="event-people-display">
+          <img src="{{ur.user.getProfilePicture()}}" class="event-people-interested" *ngIf="ur.response == 3" />
+          <img src="{{ur.user.getProfilePicture()}}" class="event-people-not-interested" *ngIf="ur.response == 1" />
+          <img src="{{ur.user.getProfilePicture()}}" class="event-people-soso" *ngIf="ur.response == 2" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2 text-center margin-top> {{ 'EVENT.DETAILS.COMMENTS' | translate }} </h2>
+  <!--<ion-card margin>
+    <div class="event-comment-section">
+      <pt-simple-comment-section [event]="event"></pt-simple-comment-section>
+    </div>
+  </ion-card>-->
+
+  <ion-row *ngFor="let comment of event.comments" class="event-card-comments" (tap)="showFullComment(comment)">
+    <ion-col col-2>
+      <img [src]="comment.user.getProfilePicture()">
+    </ion-col>
+    <ion-col col-10>
+      <h5 two-lines-text><strong>{{comment.user.firstname}} {{comment.user.lastname}}</strong> {{comment.text}}</h5>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <div class="event-card-comment-section">
+      <div class="event-card-comment-section-icon icon-normal-size" *ngIf="event.user_response === 0" (tap)="changeOpinionModal()">
+        <ion-icon name="icon-ic_hourglass_full_24px" color="light"></ion-icon>
+      </div>
+      <div class="event-card-comment-section-icon icon-full-size" *ngIf="event.user_response === 1" (tap)="changeOpinionModal()">
+        <ion-icon name="icon-circle-remove" color="primary"></ion-icon>
+      </div>
+      <div class="event-card-comment-section-icon icon-full-size" *ngIf="event.user_response === 3" (tap)="changeOpinionModal()">
+        <ion-icon name="icon-check-circle-08" color="secondary"></ion-icon>
+      </div>
+
+      <ion-item>
+        <ion-input autocorrect="true" type="text" [(ngModel)]="commentText" placeholder="Leave a comment..." name="comment"></ion-input>
+      </ion-item>
+      <div class="event-card-comment-section-icon active-icon-send" *ngIf="commentText !== ''" (tap)="sendComment()">
+        <ion-icon name="icon-send" color="light"></ion-icon>
+      </div>
+      <div class="event-card-comment-section-icon unactive-icon-send" *ngIf="commentText === ''">
+        <ion-icon name="icon-send" color="light"></ion-icon>
+      </div>
+    </div>
+  </ion-row>
+
+  <!--<div>
+    <h2 text-center margin-top> {{ 'EVENT.DETAILS.COMMENTS' | translate }} </h2>
+    <ion-item>
+      <div *ngFor="let c of events.comments" padding>
+        <ion-icon *ngIf="c.user.facebook_id === user.getFBID()" name="ios-create-outline" (tap)="editComment(c, path)" color="primary"></ion-icon>
+        <ion-row>
+          <ion-col col-3>
+            <img style="float: left;" (tap)="goProfile(c.user)" src="{{c.user.getProfilePicture()}}" class="profile-picture" />
+          </ion-col>
+          <ion-col col-9>
+            <h4 text-wrap>
+              {{c.user.firstname}} {{c.user.lastname}}
+            </h4>
+            <p text-wrap *ngIf="c.text && c.text != ''" >
+              {{c.text}}
+            </p>
+            <pt-star-rating star-center *ngIf="!c.text || c.text == ''" [editable]="false" [(rate)]="c.rate"></pt-star-rating>
+          </ion-col>
+        </ion-row>
+      </div>
+      <div *ngIf="userComment.id && !includeComment(userComment, path.comments)" padding>
+        <ion-icon *ngIf="userComment.user.facebook_id === user.getFBID()" name="ios-create-outline" (tap)="editComment(userComment, path)" color="primary"></ion-icon>
+        <ion-row>
+          <ion-col col-3>
+            <img style="float: left;" src="{{userComment.user.getProfilePicture()}}" class="profile-picture" />
+          </ion-col>
+          <ion-col col-9>
+            <h4 text-wrap>
+              {{userComment.user.firstname}} {{userComment.user.lastname}}
+            </h4>
+            <p text-wrap *ngIf="userComment.text && userComment.text != ''" >
+              {{userComment.text}}
+            </p>
+            <pt-star-rating star-center *ngIf="!userComment.text || userComment.text == ''" [editable]="false" [(rate)]="userComment.rate"></pt-star-rating>
+          </ion-col>
+        </ion-row>
+      </div>
+      <div *ngIf="!userComment.id && !includeComment(userComment, path.comments)" padding>
+        <ion-row (tap)="editComment(userComment, path)">
+          <ion-col col-3 class="comment-icon">
+            <ion-icon name="ios-create-outline"  color="primary"></ion-icon>
+          </ion-col>
+          <ion-col col-9 padding-top>
+            <h4 text-wrap primary-color>
+               {{ 'PATH.DETAILS.COMMENTACTION' | translate }}
+            </h4>
+            <p>
+              {{ 'PATH.DETAILS.COMMENTACTIONTEXT' | translate }}
+            </p>
+          </ion-col>
+        </ion-row>
+      </div>
+    </ion-item>
+  </div>-->
+</ion-content>

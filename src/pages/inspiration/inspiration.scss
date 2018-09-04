@@ -1,0 +1,45 @@
+page-inspiration {
+  #inspirationMap {
+    height: 100%;
+    width: 100%
+  }
+  .sub-header-inspiration {
+    height: 70px !important;
+  }
+  .sub-header-users {
+    height: 70px !important;
+    margin-left: 16px !important;
+    white-space: nowrap;
+    img {
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      margin: 5px;
+    }
+    .path-user-header {
+      width: 60px;
+      height: 60px;
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+    }
+    .not-selected {
+      background-color: map-get($colors, primary);
+      opacity: 0.5;
+      position: absolute;
+      z-index: 2;
+      border-radius: 50%;
+      top: 5px;
+      left: 5px;
+      height: 50px;
+      width: 50px;
+    }
+  }
+    .validateButton {
+    position: absolute;
+    z-index: 10;
+    bottom: 25px;
+    margin-left: -80px;
+    min-width: 160px;
+  }
+}

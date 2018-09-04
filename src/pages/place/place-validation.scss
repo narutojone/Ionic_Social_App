@@ -1,0 +1,81 @@
+$place-creation-padding: 12px;
+$place-creation-filter-margin-right: 16px;
+$place-creation-content-height: 85px;
+$place-creation-filter-size: 60px;
+$place-creation-section-title-size: 30px;
+
+page-place-validation {
+  ion-navbar {
+    ion-title {
+      color: white;
+      .toolbar-title-ios {
+        color: white;
+      }
+    }
+  }
+  ion-content {
+    display: block;
+    padding: $place-creation-padding;
+
+    h2 {
+      text-align: left;
+      color: map-get($colors, dark-text);
+      margin-left: 20px;
+    }
+
+    h3 {
+      color: map-get($colors, dark-text);
+      margin: 0px;
+    }
+    .creation-section-title {
+      h3 {
+        color: map-get($colors, dark-text);
+        margin: 0px;
+      }
+      ion-icon {
+        font-size: $place-creation-section-title-size;
+        margin-right: $place-creation-filter-margin-right;
+      }
+    }
+
+    .place-creation-category-selected {
+      margin-bottom: $place-creation-content-height;
+    }
+    .place-creation-section-content {
+      display: flex;
+      height: $place-creation-content-height;
+      align-items: center;
+      justify-content: space-between;
+      .scroll-zoom-wrapper {
+        display: flex;
+        height: 100%;
+        align-items: center;
+      }
+      .place-creation-filter {
+        float: left;
+        margin-right: $place-creation-filter-margin-right;
+        width: $place-creation-filter-size;
+        text-align: center;
+        ion-icon {
+          font-size: $place-creation-filter-size !important;
+        }
+        span {
+          display: block;
+          font-size: x-small;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          color: map-get($colors, info);
+          margin-bottom: 10px;
+        }
+        span.active {
+          color: map-get($colors, primary);
+        }
+      }
+    }
+    .validateButton {
+      margin-left: calc(50% - 70px);
+      width: 140px;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+page-creation-place {
+  #creationPlaceMap {
+    height: 100%;
+    width: 100%
+  }
+
+  .sub-header-creationPlace {
+    height: 60px !important;
+    h2 {
+      color: white;
+    }
+  }
+
+  #creationPlaceSearch{
+    position: absolute;
+    top: 16px;
+    z-index: 30;
+  }
+
+  .validateButton {
+    position: absolute;
+    z-index: 10;
+    bottom: 25px;
+    margin-left: -80px;
+    min-width: 160px;
+  }
+}

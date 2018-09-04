@@ -1,0 +1,221 @@
+<ion-header>
+  <ion-toolbar>
+    <pt-header></pt-header>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="main-filter">
+    <!-- CITY -->
+    <div class="filter" [ngClass]="{'filter-no-focus': focus != 'city'}" (tap)="focus='city' ; resetValues()">
+      <ion-icon class="filter-icon" name="md-pt-place" color="primary"></ion-icon>
+      <h4 *ngIf="!filter.city">{{ 'EXPLORATION.CITY' | translate }}</h4>
+      <div [hidden]="focus != 'city'" class="filter-content filter-search-city">
+        <ion-searchbar #explorationSearch id="explorationSearch" placeholder="{{ 'EXPLORATION.CITY_PLACEHOLDER' | translate }}">
+        </ion-searchbar>
+      </div>
+      <div [hidden]="focus === 'city' || !filter.city" class="filter-content">
+        <p>{{filter.city}}</p>
+      </div>
+    </div>
+
+    <!-- WHOS IN -->
+    <div class="filter" [ngClass]="{'filter-no-focus': focus != 'whos'}" (tap)="focus='whos'; resetValues('whos')">
+      <ion-icon class="filter-icon" name="md-pt-people" color="primary"></ion-icon>
+      <h4 *ngIf="!filter.with">{{ 'EXPLORATION.WHOS_IN' | translate }}</h4>
+      <div class="filter-content" *ngIf="focus != 'whos' && filter.with && filter.pathers.length === 0">
+        <div class="filter-content-item">
+          <ion-icon name="{{filter.with.getIcon(true)}}" color="secondary"></ion-icon>
+          <span>{{ filter.with.value + '' | translate }}</span>
+        </div>
+      </div>
+      <div class="filter-content" *ngIf="focus != 'whos' && filter.with && filter.pathers.length > 0">
+        <div class="filter-content-item" *ngFor="let p of filter.pathers">
+          <img [src]="p.getProfilePicture()">
+          <span>{{p.firstname}} {{p.lastname}}</span>
+        </div>
+      </div>
+      <div class="filter-content filter-content-focus" *ngIf="filter.pathers.length === 0">
+        <div class="filter-content-item" *ngFor="let w of filters.whos" tappable (touchstart)="touchStartPtTap($event)" (touchend)="touchEndPtTap($event) && changeWhos(w)">
+          <ion-icon *ngIf="filter.with !== w" name="{{ w.getIcon() }}" color="secondary"></ion-icon>
+          <ion-icon *ngIf="filter.with === w" name="{{w.getIcon(true)}}" color="secondary"></ion-icon>
+          <span>{{ w.value + '' | translate }}</span>
+        </div>
+      </div>
+      <div class="filter-content filter-content-focus" *ngIf="filter.pathers.length > 0">
+        <div class="filter-content-item" *ngFor="let p of filter.pathers" tappable (touchstart)="touchStartPtTap($event)" (touchend)="touchEndPtTap($event) && removePather(p)">
+          <img [src]="p.getProfilePicture()">
+          <div class="deletePlace" [class.hide]="!delete_whos">
+            <ion-icon name="close" color="white"></ion-icon>
+          </div>
+          <span>{{p.firstname}} {{p.lastname}}</span>
+        </div>
+        <div class="filter-content-item" tappable (touchstart)="touchStartPtTap($event)" (touchend)="touchEndPtTap($event) && addPather()"
+          *ngIf="!delete_whos">
+          <ion-icon name="ios-add-circle-outline" color="primary" class="normal-line"></ion-icon>
+          <span>{{ 'EXPLORATION.WHOS.ADDPATHER' | translate }}</span>
+        </div>
+        <div class="filter-content-item" (tap)="delete_whos = false ; selected_pather = false;" *ngIf="delete_whos">
+          <ion-icon name="ios-remove-circle-outline" color="primary" class="normal-line"></ion-icon>
+          <span>{{ 'EXPLORATION.WHOS.CANCEL' | translate }}</span>
+        </div>
+      </div>
+      <!--<div *ngIf="selected_pather" class="filter-content-focus search-pather-exploration">
+      <ion-searchbar
+        [(ngModel)]="patherSearch"
+        (ionInput)="setFilteredItems()"
+        [showCancelButton]="true"
+        (ionCancel)="onCancelSearch()">
+      </ion-searchbar>
+      <div *ngFor="let pather of pathers;">
+        <div class="filter-content-item" tappable (touchstart)="touchStartPtTap($event)" (touchend)="touchEndPtTap($event) && addUser(pather)">
+          <img src="{{pather.getProfilePicture()}}" />
+          <span>{{pather.firstname}} {{pather.lastname}}</span>
+        </div>
+      </div>
+    </div>-->
+      <!--<pt-popover-pather  (onPatherSelected)="onPatherSelected($event)"
+                        [result]="filter.pathers"
+                        *ngIf="selected_pather"
+                        class="filter-content-focus">
+    </pt-popover-pather>-->
+    </div>
+    <div class="pop-over-search" *ngIf="selected_pather">
+      <div class="filter-content-focus search-pather-exploration">
+        <ion-searchbar [(ngModel)]="patherSearch" placeholder="Search Pather" (ionInput)="setFilteredItems()" (ionCancel)="onCancelSearch()">
+        </ion-searchbar>
+        <div class="filter-content" [hidden]="pathers.length < 1">
+          <div class="filter-content-item" *ngFor="let pather of pathers;" tappable (touchstart)="touchStartPtTap($event)" (touchend)="touchEndPtTap($event) && addUser(pather)">
+            <img src="{{pather.getProfilePicture()}}" />
+            <span>{{pather.firstname}} {{pather.lastname}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Categories -->
+    <div class="filter" [ngClass]="{'filter-no-focus': focus != 'category'}" (tap)="focus='category' ; resetValues('category')">
+      <ion-icon class="filter-icon" name="md-pt-plan" color="primary"></ion-icon>
+      <h4 *ngIf="filter.categories.length == 0">{{ 'EXPLORATION.PLANS' | translate }}</h4>
+      <!-- Filter selected -->
+      <div class="filter-content" *ngIf="focus != 'category' && filter.categories.length > 0">
+        <div class="filter-content-item" *ngFor="let c of filter.categories">
+          <ion-icon name="{{c.getIcon(true)}}" color="{{ c.parent_id ? 'secondary' : 'primary' }}">
+          </ion-icon>
+          <span>{{ c.getName(translate.currentLang) }}</span>
+        </div>
+      </div>
+      <!-- Filters -->
+      <div class="filter-content filter-content-focus">
+        <div class="filter-content-item" *ngFor="let c of filters.categories" tappable (touchstart)="touchStartPtTap($event)" (touchend)="touchEndPtTap($event) && changePlans(c)">
+          <ion-icon *ngIf="!category_active(c)" name="{{ c.getIcon() }}" color="primary">
+          </ion-icon>
+          <ion-icon *ngIf="category_active(c)" name="{{ c.getIcon(true) }}" color="primary">
+          </ion-icon>
+          <span>{{ c.getName(translate.currentLang) }}</span>
+        </div>
+        <div class="filter-content-item" tappable (touchstart)="touchStartPtTap($event)" (touchend)="touchEndPtTap($event) && addPendingCategory()">
+          <ion-icon name="ios-add-circle-outline" color="primary">
+          </ion-icon>
+          <span>{{ 'ADD' | translate }}</span>
+        </div>
+      </div>
+    </div>
+    <!-- Children -->
+    <pt-popover-category [parent]="selected_category" [result]="filter.categories" *ngIf="selected_category" class="filter-content-focus">
+    </pt-popover-category>
+
+    <!-- Moods -->
+    <div class="filter" [ngClass]="{'filter-no-focus': focus != 'moods'}" (tap)="focus='moods' ; resetValues()">
+      <ion-icon class="filter-icon" name="md-pt-mood" color="primary"></ion-icon>
+      <h4 *ngIf="filter.moods.length == 0">
+        {{ 'EXPLORATION.MOOD' | translate }}
+      </h4>
+      <!-- Filter selected -->
+      <div class="filter-content" *ngIf="focus != 'moods' && filter.moods.length > 0">
+        <div class="filter-content-item" *ngFor="let m of filter.moods">
+          <ion-icon name="{{m.getIcon(true)}}" color="primary"></ion-icon>
+          <span>{{ m.getName(translate.currentLang) }}</span>
+        </div>
+      </div>
+      <!-- Filters -->
+      <div class="filter-content filter-content-focus">
+        <div class="filter-content-item" *ngFor="let m of filters.moods" tappable (touchstart)="touchStartPtTap($event)" (touchend)="touchEndPtTap($event) && changeMood(m)">
+          <ion-icon *ngIf="filter.moods.indexOf(m) == -1" name="{{ m.getIcon() }}" color="primary">
+          </ion-icon>
+          <ion-icon *ngIf="filter.moods.indexOf(m) >= 0" name="{{ m.getIcon(true) }}" color="primary">
+          </ion-icon>
+          <span>{{ m.getName(translate.currentLang) }}</span>
+        </div>
+        <div class="filter-content-item" tappable (touchstart)="touchStartPtTap($event)" (touchend)="touchEndPtTap($event) && addPendingMood()">
+          <ion-icon name="ios-add-circle-outline" color="primary">
+          </ion-icon>
+          <span>{{ 'ADD' | translate }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Budget -->
+    <div class="filter" [ngClass]="{'filter-no-focus': focus != 'budget'}" (tap)="focus='budget' ; resetValues()">
+      <ion-icon class="filter-icon" name="md-pt-price" color="primary"></ion-icon>
+      <h4 *ngIf="filter.budget == null">{{ 'EXPLORATION.BUDGET' | translate }}</h4>
+      <div class="filter-content" *ngIf="focus != 'budget' && filter.budget != null">
+        <ion-icon name="logo-usd" color="primary" [ngClass]="'filter-budget-' + filter.budget">
+        </ion-icon>
+      </div>
+      <div class="filter-content filter-content-focus">
+        <ion-icon name="logo-usd" color="primary" tappable (touchstart)="touchStartPtTap($event)" (touchend)="touchEndPtTap($event) && changePrice(i)"
+          [ngClass]="getBudgetClass(i)" *ngFor="let i of [ 1, 2, 3, 4, 5 ]">
+        </ion-icon>
+      </div>
+    </div>
+
+    <!--<div class="filter-validate" margin-top>
+      <div>
+        <button class="filter-validate-button" (tap)='goInspiration()'>
+          <img src="assets/icon/inspirer.png" class="filter-validate-icon"/>
+          <p>{{ 'EXPLORATION.INSPIRATION' | translate }}</p>
+      </button>
+        <button class="filter-validate-button" (tap)='goPlanification()'>
+        <img src="assets/icon/planifier.png" class="filter-validate-icon"/>
+          <p>{{ 'EXPLORATION.DISCOVER' | translate }}</p>
+      </button>
+      </div>
+    </div>-->
+  </div>
+
+
+  <!--<div class="filter-validate" margin-top>
+    <div>
+      <button class="filter-validate-button" (tap)='goInspiration()'>
+          <img src="assets/icon/inspirer.png" class="filter-validate-icon"/>
+          <p>{{ 'EXPLORATION.INSPIRATION' | translate }}</p>
+      </button>
+      <button class="filter-validate-button" (tap)='goPlanification()'>
+        <img src="assets/icon/planifier.png" class="filter-validate-icon"/>
+          <p>{{ 'EXPLORATION.DISCOVER' | translate }}</p>
+      </button>
+    </div>
+  </div>-->
+
+  <!--<div class="filter-validate" [style.height.px]="30" *ngIf="!show_validate">
+    <ion-icon class="filter-validate-display" name="ios-arrow-up" (tap)="showValidate()">
+    </ion-icon>
+  </div>-->
+</ion-content>
+
+<ion-footer>
+  <ion-row>
+    <ion-col>
+      <button ion-button icon-start round color="primary" (tap)='goInspiration()'>
+        <ion-icon name="icon-pin-search" color="light"></ion-icon>
+        {{ 'EXPLORATION.INSPIRATION' | translate }}
+      </button>
+    </ion-col>
+    <ion-col>
+      <button ion-button icon-start round color="primary" (tap)='goPlanification()'>
+        <ion-icon name="icon-pin-search" color="light"></ion-icon>
+        {{ 'EXPLORATION.DISCOVER' | translate }}
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-footer>

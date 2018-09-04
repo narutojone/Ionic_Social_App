@@ -1,0 +1,145 @@
+pt-simple-comment-section {
+  font-size: 50px;
+  width: 100%;
+  min-height: 40px;
+
+  .new-comment-list {
+    margin-bottom: 3px !important;
+    margin-top: 3px !important;
+
+    ion-item {
+      border: none !important;
+      padding: 1px !important;
+    }
+  }
+  ion-list {
+    ion-label {
+      display: inline-flex;
+      img {
+        margin: auto;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+      }
+      p {
+        text-align: left;
+        height: 36px;
+        margin: auto !important;
+        padding: 8px !important;
+        width: 80%;
+        border: solid 1px map-get($colors, primary);
+        border-radius: 30px;
+      }
+    }
+    ion-textarea {
+        width: 70vw;
+        max-width: 70vw;
+        margin: auto !important;
+      }
+
+      ion-icon {
+        margin: auto;
+        width: 30px;
+        height: 30px;
+        font-size: 30px !important;
+        border-radius: 50%;
+      }
+  }
+  .comments-section {
+    width: 100%;
+    .comment-section {
+      height: 40px;
+      margin-bottom: 5px;
+      display: inline-block;
+      .comment-user-info {
+        width: 20%;
+        height: 40px;
+        img {
+          margin: auto;
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+        }
+      }
+      .comment-text {
+        width: 80%;
+        height: 35px;
+        margin-top: 2px;
+        border-radius: 30px;
+        p {
+          overflow: hidden;
+          font-size: 12px;
+          text-align: left;
+          padding: 5px;
+          white-space: normal;
+          height: 25px;
+          line-height: 10px;
+        }
+      }
+    }
+  }
+  .comment-text {
+    width: 80%;
+    height: 35px;
+    margin-top: 2px;
+    border: solid 1px map-get($colors, primary);
+    border-radius: 30px;
+    p {
+      overflow: hidden;
+      font-size: 12px;
+      text-align: left;
+      padding: 5px;
+      white-space: normal;
+      height: 25px;
+      line-height: 10px;
+    }
+  }
+  .default-comment {
+    color: map-get($colors, info);
+    text-align: center;
+    width: 75vw;
+    margin-top: 25px;
+    p {
+      font-size: 20px;
+    }
+  }
+  .comment-user-part {
+    width: 100%;
+    display: inline-flex;
+    ion-textarea {
+      width: 80%;
+      border: solid 1px map-get($colors, primary);
+      border-radius: 30px;
+    }
+    ion-icon {
+      font-size: 30px !important;
+      height: 100%;
+      width: 20%;
+      margin: auto;
+    }
+  }
+  .add-comment-section {
+    width: 20%;
+    border-left: solid 1px map-get($colors, primary);
+    text-align: center;
+    ion-icon {
+      z-index: 30;
+      font-size: 50px !important;
+      margin-top: 15px !important;
+      height: 40px !important;
+      display: block !important;
+      padding-left: 4px !important;
+    }
+  }
+  .icon-comment {
+    z-index: 30;
+    font-size: 40px !important;
+    margin-top: auto  !important;
+    margin-bottom: auto !important;
+    margin-right: 20px !important;
+    height: 40px !important;
+    width: 40px !important;
+    display: block !important;
+    padding-left: 4px !important;
+  }
+}

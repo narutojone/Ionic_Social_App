@@ -1,0 +1,733 @@
+/*------------------------
+	icons
+-------------------------*/
+@function unicode($str) {
+  @return unquote("\"\\#{$str}\"");
+}
+
+$icon-multiple-11: unicode(ea05);
+$icon-multiple-11-2: unicode(ea06);
+$icon-compass-2: unicode(ea07);
+$icon-compass-2-2: unicode(ea08);
+$icon-square-add-08: unicode(ea09);
+$icon-square-add-08-2: unicode(ea0a);
+$icon-home-minimal: unicode(ea0b);
+$icon-home-minimal-2: unicode(ea0c);
+$icon-single-02: unicode(ea0d);
+$icon-single-02-2: unicode(ea0e);
+$icon-logo-facebook: unicode(ea0f);
+$icon-menu-left: unicode(ea10);
+$icon-bell-55: unicode(ea11);
+$icon-bell-55-2: unicode(ea12);
+$icon-position-pin: unicode(ea13);
+$icon-position-pin-2: unicode(ea14);
+$icon-road: unicode(ea15);
+$icon-road-2: unicode(ea16);
+$icon-funnel-39: unicode(ea17);
+$icon-photo-editor: unicode(ea18);
+$icon-photo-editor-2: unicode(ea19);
+$icon-shape-star: unicode(ea1a);
+$icon-shape-star-2: unicode(ea1b);
+$icon-chat: unicode(ea1c);
+$icon-chat-content: unicode(ea1d);
+$icon-chat-2: unicode(ea1e);
+$icon-camera-20: unicode(ea1f);
+$icon-connect: unicode(ea20);
+$icon-heart-2: unicode(ea21);
+$icon-heart-2-2: unicode(ea22);
+$icon-share-bold: unicode(ea23);
+$icon-share-bold-2: unicode(ea24);
+$icon-bookmark-2: unicode(ea25);
+$icon-bookmark-2-2: unicode(ea26);
+$icon-restore: unicode(ea27);
+$icon-time-3: unicode(ea28);
+$icon-check-circle-07: unicode(ea29);
+$icon-check-circle-08: unicode(ea2a);
+$icon-circle-remove: unicode(ea2b);
+$icon-ic_hourglass_full_24px: unicode(ea2c);
+$icon-ic_edit_24px: unicode(ea2d);
+$icon-send: unicode(ea2e);
+$icon-pin-3: unicode(ea2f);
+$icon-phone-2: unicode(ea30);
+$icon-link-72: unicode(ea31);
+$icon-menu-dots: unicode(ea32);
+$icon-walk: unicode(ea33);
+$icon-tail-left: unicode(ea34);
+$icon-camera-ban-37: unicode(ea35);
+$icon-multiple-19: unicode(ea36);
+$icon-centralize: unicode(ea37);
+$icon-multiple-19-2: unicode(ea38);
+$icon-alert-circle-i: unicode(ea39);
+$icon-pin-search: unicode(ea3a);
+$icon-circle-add: unicode(ea3b);
+$icon-flick-left: unicode(ea3c);
+$icon-flick-right: unicode(ea3d);
+$icon-ic_wb_iridescent_48px: unicode(ea3e);
+$icon-ic_more_48px: unicode(ea3f);
+$icon-image-05: unicode(ea40);
+$icon-calendar-grid-58: unicode(ea41);
+$icon-menu-bold: unicode(ea42);
+$icon-menu-bold-2: unicode(ea43);
+$icon-calendar-60: unicode(ea44);
+$icon-a-add: unicode(ea45);
+$icon-add-29: unicode(ea46);
+$icon-coins: unicode(ea47);
+$icon-map: unicode(ea48);
+$icon-map-2: unicode(ea49);
+$icon-pin-add: unicode(ea4a);
+$icon-map-pin: unicode(ea4b);
+$icon-pizza-slice: unicode(ea4c);
+$icon-croissant: unicode(ea4d);
+$icon-cheeseburger: unicode(ea4e);
+$icon-lobster: unicode(ea4f);
+$icon-tacos: unicode(ea50);
+$icon-food-course: unicode(ea51);
+$icon-sushi: unicode(ea52);
+$icon-mortar: unicode(ea53);
+$icon-pancake: unicode(ea54);
+$icon-muffin: unicode(ea55);
+$icon-eggs: unicode(ea56);
+$icon-chips: unicode(ea57);
+$icon-bakery: unicode(ea58);
+$icon-whisk: unicode(ea59);
+$icon-smoothie: unicode(ea5a);
+$icon-popcorn: unicode(ea5b);
+$icon-lollipop: unicode(ea5c);
+$icon-vest-31: unicode(ea5d);
+$icon-carrot: unicode(ea5e);
+$icon-cutlery: unicode(ea5f);
+$icon-chef: unicode(ea60);
+$icon-ice-cream-22: unicode(ea61);
+$icon-paris-tower: unicode(ea62);
+$icon-donut: unicode(ea63);
+$icon-waffle: unicode(ea64);
+$icon-meeting: unicode(ea65);
+$icon-meeting-2: unicode(ea66);
+$icon-network: unicode(ea67);
+$icon-flower-07: unicode(ea68);
+$icon-sofa: unicode(ea69);
+$icon-chili: unicode(ea6a);
+$icon-pulse: unicode(ea6b);
+$icon-alcohol: unicode(ea6c);
+$icon-muffin-2: unicode(ea6d);
+$icon-baloon: unicode(ea6e);
+$icon-delivery-fast: unicode(ea6f);
+$icon-steak: unicode(ea70);
+$icon-atom: unicode(ea71);
+$icon-remix: unicode(ea72);
+$icon-pyramid: unicode(ea73);
+$icon-coffee-long: unicode(ea74);
+$icon-forest: unicode(ea75);
+$icon-road-2-2: unicode(ea76);
+$icon-dice: unicode(ea77);
+$icon-eye-ban-20: unicode(ea78);
+$icon-cart-full: unicode(ea79);
+$icon-hotel-symbol: unicode(ea7a);
+$icon-flip: unicode(ea7b);
+$icon-board: unicode(ea7c);
+$icon-drink: unicode(ea7d);
+$icon-beer-95: unicode(ea7e);
+$icon-glass: unicode(ea7f);
+$icon-vest-sport: unicode(ea80);
+$icon-terrace: unicode(ea81);
+$icon-glass-water: unicode(ea82);
+$icon-rock: unicode(ea83);
+$icon-scotch: unicode(ea84);
+$icon-mic: unicode(ea85);
+$icon-user-climb: unicode(ea86);
+$icon-controller: unicode(ea87);
+$icon-puzzle-10: unicode(ea88);
+$icon-ping-pong: unicode(ea89);
+$icon-steering-wheel: unicode(ea8a);
+$icon-money-coins: unicode(ea8b);
+$icon-golf: unicode(ea8c);
+$icon-bow: unicode(ea8d);
+$icon-soccer-field: unicode(ea8e);
+$icon-bowling: unicode(ea8f);
+$icon-dart: unicode(ea90);
+$icon-key-26: unicode(ea91);
+$icon-axe: unicode(ea92);
+$icon-spray: unicode(ea93);
+$icon-bullet-list-67: unicode(ea94);
+$icon-small-down: unicode(ea95);
+
+.ion-md-icon-multiple-11::before {
+  content: $icon-multiple-11;
+}
+
+.ion-md-icon-multiple-11-2::before {
+  content: $icon-multiple-11-2;
+}
+
+.ion-md-icon-compass-2::before {
+  content: $icon-compass-2;
+}
+
+.ion-md-icon-compass-2-2::before {
+  content: $icon-compass-2-2;
+}
+
+.ion-md-icon-square-add-08::before {
+  content: $icon-square-add-08;
+}
+
+.ion-md-icon-square-add-08-2::before {
+  content: $icon-square-add-08-2;
+}
+
+.ion-md-icon-home-minimal::before {
+  content: $icon-home-minimal;
+}
+
+.ion-md-icon-home-minimal-2::before {
+  content: $icon-home-minimal-2;
+}
+
+.ion-md-icon-single-02::before {
+  content: $icon-single-02;
+}
+
+.ion-md-icon-single-02-2::before {
+  content: $icon-single-02-2;
+}
+
+.ion-md-icon-logo-facebook::before {
+  content: $icon-logo-facebook;
+}
+
+.ion-md-icon-menu-left::before {
+  content: $icon-menu-left;
+}
+
+.ion-md-icon-bell-55::before {
+  content: $icon-bell-55;
+}
+
+.ion-md-icon-bell-55-2::before {
+  content: $icon-bell-55-2;
+}
+
+.ion-md-icon-position-pin::before {
+  content: $icon-position-pin;
+}
+
+.ion-md-icon-position-pin-2::before {
+  content: $icon-position-pin-2;
+}
+
+.ion-md-icon-road::before {
+  content: $icon-road;
+}
+
+.ion-md-icon-road-2::before {
+  content: $icon-road-2;
+}
+
+.ion-md-icon-funnel-39::before {
+  content: $icon-funnel-39;
+}
+
+.ion-md-icon-photo-editor::before {
+  content: $icon-photo-editor;
+}
+
+.ion-md-icon-photo-editor-2::before {
+  content: $icon-photo-editor-2;
+}
+
+.ion-md-icon-shape-star::before {
+  content: $icon-shape-star;
+}
+
+.ion-md-icon-shape-star-2::before {
+  content: $icon-shape-star-2;
+}
+
+.ion-md-icon-chat::before {
+  content: $icon-chat;
+}
+
+.ion-md-icon-chat-content::before {
+  content: $icon-chat-content;
+}
+
+.ion-md-icon-chat-2::before {
+  content: $icon-chat-2;
+}
+
+.ion-md-icon-camera-20::before {
+  content: $icon-camera-20;
+}
+
+.ion-md-icon-connect::before {
+  content: $icon-connect;
+}
+
+.ion-md-icon-heart-2::before {
+  content: $icon-heart-2;
+}
+
+.ion-md-icon-heart-2-2::before {
+  content: $icon-heart-2-2;
+}
+
+.ion-md-icon-share-bold::before {
+  content: $icon-share-bold;
+}
+
+.ion-md-icon-share-bold-2::before {
+  content: $icon-share-bold-2;
+}
+
+.ion-md-icon-bookmark-2::before {
+  content: $icon-bookmark-2;
+}
+
+.ion-md-icon-bookmark-2-2::before {
+  content: $icon-bookmark-2-2;
+}
+
+.ion-md-icon-restore::before {
+  content: $icon-restore;
+}
+
+.ion-md-icon-time-3::before {
+  content: $icon-time-3;
+}
+
+.ion-md-icon-check-circle-07::before {
+  content: $icon-check-circle-07;
+}
+
+.ion-md-icon-check-circle-08::before {
+  content: $icon-check-circle-08;
+}
+
+.ion-md-icon-circle-remove::before {
+  content: $icon-circle-remove;
+}
+
+.ion-md-icon-ic_hourglass_full_24px::before {
+  content: $icon-ic_hourglass_full_24px;
+}
+
+.ion-md-icon-ic_edit_24px::before {
+  content: $icon-ic_edit_24px;
+}
+
+.ion-md-icon-send::before {
+  content: $icon-send;
+}
+
+.ion-md-icon-pin-3::before {
+  content: $icon-pin-3;
+}
+
+.ion-md-icon-phone-2::before {
+  content: $icon-phone-2;
+}
+
+.ion-md-icon-link-72::before {
+  content: $icon-link-72;
+}
+
+.ion-md-icon-menu-dots::before {
+  content: $icon-menu-dots;
+}
+
+.ion-md-icon-walk::before {
+  content: $icon-walk;
+}
+
+.ion-md-icon-tail-left::before {
+  content: $icon-tail-left;
+}
+
+.ion-md-icon-camera-ban-37::before {
+  content: $icon-camera-ban-37;
+}
+
+.ion-md-icon-multiple-19::before {
+  content: $icon-multiple-19;
+}
+
+.ion-md-icon-centralize::before {
+  content: $icon-centralize;
+}
+
+.ion-md-icon-multiple-19-2::before {
+  content: $icon-multiple-19-2;
+}
+
+.ion-md-icon-alert-circle-i::before {
+  content: $icon-alert-circle-i;
+}
+
+.ion-md-icon-pin-search::before {
+  content: $icon-pin-search;
+}
+
+.ion-md-icon-circle-add::before {
+  content: $icon-circle-add;
+}
+
+.ion-md-icon-flick-left::before {
+  content: $icon-flick-left;
+}
+
+.ion-md-icon-flick-right::before {
+  content: $icon-flick-right;
+}
+
+.ion-md-icon-ic_wb_iridescent_48px::before {
+  content: $icon-ic_wb_iridescent_48px;
+}
+
+.ion-md-icon-ic_more_48px::before {
+  content: $icon-ic_more_48px;
+}
+
+.ion-md-icon-image-05::before {
+  content: $icon-image-05;
+}
+
+.ion-md-icon-calendar-grid-58::before {
+  content: $icon-calendar-grid-58;
+}
+
+.ion-md-icon-menu-bold::before {
+  content: $icon-menu-bold;
+}
+
+.ion-md-icon-menu-bold-2::before {
+  content: $icon-menu-bold-2;
+}
+
+.ion-md-icon-calendar-60::before {
+  content: $icon-calendar-60;
+}
+
+.ion-md-icon-a-add::before {
+  content: $icon-a-add;
+}
+
+.ion-md-icon-add-29::before {
+  content: $icon-add-29;
+}
+
+.ion-md-icon-coins::before {
+  content: $icon-coins;
+}
+
+.ion-md-icon-map::before {
+  content: $icon-map;
+}
+
+.ion-md-icon-map-2::before {
+  content: $icon-map-2;
+}
+
+.ion-md-icon-pin-add::before {
+  content: $icon-pin-add;
+}
+
+.ion-md-icon-map-pin::before {
+  content: $icon-map-pin;
+}
+
+.ion-md-icon-pizza-slice::before {
+  content: $icon-pizza-slice;
+}
+
+.ion-md-icon-croissant::before {
+  content: $icon-croissant;
+}
+
+.ion-md-icon-cheeseburger::before {
+  content: $icon-cheeseburger;
+}
+
+.ion-md-icon-lobster::before {
+  content: $icon-lobster;
+}
+
+.ion-md-icon-tacos::before {
+  content: $icon-tacos;
+}
+
+.ion-md-icon-food-course::before {
+  content: $icon-food-course;
+}
+
+.ion-md-icon-sushi::before {
+  content: $icon-sushi;
+}
+
+.ion-md-icon-mortar::before {
+  content: $icon-mortar;
+}
+
+.ion-md-icon-pancake::before {
+  content: $icon-pancake;
+}
+
+.ion-md-icon-muffin::before {
+  content: $icon-muffin;
+}
+
+.ion-md-icon-eggs::before {
+  content: $icon-eggs;
+}
+
+.ion-md-icon-chips::before {
+  content: $icon-chips;
+}
+
+.ion-md-icon-bakery::before {
+  content: $icon-bakery;
+}
+
+.ion-md-icon-whisk::before {
+  content: $icon-whisk;
+}
+
+.ion-md-icon-smoothie::before {
+  content: $icon-smoothie;
+}
+
+.ion-md-icon-popcorn::before {
+  content: $icon-popcorn;
+}
+
+.ion-md-icon-lollipop::before {
+  content: $icon-lollipop;
+}
+
+.ion-md-icon-vest-31::before {
+  content: $icon-vest-31;
+}
+
+.ion-md-icon-carrot::before {
+  content: $icon-carrot;
+}
+
+.ion-md-icon-cutlery::before {
+  content: $icon-cutlery;
+}
+
+.ion-md-icon-chef::before {
+  content: $icon-chef;
+}
+
+.ion-md-icon-ice-cream-22::before {
+  content: $icon-ice-cream-22;
+}
+
+.ion-md-icon-paris-tower::before {
+  content: $icon-paris-tower;
+}
+
+.ion-md-icon-donut::before {
+  content: $icon-donut;
+}
+
+.ion-md-icon-waffle::before {
+  content: $icon-waffle;
+}
+
+.ion-md-icon-meeting::before {
+  content: $icon-meeting;
+}
+
+.ion-md-icon-meeting-2::before {
+  content: $icon-meeting-2;
+}
+
+.ion-md-icon-network::before {
+  content: $icon-network;
+}
+
+.ion-md-icon-flower-07::before {
+  content: $icon-flower-07;
+}
+
+.ion-md-icon-sofa::before {
+  content: $icon-sofa;
+}
+
+.ion-md-icon-chili::before {
+  content: $icon-chili;
+}
+
+.ion-md-icon-pulse::before {
+  content: $icon-pulse;
+}
+
+.ion-md-icon-alcohol::before {
+  content: $icon-alcohol;
+}
+
+.ion-md-icon-muffin-2::before {
+  content: $icon-muffin-2;
+}
+
+.ion-md-icon-baloon::before {
+  content: $icon-baloon;
+}
+
+.ion-md-icon-delivery-fast::before {
+  content: $icon-delivery-fast;
+}
+
+.ion-md-icon-steak::before {
+  content: $icon-steak;
+}
+
+.ion-md-icon-atom::before {
+  content: $icon-atom;
+}
+
+.ion-md-icon-remix::before {
+  content: $icon-remix;
+}
+
+.ion-md-icon-pyramid::before {
+  content: $icon-pyramid;
+}
+
+.ion-md-icon-coffee-long::before {
+  content: $icon-coffee-long;
+}
+
+.ion-md-icon-forest::before {
+  content: $icon-forest;
+}
+
+.ion-md-icon-road-2-2::before {
+  content: $icon-road-2-2;
+}
+
+.ion-md-icon-dice::before {
+  content: $icon-dice;
+}
+
+.ion-md-icon-eye-ban-20::before {
+  content: $icon-eye-ban-20;
+}
+
+.ion-md-icon-cart-full::before {
+  content: $icon-cart-full;
+}
+
+.ion-md-icon-hotel-symbol::before {
+  content: $icon-hotel-symbol;
+}
+
+.ion-md-icon-flip::before {
+  content: $icon-flip;
+}
+
+.ion-md-icon-board::before {
+  content: $icon-board;
+}
+
+.ion-md-icon-drink::before {
+  content: $icon-drink;
+}
+
+.ion-md-icon-beer-95::before {
+  content: $icon-beer-95;
+}
+
+.ion-md-icon-glass::before {
+  content: $icon-glass;
+}
+
+.ion-md-icon-vest-sport::before {
+  content: $icon-vest-sport;
+}
+
+.ion-md-icon-terrace::before {
+  content: $icon-terrace;
+}
+
+.ion-md-icon-glass-water::before {
+  content: $icon-glass-water;
+}
+
+.ion-md-icon-rock::before {
+  content: $icon-rock;
+}
+
+.ion-md-icon-scotch::before {
+  content: $icon-scotch;
+}
+
+.ion-md-icon-mic::before {
+  content: $icon-mic;
+}
+
+.ion-md-icon-user-climb::before {
+  content: $icon-user-climb;
+}
+
+.ion-md-icon-controller::before {
+  content: $icon-controller;
+}
+
+.ion-md-icon-puzzle-10::before {
+  content: $icon-puzzle-10;
+}
+
+.ion-md-icon-ping-pong::before {
+  content: $icon-ping-pong;
+}
+
+.ion-md-icon-steering-wheel::before {
+  content: $icon-steering-wheel;
+}
+
+.ion-md-icon-money-coins::before {
+  content: $icon-money-coins;
+}
+
+.ion-md-icon-golf::before {
+  content: $icon-golf;
+}
+
+.ion-md-icon-bow::before {
+  content: $icon-bow;
+}
+
+.ion-md-icon-soccer-field::before {
+  content: $icon-soccer-field;
+}
+
+.ion-md-icon-bowling::before {
+  content: $icon-bowling;
+}
+
+.ion-md-icon-dart::before {
+  content: $icon-dart;
+}
+
+.ion-md-icon-key-26::before {
+  content: $icon-key-26;
+}
+
+.ion-md-icon-axe::before {
+  content: $icon-axe;
+}
+
+.ion-md-icon-spray::before {
+  content: $icon-spray;
+}
+
+.ion-md-icon-bullet-list-67::before {
+  content: $icon-bullet-list-67;
+}
+
+.ion-md-icon-small-down::before {
+  content: $icon-small-down;
+}
+

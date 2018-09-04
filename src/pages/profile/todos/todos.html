@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <pt-header></pt-header>
+  </ion-toolbar>
+  <ion-navbar #profilNavBar class="profile-header sub-header-profile">
+    <ion-icon class="profile-header-icon-left" name="md-pt-record" color="white"></ion-icon>
+    <img [src]="u.getProfilePicture()" />
+    <div class="profile-header-stats">
+      <span>
+        <b>{{ u.follows }}</b> {{ 'PROFILE.INSPIRATIONS' | translate }}
+        <br/>
+        <b>{{ u.followers }}</b> {{ 'PROFILE.INFLUENCES' | translate }}
+      </span>
+    </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content default-grey-background>
+
+  <div *ngIf="u.todos.length > 0">
+    <div *ngFor="let pto of u.todos;">
+      <!-- PATH-BEGIN-->
+      <pt-card-path *ngIf="pto.places" [path]="pto"></pt-card-path>
+      <!-- PATH-END-->
+
+      <!-- PLACE-BEGIN-->
+      <pt-card-place *ngIf="!pto.places" [place]="pto"></pt-card-place>
+      <!-- PLACE-END-->
+    </div>
+  </div>
+
+  <pt-page-empty *ngIf="u.todos.length === 0" icon="md-pt-record" page="TODOS" image="assets/img/path-details-page.png"></pt-page-empty>
+
+
+</ion-content>

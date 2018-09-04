@@ -1,0 +1,130 @@
+page-path-detail {
+  ion-navbar {
+    ion-title {
+      color: white;
+      .toolbar-title-ios {
+        color: white;
+      }
+    }
+  }
+  ion-content {
+    .fab ion-icon {
+      font-size: 60px !important;
+    }
+    .add-event-ion-fab {
+      top: 15px;
+      .add-event-main-button {
+        color: white;
+        background-color: map-get($colors, 'primary');
+        margin-right: 12px;
+      }
+      .add-event-fab {
+        margin-top: -5px;
+        color: white;
+        width: 80px;
+        height: 80px;
+        border-radius: 0;
+        margin-left: -14px;
+        span {
+          display: block;
+        }
+        ion-icon {
+          font-size: 30px !important;
+        }
+        p {
+          color: white;
+          text-align: center;
+          margin-top: -18px;
+          font-size: 10px;
+          line-height: 10px;
+          white-space: normal;
+        }
+      }
+      .pick-todo {
+        background-color: rgb(255, 148, 52);
+      }
+      .pick-historic {
+        background-color: map-get($colors, 'primary');
+      }
+      .pick-path {
+        background-color: map-get($colors, 'secondary');
+      }
+      .pick-place {
+        background-color: map-get($colors, around-me);
+      }
+    }
+
+
+
+
+    .user-ion-item {
+      background-color: transparent !important;
+      text-align: center !important;
+    }
+    ion-row {
+      //height: 74px;
+    }
+    ion-col {
+      margin-top: -4px !important;
+      img {
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+      }
+    }
+    .comment-icon {
+      font-size: 50px !important;
+    }
+  }
+  .path-nb-likes {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding-right: 12px;
+    padding-left: 12px;
+    font-size: 12px;
+    ion-icon {
+      margin-left: 3px;
+      margin-top: 12px;
+      float: left;
+    }
+    p {
+      float: left;
+    }
+  }
+  .path-detail-tools {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 50px;
+    width: 150px;
+    background-color: map-get($colors, secondary);
+    text-align: center;
+  }
+  .path-detail-tools ion-icon {
+    float: left;
+    font-size: 40px !important;
+    margin-top: 5px;
+    width: 50px;
+  }
+  .path-details-main {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+  }
+  .path-details-location {
+    width: 95%;
+    margin-left: 2.5%;
+    height: 200px;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+  }
+  pt-star-rating {
+    margin-left: calc(50% - 55px);
+  }
+}

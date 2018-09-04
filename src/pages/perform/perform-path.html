@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <pt-header></pt-header>
+  </ion-toolbar>
+  <ion-navbar #performNavBar class="sub-header sub-header-perform">
+    <pt-sub-bar-icon-title [path]="path" [perform]="true" [img]="path.user.getProfilePicture()" [title]="path.name"></pt-sub-bar-icon-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content text-center>
+
+  <div #performMap id="performMap" ></div>
+  <button ion-button class="validateButton" *ngIf="!allPlacesDone" color="secondary" (tap)="goNext()">{{ 'PERFORM.NEXT' | translate }}</button>
+  <button ion-button class="validateButton" *ngIf="allPlacesDone" color="primary" (tap)="validatePath()">{{ 'PERFORM.NEXT' | translate }}</button>
+
+</ion-content>

@@ -1,0 +1,96 @@
+page-planification {
+  #planificationMap {
+    height: 100%;
+    width: 100%
+  }
+  .sub-header-planification {
+    height: 60px !important;
+  }
+
+  .sub-header-full {
+    width: 100%;
+    display: inline-flex;
+  }
+
+  .go-section {
+    width: 20%;
+    height: 60px;
+    border-left: solid 1px white;
+    text-align: center;
+    display: inline-block;
+
+    ion-icon {
+      font-size: 50px !important;
+      margin-top: -8px;
+      height: 40px;
+      display: block;
+    }
+
+    span {
+      color: white;
+      font-size: 20px;
+      display: block;
+      line-height: 30px;
+    }
+  }
+
+  .deletePlace {
+    position: absolute;
+    top: 5px;
+    left: 7px;
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+    background: rgba(0, 0, 0, 0.60);
+    ion-icon {
+      padding-top: 0px !important;
+      padding-left: 0px;
+      width: 45px;
+    }
+  }
+  .sub-header-plans {
+    height: 60px !important;
+    white-space: nowrap;
+    width: 80%;
+    display: inline-block;
+    ion-icon {
+      width: 50px;
+      height: 50px;
+      font-size: 50px !important;
+    }
+    .plan-header {
+      width: 60px;
+      height: 60px;
+      display: inline-block;
+      position: relative;
+      text-align: center;
+      z-index: 1;
+      span {
+        font-size: xx-small;
+        color: white;
+        display: block;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        margin-top: -2px;
+        overflow: hidden;
+      }
+
+      .action-header {
+        width: 70px !important;
+      }
+    }
+    .plan-div {
+      ion-icon {
+        font-size: 45px !important;
+        padding-top: 5px;
+      }
+    }
+  }
+  .validateButton {
+    position: absolute;
+    z-index: 10;
+    bottom: 25px;
+    margin-left: -80px;
+    min-width: 160px;
+  }
+}

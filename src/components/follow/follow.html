@@ -1,0 +1,2 @@
+<span *ngIf="u.facebook_id !== user.getFBID() && !u.isFollowed" (tap)="toggleFollow()">FOLLOW</span>
+<span *ngIf="u.facebook_id !== user.getFBID() && u.isFollowed" (tap)="toggleFollow()">UNFOLLOW</span>

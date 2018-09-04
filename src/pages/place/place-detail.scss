@@ -1,0 +1,175 @@
+$place-details-description-width: 70%;
+$place-details-description-height: 60px;
+
+page-place-detail {
+  ion-navbar {
+    ion-title {
+      color: white;
+      .toolbar-title-ios {
+        color: white;
+      }
+    }
+    .place-detail-icons {
+      float: right;
+      font-size: 40px !important;
+      margin-top: 5px;
+      margin-right: 5px;
+    }
+  }
+  ion-content {
+    .fab ion-icon {
+      font-size: 60px !important;
+    }
+    .add-event-ion-fab {
+      top: 15px;
+      .add-event-main-button {
+        color: white;
+        background-color: map-get($colors, 'primary');
+        margin-right: 12px;
+      }
+      .add-event-fab {
+        margin-top: -5px;
+        color: white;
+        width: 80px;
+        height: 80px;
+        border-radius: 0;
+        margin-left: -14px;
+        span {
+          display: block;
+        }
+        ion-icon {
+          font-size: 30px !important;
+        }
+        p {
+          color: white;
+          text-align: center;
+          margin-top: -18px;
+          font-size: 10px;
+          line-height: 10px;
+          white-space: normal;
+        }
+      }
+      .pick-todo {
+        background-color: rgb(255, 148, 52);
+      }
+      .pick-historic {
+        background-color: map-get($colors, 'primary');
+      }
+      .pick-path {
+        background-color: map-get($colors, 'secondary');
+      }
+      .pick-place {
+        background-color: map-get($colors, around-me);
+      }
+    }
+
+
+    .page-title {
+      text-align: center;
+      color: map-get($colors, primary);
+    }
+    .place-images {
+      position: relative;
+    }
+    .user-ion-item {
+      background-color: transparent !important;
+      text-align: center !important;
+    }
+    .place-details-clock {
+      font-size: 25px;
+    }
+    .place-details-schedule {
+      background-color: map-get($colors, light);
+      position: absolute;
+      left: 10px;
+      z-index: 1;
+      font-size: x-small;
+      text-align: start;
+      color: map-get($colors, info);
+      box-shadow: 1px 1px 5px map-get($colors, info);
+      padding: 5px;
+      ion-icon {
+        margin-left: 10px;
+      }
+      p {
+        white-space: pre-line;
+      }
+    }
+    ion-row {
+      //height: 74px;
+    }
+    ion-col {
+      margin-top: -4px !important;
+      img {
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+      }
+    }
+    .comment-icon {
+      font-size: 50px !important;
+    }
+  }
+  .place-nb-likes {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding-right: 12px;
+    padding-left: 12px;
+    font-size: 12px;
+    z-index: 5;
+    ion-icon {
+      margin-left: 3px;
+      margin-top: 12px;
+      float: left;
+    }
+    p {
+      float: left;
+    }
+  }
+  .place-details-main {
+    width: 100%;
+    height: 250px;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+  }
+  .place-details-location {
+    width: 95%;
+    margin-left: 2.5%;
+    height: 300px;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+  }
+  .place-details-description {
+    width: $place-details-description-width;
+    height: $place-details-description-height;
+    margin-left: calc((100% - #{$place-details-description-width}) / 2);
+    margin-bottom: 15px;
+    margin-top: 5px;
+    box-shadow: 5px 5px 10px 0px map-get($colors, info);
+    font-size: x-small;
+    padding: 5px;
+  }
+
+
+  pt-star-rating {
+    margin-left: calc(50% - 55px);
+  }
+
+  .validateButton {
+    margin-left: calc(50% - 70px);
+    width: 140px;
+  }
+
+  .action-link {
+    display: block;
+
+    p {
+      display: inline-block;
+    }
+  }
+}

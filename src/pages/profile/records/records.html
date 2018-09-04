@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <pt-header></pt-header>
+  </ion-toolbar>
+  <ion-navbar #profilNavBar class="profile-header sub-header-profile">
+    <ion-icon class="profile-header-icon-left" name="md-pt-record" color="white"></ion-icon>
+    <img [src]="u.getProfilePicture()" />
+    <div class="profile-header-stats">
+      <span>
+        <b>{{ u.follows }}</b> {{ 'PROFILE.INSPIRATIONS' | translate }}
+        <br/>
+        <b>{{ u.followers }}</b> {{ 'PROFILE.INFLUENCES' | translate }}
+      </span>
+    </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content default-grey-background>
+
+</ion-content>

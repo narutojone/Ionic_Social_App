@@ -1,0 +1,95 @@
+<ion-header>
+  <ion-toolbar>
+    <pt-header></pt-header>
+  </ion-toolbar>
+  <ion-navbar class="profile-header sub-header-profile">
+    <ion-title text-wrap>{{ group.name }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+   <form margin-top padding no-padding-top (ngSubmit)="updateGroup()">
+      <div class="form-section"  padding-bottom (touchstart)="touchStartPtTap($event)" (touchend)="touchEndPtTap($event) && search_pather = false;">
+        <div class="creation-section-title">
+          <div class="creation-section-number">1</div>
+          <h3>{{ 'GROUP.CREATION.NAME' | translate }}</h3>
+        </div>
+        <ion-input autocorrect="true" type="text" [(ngModel)]="group.name" name="name"></ion-input>
+      </div>
+
+      <div class="form-section" style="border: none;" margin-top>
+        <div class="creation-section-title">
+          <div class="creation-section-number">2</div>
+          <h3>{{ 'GROUP.CREATION.MEMBERS' | translate }}</h3>
+        </div>
+
+        <div class="filter-content">
+          <div class="filter-content-item" *ngFor="let p of group.members" tappable (touchstart)="touchStartPtTap($event)" (touchend)="touchEndPtTap($event) && removePather(p)">
+            <img [src]="p.getProfilePicture()">
+            <div class="deletePlace" [class.hide]="!delete_whos">
+              <ion-icon name="close" color="white"></ion-icon>
+            </div>
+            <span>{{p.firstname}} {{p.lastname}}</span>
+          </div>
+
+        <div class="filter-content-item" tappable (touchstart)="touchStartPtTap($event)" (touchend)="touchEndPtTap($event) && addPather()"
+          *ngIf="!delete_whos">
+          <ion-icon name="ios-add-circle-outline" color="primary" class="normal-line"></ion-icon>
+          <span>{{ 'EXPLORATION.WHOS.ADDPATHER' | translate }}</span>
+        </div>
+        <div class="filter-content-item" (tap)="delete_whos = false ; selected_pather = false;" *ngIf="delete_whos">
+          <ion-icon name="ios-remove-circle-outline" color="primary" class="normal-line"></ion-icon>
+          <span>{{ 'EXPLORATION.WHOS.CANCEL' | translate }}</span>
+        </div>
+
+        </div>
+
+        <div class="pop-over-search" *ngIf="search_pather">
+          <div class="filter-content-focus search-pather-creation">
+            <ion-searchbar [(ngModel)]="patherSearch" placeholder="Search Pather" (ionInput)="setFilteredItems()" (ionCancel)="onCancelSearch()"  [ngModelOptions]="{standalone: true}">
+            </ion-searchbar>
+            <div class="filter-content" [hidden]="pathers.length < 1">
+              <div class="filter-content-item" *ngFor="let pather of pathers;" tappable (touchstart)="touchStartPtTap($event)" (touchend)="touchEndPtTap($event) && addUser(pather)">
+                <img src="{{pather.getProfilePicture()}}" />
+                <span>{{pather.firstname}} {{pather.lastname}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section" margin-top padding-bottom (touchstart)="touchStartPtTap($event)" (touchend)="touchEndPtTap($event) && search_pather = false;">
+        <div class="creation-section-title">
+          <div class="creation-section-number">3</div>
+          <h3>{{ 'GROUP.CREATION.DESCRIPTION' | translate }}</h3>
+        </div>
+        <ion-item no-padding>
+          <ion-textarea autocorrect="true" fz-elastic [(ngModel)]="group.description" name="description"></ion-textarea>
+        </ion-item>
+      </div>
+
+      <div class="form-section" style="border: none;" margin-top>
+        <div class="creation-section-title">
+          <div class="creation-section-number">4</div>
+          <h3>{{ 'COMMENT.PICTURE' | translate }}</h3>
+        </div>
+        <button ion-button type="button" (click)="presentConfirm()">{{ 'COMMENT.PICTUREACTION' | translate }}</button>
+        <div margin-top>
+          <div *ngFor="let img of group.images" class="group-images">
+              <img [src]="img"/>
+              <div class="delete-icon">
+                <ion-icon name="close" (tap)="AddImageToRemove(img)"></ion-icon>
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <button ion-button margin-bottom type="submit" class="validateButton" block>{{ 'GROUP.CREATION.VALIDATE' | translate }}</button>
+    </form>
+
+      <button ion-button margin-bottom (click)="leaveGroup()" *ngIf="!group.isOwner(user.getUser())" class="validateButton" block>{{ 'GROUP.CREATION.LEAVE' | translate }}</button>
+
+      <button ion-button margin-bottom (click)="deleteGroup()" *ngIf="group.isOwner(user.getUser())" class="validateButton" block>{{ 'GROUP.CREATION.DELETE' | translate }}</button>
+
+
+</ion-content>

@@ -1,0 +1,38 @@
+page-planification-places {
+  .sub-header-planification {
+    height: 60px !important;
+  }
+  .sub-header-plans {
+    height: 60px !important;
+    margin-left: 16px !important;
+    white-space: nowrap;
+    ion-icon {
+      width: 50px;
+      height: 50px;
+      font-size: 50px !important;
+    }
+    .plan-header {
+      width: 60px;
+      height: 60px;
+      float: left;
+      position: relative;
+      text-align: center;
+      z-index: 1;
+      span {
+        font-size: xx-small;
+        color: white;
+        display: block;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        margin-top: -2px;
+        overflow: hidden;
+      }
+    }
+    .plan-div {
+      ion-icon {
+        font-size: 45px !important;
+        padding-top: 5px;
+      }
+    }
+  }
+}

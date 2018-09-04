@@ -1,0 +1,37 @@
+<div margin-top margin-bottom *ngIf="!light">
+
+  <h2 text-wrap text-center>
+    {{ 'EMPTY.' + page + '.TITLE' | translate }}
+  </h2>
+
+  <img margin-top [src]="image"/>
+
+  <p text-wrap margin no-margin-bottom padding>
+    {{ 'EMPTY.' + page + '.TEXT' | translate }}
+  </p>
+
+ <ion-icon *ngIf="icon" class="empty-icon-example" no-margin-top margin-bottom [name]="icon" color="primary"></ion-icon>
+
+  <!--<button ion-button class="validateButton" margin-top color="primary" (tap)="()">{{ 'EMPTY.' + page + '.BUTTON' | translate }}</button>-->
+
+
+</div>
+
+<div margin-top margin-bottom *ngIf="light">
+
+  <h2 text-wrap text-center light-color>
+    {{ 'EMPTY.' + page + '.TITLE' | translate }}
+  </h2>
+
+  <img margin-top [src]="image"/>
+
+  <p text-wrap margin no-margin-bottom padding light-color>
+    {{ 'EMPTY.' + page + '.TEXT' | translate }}
+  </p>
+
+ <ion-icon *ngIf="icon" class="empty-icon-example" no-margin-top margin-bottom [name]="icon" color="primary"></ion-icon>
+
+  <!--<button ion-button class="validateButton" margin-top color="primary" (tap)="()">{{ 'EMPTY.' + page + '.BUTTON' | translate }}</button>-->
+
+
+</div>

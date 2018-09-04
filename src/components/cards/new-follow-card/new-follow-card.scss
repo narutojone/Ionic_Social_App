@@ -1,0 +1,18 @@
+pt-card-new-follow {
+  .follow-card-user {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    padding: 0px;
+    vertical-align: middle;
+    h5 {
+      display: inline;
+    }
+    h6 {
+      display: inline;
+    }
+  }
+  .row ion-col {
+    height: 36px;
+    vertical-align: middle;
+  }
+}

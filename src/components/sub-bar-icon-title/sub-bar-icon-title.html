@@ -1,0 +1,19 @@
+<div class="info-section">
+<img [src]="img" *ngIf="img"/>
+<ion-icon margin-left name="{{icon}}" *ngIf="icon" color="white"></ion-icon>
+<h2 two-lines-text margin-left style="-webkit-box-orient: vertical">{{title}}</h2>
+</div>
+<div class="go-section" (tap)="goPath()" *ngIf="!perform && path && !path.user_comment && ((path.undone && path.user.facebook_id === user.getFBID()) || (!path.undone && path.user.facebook_id !== user.getFBID()))">
+<ion-icon name="ios-send" color="white"></ion-icon>
+<span>Go</span>
+</div>
+<!--<div class="add-section">
+  <ion-fab top right >
+   <button ion-fab>Share</button>
+   <ion-fab-list side="bottom">
+     <button ion-fab>Facebook</button>
+     <button ion-fab>Twitter</button>
+     <button ion-fab>Youtube</button>
+   </ion-fab-list>
+ </ion-fab>
+</div>-->

@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <pt-header></pt-header>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content linear-bg>
+  <div class="group-search">
+    <ion-searchbar [(ngModel)]="searchInput" [showCancelButton]="true" (ionInput)="onSearchInputChange($event)" (ionCancel)="onCancel($event)">
+    </ion-searchbar>
+  </div>
+
+  <div pull-right class="new-group-div">
+    <ion-icon name="md-add-circle" (tap)="goGroupCreationPage()" class="add-group-icon" color="white"></ion-icon>
+  </div>
+  <!--<ion-refresher (ionRefresh)="refresh$($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>-->
+
+  <pt-page-empty *ngIf="!groups" page="GROUPSLOADING" light="true" image="assets/img/user-search.png"></pt-page-empty>
+  <pt-page-empty *ngIf="groups && groups.length === 0" light="true" page="GROUPS" image="assets/img/user-search.png"></pt-page-empty>
+
+  <div *ngIf="groups && groups.length > 0">
+    <ion-slides #slides spaceBetween="-100" class="group-slides" pager>
+      <ion-slide class="group-slide" *ngFor="let gr of groups;">
+        <pt-card-group [group]="gr"></pt-card-group>
+      </ion-slide>
+      <ion-slide *ngIf="lastGroups.length > 0">
+        <div style="width: 100%" text-center>
+          <button margin-top margin-bottom text-center ion-button round outline class="load-more-button" color="primary" (tap)="getMoreGroups($event)">{{ 'LOADMORE' | translate }}</button>
+        </div>
+      </ion-slide>
+    </ion-slides>
+  </div>
+</ion-content>

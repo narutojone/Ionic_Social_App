@@ -1,0 +1,43 @@
+$profile-header-img-size: 50px;
+$news-feed-left-content-width: 61%;
+$news-feed-right-content-width: 39%;
+$user-image-size: 50px;
+page-historic {
+  ion-navbar {
+    ion-icon {
+      color: white;
+      font-size: 50px !important;
+      border-radius: 50%;
+    }
+  }
+  .profile-header img {
+    width: $profile-header-img-size;
+    height: $profile-header-img-size;
+    border-radius: 50%;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+
+  .profile-header-icon-left {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 2 * $profile-header-img-size + $margin-length;
+    top: 0;
+    width: $profile-header-img-size;
+    height: $profile-header-img-size;
+    bottom: 0;
+  }
+
+  .profile-header-stats {
+    float: right;
+    font-size: small;
+    color: map-get($colors, light);
+  }
+
+}

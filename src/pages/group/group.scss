@@ -1,0 +1,100 @@
+$groups-left-content-width: 61%;
+$groups-right-content-width: 39%;
+page-group {
+  .slider-pager-page.active {
+    color: white !important;
+    opacity: 1 !important;
+  }
+  .group-search {
+    ion-searchbar {
+      margin-left: 5vw;
+    }
+    .searchbar-input {
+      min-width: 300px !important;
+      width: 300px !important;
+      color: #fff !important;
+      background-color: rgba(255, 255, 255, 0.25) !important;
+    }
+    .searchbar-input {
+      &::-webkit-input-placeholder {
+        /* Chrome/Opera/Safari */
+        color: white;
+      }
+      &::-moz-placeholder {
+        /* Firefox 19+ */
+        color: white;
+      }
+      &:-ms-input-placeholder {
+        /* IE 10+ */
+        color: white;
+      }
+      &:-moz-placeholder {
+        /* Firefox 18- */
+        color: white;
+      }
+    }
+    .searchbar-clear-icon {
+      filter: invert(100);
+    }
+    .searchbar-search-icon {
+      filter: invert(100);
+    }
+  }
+  .group-slides {
+    height: 450px;
+    .swiper-pagination-fraction,
+    .swiper-pagination-custom,
+    .swiper-container-horizontal>.swiper-pagination-bullets {
+      bottom: 0px !important;
+    }
+
+    .group-slide {
+      //width: 70vw !important;
+    }
+
+    .load-more-button {
+      background-color: white;
+    }
+  }
+  .group-members {
+    width: 100%;
+    white-space: nowrap;
+    display: inline-flex;
+    overflow: scroll;
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    .group-members-item {
+      float: left;
+      width: 50px;
+      max-width: 50px;
+      min-width: 50px;
+      text-align: center;
+      img {
+        width: 30px;
+        height: 30px;
+        margin-left: 10px;
+        border-radius: 50%;
+      }
+      span {
+        font-size: x-small;
+        display: block;
+        overflow: hidden;
+        color: black;
+      }
+    }
+  }
+  .new-group-div {
+    z-index: 50;
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+  }
+  .add-group-icon {
+    text-align: center;
+    width: 60px;
+    height: 60px;
+    font-size: 60px !important;
+    color: white;
+  }
+}

@@ -1,0 +1,385 @@
+{
+  "LOGIN": {
+    "LOGIN": "Login with:",
+    "POLICY": "Privacy policy",
+    "TITLE": "Welcome to PathTime",
+    "TEXT": "Login to discover taylormade paths and activities for you!",
+    "FACEBOOK": "Connect with Facebook"
+  },
+  "TUTORIAL": {
+    "PREV": "Previous",
+    "NEXT": "Next",
+    "LETSGO": "Let's go !"
+  },
+  "CHATPAGE": {
+    "EMPTYTITLE": "There is no comment yet!"
+  },
+  "MENU": {
+    "LANGUAGE": "Language: English",
+    "POLICY": "Privacy Policy",
+    "LOGOUT": "Logout",
+    "TUTORIAL": "Tutorial",
+    "RECOMMENDEDPATHER": "Recommended Pathers",
+    "TOPPATHER": "Top Pathers",
+    "NOTIFICATIONS": "Notifications"
+  },
+  "TABS": {
+    "NEWS_FEED": "News Feed",
+    "EXPLORATION": "Exploration",
+    "CREATION": "Creation",
+    "GROUP": "Crew",
+    "PROFILE": "Profile"
+  },
+  "COMMUNITY": {
+
+  },
+  "ACTIONS": {
+    "COMMENT": "Comment",
+    "LIKE": "Like",
+    "DISLIKE": "Dislike",
+    "ADDTODO": "Add in my ToDo",
+    "REMOVETODO": "Remove from my ToDo",
+    "GO": "Do it now",
+    "SHARE": "Share to one of my group"
+  },
+  "NEWS_FEED": {
+    "TITLE": "News Feed",
+    "FOLLOWS": "Follows",
+    "FOLLOWERS": "Followers",
+    "FOLLOWACTION": "follows",
+    "PATH":{
+      "CREATED": "created a path.",
+      "LIKED": "liked a path.",
+      "RATED": "rated a path",
+      "COMMENTED": "commented a path."
+    },
+    "PLACE":{
+      "LIKED": "liked a place.",
+      "RATED": "rated a place",
+      "COMMENTED": "commented a place."
+    },
+    "FOLLOW": "start following"
+  },
+  "PROFILE": {
+    "INSPIRATIONS": "Follows",
+    "INFLUENCES": "Followers",
+    "PATHLIST": "My Pathlist",
+    "PATHLISTOTHER": "Pathlist",
+    "PHOTOS": "Photos",
+    "PHOTOSOTHER": "Photos",
+    "RECORDS": "Saved",
+    "TODOS": "ToDo",
+    "COMMUNITY": "Community",
+    "COMMUNITYOTHER": "Community",
+    "FOLLOWS": "Follows",
+    "FOLLOWSOTHER": "Follows",
+    "SPIDER": "My Spider",
+    "HISTORIC": "Historic"
+  },
+  "EXPLORATION": {
+    "CITY": "I'm in ... ?",
+    "CITY_PLACEHOLDER": "Near ...",
+    "WHOS_IN": "With ... ?",
+    "PLANS": "We want to ... ?",
+    "MOOD": "We feel like ... ?",
+    "BUDGET": "We can spend ?",
+    "WHOS": {
+      "PATHER": "Pathers",
+      "ADDPATHER": "Add Pather",
+      "CANCEL": "Cancel",
+      "FRIEND": "Friends",
+      "SOLO": "My myself and I",
+      "COUPLE": "Couple",
+      "FAMILY": "Family"
+    },
+    "INSPIRATION": "Look for Paths",
+    "DISCOVER": "Look for Places",
+    "WAIT": "Loading...",
+    "ALERT": {
+      "TITLE": "Not so fast!",
+      "TEXT": "You must chose at least the city and one category."
+    },
+    "ALERTMOOD": {
+      "TITLE": "Add a Mood",
+      "TEXT": "We don't have the mood that you want, let us know which one is it!",
+      "NAME": "Mood name",
+      "CANCEL": "Cancel",
+      "VALIDATE": "Send",
+      "DONETITLE": "Thanks!",
+      "DONETEXT": "We received your request and we will take care of it as soon as possible."
+    },
+    "ALERTCATEGORY": {
+      "TITLE": "Add a Category",
+      "TEXT": "We don't have the category that you want, let us know which one is it!",
+      "NAME": "Category name",
+      "CANCEL": "Cancel",
+      "VALIDATE": "Send",
+      "DONETITLE": "Thanks!",
+      "DONETEXT": "We received your request and we will take care of it as soon as possible."
+    }
+  },
+  "PLANIFICATION": {
+    "WAIT": "Loading...",
+    "PLACE": {
+      "ADDRESS": "Address: ",
+      "PHONE": "Phone: ",
+      "OPINION": {
+        "RATE": "Rate this place",
+        "COMMENT": "Write a short comment",
+        "PLACEHOLDER": "Write a comment...",
+        "SEND": "Send"
+      }
+    },
+    "PLACES": {
+      "TITLE": "Select the perfect spot !"
+    }
+  },
+  "INSPIRATION": {
+    "VALIDATE": "See this path",
+    "EMPTY": {
+      "TITLE": "Oops",
+      "TEXT": "We didn't find any paths corresponding to your filters. Try to be less specific and maybe you will get lucky."
+    }
+  },
+  "SETTING": {
+    "EVENT": {
+      "TITLE": "Change this event ?"
+    },
+    "VALIDATE": "Validate"
+  },
+  "CREATION": {
+    "WAIT": "Creating...",
+    "MODAL": {
+      "TITLE": "Create",
+      "CHOICE": {
+        "PLACE": "A place",
+        "PATH": "A path"
+      }
+    },
+    "MENU": {
+      "PATH": "CREATE A PATH",
+      "PLACE": "MARK A PLACE",
+      "AROUNDME": "AROUND ME",
+      "GUIDELINES": "GUIDELINES",
+      "GUIDELINE": {
+        "PLACE": {
+          "PARTONE": "Based on your interest, moods and habits, Share and Give truly helpful recommandations to likeminded pathers.",
+          "PARTTWO": "Turn you spots into Inspirations, Turn inspirations into Ideas !"
+        },
+        "PATH": {
+          "PARTONE": "If you want to spread your story, your adventure and share it to pathers with common interest, you're in the right spot !",
+          "PARTTWO": "Create Path and show the way to a likeminded community what an adventure sounds like to you !"
+        }
+      }
+    },
+    "TITLE": {
+      "CHOOSE": "Choose a place !",
+      "VALIDATE": "Add this place to your path ?",
+      "CREATE": "Create this place ?"
+    },
+    "CREATE": {
+      "CATEGORY": "Select a tag",
+      "TYPE": "Type",
+      "MOOD": "Mood",
+      "COMMENT": "Comment this place",
+      "PHOTO": "Add photos to this place",
+      "VALIDATION": "What it's like ?",
+      "NEW_VALIDATION": "Which of the following best describes this place?"
+    },
+    "SEARCH": "Look for a place...",
+    "VALIDATE": {
+      "BUTTON": "Go ?",
+      "SEARCH": "Nearby City ?",
+      "PLACES": "Places of your path :",
+      "PATH_NAME": "Path Name :",
+      "MOODS": "Choose Moods :",
+      "DESCRIPTION": "Describe your Path :",
+      "WHOS": "A Path For Who ?",
+      "EVENT_NAME": "Give it a name (optionnal)",
+      "EVENT_DATE": "On which date :",
+      "EVENT_DESCRIPTION": "Describe your Event :",
+      "EVENT_TITLE": "Create this event ?",
+      "DELETE": "Delete path"
+    },
+    "ADDPLACE": "Add a place",
+    "CANCELADD": "Cancel",
+    "VALIDATEPLACE": "Add this place",
+    "VALIDATEPATH": "Create this path"
+  },
+  "PLACE": {
+    "PLURIAL": "Places",
+    "NO_DESCRIPTION": "Description not available...",
+    "DETAILS": {
+      "CREATE": "Confirm ?",
+      "ADD": "Add this place ?",
+      "PHONE": "Phone",
+      "WEBSITE": "Website",
+      "LOCATION": "Location",
+      "ADDRESS": "Address",
+      "COMMENTS": "Comments",
+      "PRICE": "Price",
+      "COMMENTACTION": "You have been in this place ?",
+      "COMMENTACTIONTEXT": "Care to comment ?"
+    }
+  },
+  "PATH": {
+    "PLURIAL": "Paths",
+    "NO_DESCRIPTION": "Description not available...",
+    "DETAILS": {
+      "CREATOR": "Creator",
+      "LOCATION": "Location",
+      "STEPS": "The Steps",
+      "COMMENTS": "Comments",
+      "COMMENTACTION": "You did this path ?",
+      "COMMENTACTIONTEXT": "Care to comment ?",
+      "UNDONETEXT": "This path is a personal path, to create a real one from this path give us some feedback about it!",
+      "UNDONEBUTTON": "Give Feedback"
+    },
+    "SETTING": {
+      "TITLE": "Update this path ?"
+    }
+  },
+  "EVENT": {
+    "NO_DESCRIPTION": "Description not available...",
+    "DETAILS": {
+      "ORGANIZER": "Organizer",
+      "LOCATION": "Location",
+      "STEPS": "The Steps",
+      "PEOPLE": "People",
+      "COMMENTS": "Comments",
+      "COMMENTACTION": "You did this path ?",
+      "COMMENTACTIONTEXT": "Care to comment ?",
+      "UNDONETEXT": "This path is a personal path, to create a real one from this path give us some feedback about it!",
+      "UNDONEBUTTON": "Give Feedback"
+    },
+    "CREATION": {
+      "TITLEMODAL": "Create new event from",
+      "CHOICE": {
+        "PICKONE": "Pick one in my",
+        "CREATEONE": "Add a new",
+        "PATH": "New Path",
+        "PLACE": "Search Place",
+        "TODO": "ToDo",
+        "MYPATHS": "My Paths",
+        "HISTORIC": "Historic"
+      },
+      "PICK": "Choose an acitivty !"
+    },
+    "DELETE": "Delete this event",
+    "TODO": "Add to ToDo",
+    "FEEDBACKS": "Give feedbacks"
+  },
+  "COMMENT": {
+    "TITLE": "So how was it like?",
+    "RATE": "Rate :",
+    "COMMENT": "Comment :",
+    "PICTURE": "Photos :",
+    "PICTUREACTION": "Add a photo",
+    "YOUR_COMMENT": "Your comment:",
+    "VALIDATE": "Validate",
+    "UPLOADIMAGE": "Upload Image",
+    "CREATE": "CREATE",
+    "RATING": "Rating",
+    "COMMENTS": "Comments"
+  },
+  "GROUP": {
+    "CREATION": {
+      "TITLE": "New Crew",
+      "NAME": "Name",
+      "DESCRIPTION": "Description",
+      "MEMBERS": "Crew members",
+      "VALIDATE": "Validate",
+      "LEAVE": "Leave group",
+      "DELETE": "Delete group"
+    }
+  },
+  "EMPTY": {
+    "FEED": {
+      "TITLE": "News Feed",
+      "TEXT": "You don't have any news yet. Start using the app and your news feed will follow. You can also search for your friend in the search bar to see their activities on PathTime!"
+    },
+    "FOLLOW": {
+      "TITLE": "My Follows",
+      "TEXT": "No friends at the moment? Look out for your friends with the News feeds search bar :) ! "
+    },
+    "FOLLOWOTHER": {
+      "TITLE": "Follows",
+      "TEXT": "This user has no follow yet."
+    },
+    "FOLLOWER": {
+      "TITLE": "My Followers",
+      "TEXT": "No friends at the moment? Look out for your friends with the News feeds search bar :) ! "
+    },
+    "FOLLOWEROTHER": {
+      "TITLE": "Followers",
+      "TEXT": "This user has no follower yet."
+    },
+    "HISTORIC": {
+      "TITLE": "My Historic",
+      "TEXT": "Like, comment, create, inspire yourself et share your experiences! The historic will come right after."
+    },
+    "PATHLIST": {
+      "TITLE": "My PathList",
+      "TEXT": "Create a path, Share it with your community and let the pathers with the same personality than you enjoy it !"
+    },
+    "PATHLISTOTHER": {
+      "TITLE": "Empty PathList",
+      "TEXT": "No path or place registered yet."
+    },
+    "RECORDS": {
+      "TITLE": "My Records",
+      "TEXT": "No records for now ? You can like and records every path and activities that you enjoy"
+    },
+    "TODOS": {
+      "TITLE": "My ToDo",
+      "TEXT": "No ToDo for now ? You can like and add in your ToDo every path and activities that you enjoy"
+    },
+    "PHOTO": {
+      "TITLE": "My Pics",
+      "TEXT": "During your activities and path creation you also could add some pictures to it !"
+    },
+    "PHOTOOTHER": {
+      "TITLE": "Pics",
+      "TEXT": "No photo found."
+    },
+    "FEEDLOADING": {
+      "TITLE": "News Feed",
+      "TEXT": "Let us some time to find out if you have news!"
+    },
+    "GROUPSLOADING": {
+      "TITLE": "My Crews",
+      "TEXT": "Let us some time to find your crews!"
+    },
+    "GROUPVOTING": {
+      "TITLE": "Events",
+      "TEXT": "You don't have any event to vote for? Create one by using the button located at the top right of this page :",
+      "SUBTITLE": "Great, your crew is all set! Looking to organize an event?",
+      "ACTION": "Create Event"
+    },
+    "GROUPTODO": {
+      "TITLE": "ToDo",
+      "TEXT": "Not a single ToDo yet? Validate an event by using the button that appears when you swipe an event :"
+    },
+    "GROUPDONE": {
+      "TITLE": "Done",
+      "TEXT": "You already did an event? Rate and comment this event in order to discover new activies !"
+    },
+    "GROUPS": {
+      "TITLE": "My Crews",
+      "TEXT": "You don't have any crew! Create one with the add button!"
+    },
+    "NOTIFICATIONS": {
+      "TITLE": "My Notifications",
+      "TEXT": "You d'ont have any notification yet!"
+    },
+    "NORESULT": {
+      "TITLE": "Nothing found",
+      "TEXT": "You find something that we currently not have. If you know a place please add it :) !"
+    }
+  },
+  "PERFORM": {
+    "NEXT": "Next"
+  },
+  "ADD": "Add",
+  "LOADMORE": "Load more"
+}

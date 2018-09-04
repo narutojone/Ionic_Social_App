@@ -1,0 +1,16 @@
+page-perform-path {
+  #performMap {
+    height: 100%;
+    width: 100%
+  }
+  .sub-header-perform {
+    height: 70px !important;
+  }
+  .validateButton {
+    position: absolute;
+    z-index: 10;
+    bottom: 25px;
+    margin-left: -60px;
+    width: 120px;
+  }
+}

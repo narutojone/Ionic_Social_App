@@ -1,0 +1,102 @@
+<ion-card class="card-v2" padding>
+
+  <ion-row low-padding-bottom *ngIf="news" (tap)="goProfile(u)">
+    <ion-col col-2 no-padding>
+      <ion-avatar>
+        <div class="user-icon-image">
+          <img [src]="u.getProfilePicture()">
+          <ion-icon *ngIf="news.newsType === 2" class="user-icon-info" name="icon-shape-star-2"></ion-icon>
+          <ion-icon *ngIf="news.newsType === 4" class="user-icon-info" name="icon-chat-2"></ion-icon>
+          <ion-icon *ngIf="news.newsType === 7" class="user-icon-info" name="icon-heart-2-2"></ion-icon>
+          <ion-icon *ngIf="news.newsType === 9" class="user-icon-info" name="icon-heart-2-2"></ion-icon>
+        </div>
+      </ion-avatar>
+    </ion-col>
+    <ion-col col-10 class="place-card-user">
+      <h5 *ngIf="news.newsType === 2">
+        <strong>{{u.firstname}} {{u.lastname}}</strong> {{ 'NEWS_FEED.PLACE.RATED' | translate }}</h5>
+      <h5 *ngIf="news.newsType === 4">
+        <strong>{{u.firstname}} {{u.lastname}}</strong> {{ 'NEWS_FEED.PLACE.COMMENTED' | translate }}</h5>
+      <h5 *ngIf="news.newsType === 7">
+        <strong>{{u.firstname}} {{u.lastname}}</strong> {{ 'NEWS_FEED.PLACE.LIKED' | translate }}</h5>
+      <h5 *ngIf="news.newsType === 9">
+        <strong>{{u.firstname}} {{u.lastname}}</strong> {{ 'NEWS_FEED.PLACE.LIKED' | translate }}</h5>
+      <h6>{{news.date | date: 'dd/MM/yyyy hh:mm' }}</h6>
+    </ion-col>
+  </ion-row>
+
+  <ion-row low-padding-bottom *ngIf="comment && !news">
+    <ion-col col-2 no-padding>
+      <ion-avatar>
+        <div class="user-icon-image">
+          <img [src]="user.getProfilePicture()">
+          <ion-icon class="user-icon-info" name="icon-chat"></ion-icon>
+        </div>
+      </ion-avatar>
+    </ion-col>
+    <ion-col col-10 class="place-card-user">
+      <h5>
+        <strong>You</strong> {{ 'NEWS_FEED.PLACE.COMMENTED' | translate }}</h5>
+    </ion-col>
+  </ion-row>
+
+  <ion-row low-padding-bottom class="place-card-comment-rating" *ngIf="comment && comment.rate">
+    <span>
+      <strong>{{comment.rate | number:'1.1-2' }}</strong>
+    </span>
+    <pt-star-rating [editable]="false" [newsCardSection]="true" [(rate)]="comment.rate"></pt-star-rating>
+  </ion-row>
+
+  <ion-row low-padding-bottom *ngIf="comment && comment.text">
+    <h5>{{comment.text}}</h5>
+  </ion-row>
+
+  <div class="card-div-image" (tap)="goPlaceDetail()">
+    <div class="bottom-image-overlay"></div>
+    <img [src]="place.getCover()">
+    <div *ngIf="needSelectionAction" (tap)="selectActivity()" class="card-place-select">
+      <ion-icon name="icon-pin-add" color="white"></ion-icon>
+    </div>
+    <p class="card-place-city">{{place.getCityName() | uppercase}}</p>
+    <p class="card-place-name">{{place.name}}</p>
+    <p class="card-place-category">{{place.getFirstActivityTypeName()}}</p>
+    <p class="card-place-mood" *ngIf="place.hasMoods()">
+     {{place.getFirstMood().getName() | uppercase}}
+      <ion-icon name="{{place.getFirstMood().getIcon(true)}}" color="secondary"></ion-icon>
+    </p>
+    <p class="card-place-rating">{{place.note | number:'1.0-2' }}
+      <ion-icon name="star"></ion-icon>
+    </p>
+  </div>
+
+  <!--<ion-card-content>
+  </ion-card-content>-->
+
+  <ion-row class="card-footer">
+    <ion-col>
+      <button ion-button center clear big (tap)="place.toggleLike()">
+        <ion-icon name="icon-heart-2-2" primary-color color="primary" *ngIf="place.isLiked()"></ion-icon>
+        <ion-icon name="icon-heart-2" *ngIf="!place.isLiked()"></ion-icon>
+        <div class="button-text">{{place.nb_likes}}</div>
+      </button>
+    </ion-col>
+    <ion-col>
+      <button ion-button center clear big (tap)="goChatPage()">
+        <ion-icon name="icon-chat"></ion-icon>
+        <div class="button-text">{{place.nb_chats}}</div>
+      </button>
+    </ion-col>
+    <ion-col>
+      <button ion-button center clear big (tap)="sharePlace()">
+        <ion-icon name="icon-share-bold"></ion-icon>
+      </button>
+    </ion-col>
+    <ion-col>
+      <button ion-button center clear big (tap)="place.toggleFavorite()">
+        <ion-icon name="icon-bookmark-2-2" primary-color color="primary" *ngIf="place.isFavorite()"></ion-icon>
+        <ion-icon name="icon-bookmark-2" *ngIf="!place.isFavorite()"></ion-icon>
+      </button>
+    </ion-col>
+  </ion-row>
+
+</ion-card>

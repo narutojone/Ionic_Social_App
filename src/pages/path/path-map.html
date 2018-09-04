@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <pt-header></pt-header>
+  </ion-toolbar>
+  <ion-navbar #pathMapNavBar class="sub-header sub-header-path-map">
+    <pt-sub-bar-icon-title [img]="path.user.getProfilePicture()" [path]="path" [title]="path.name"></pt-sub-bar-icon-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content text-center>
+
+  <div #pathMap id="pathMap" ></div>
+
+</ion-content>

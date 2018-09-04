@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <pt-header></pt-header>
+  </ion-toolbar>
+  <ion-navbar class="profile-header sub-header-profile">
+    <ion-title text-wrap>Comments</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content style="overflow: hidden;">
+
+  <div #chatAutoscroll class="content-scroll message-wrap" style="height: 100%; overflow: scroll">
+
+    <h3 text-center *ngIf="chats.length == 0">{{ 'CHATPAGE.EMPTYTITLE' | translate}}</h3>
+
+    <div *ngFor="let chat of chats" class="message left">
+      <img class="user-img" [src]="chat.user.getProfilePicture()">
+      <div class="msg-detail">
+        <div class="msg-content" default-grey-background>
+          <span class="triangle"></span>
+          <h5 no-margin no-padding><strong>{{chat.user.getName()}}</strong></h5>
+          <p class="line-breaker">{{chat.message}}</p>
+          <div class="nb-like" *ngIf="chat.nb_like > 0">
+            <ion-icon name="icon-heart-2-2" color="primary"></ion-icon>
+            <p>{{chat.nb_like}}</p>
+          </div>
+        </div>
+        <div class="msg-info">
+          <p>{{chat.date | date: 'dd/MM/yyyy hh:mm' }}</p>
+          <p class="msg-action" *ngIf="chat.isLiked()" (tap)="chat.toggleLike()"><strong>DisLike</strong></p>
+          <p class="msg-action" *ngIf="!chat.isLiked()" (tap)="chat.toggleLike()"><strong>Like</strong></p>
+          <!--<p class="msg-action"><strong>Reply</strong></p>-->
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</ion-content>
+
+<ion-footer>
+  <ion-item>
+    <ion-input autocorrect="true" type="text" [(ngModel)]="commentText" placeholder="Leave a comment..." name="comment"></ion-input>
+  </ion-item>
+  <div class="event-card-comment-section-icon active-icon-send" *ngIf="commentText !== ''" (tap)="sendComment()">
+    <ion-icon name="icon-send" color="light"></ion-icon>
+  </div>
+  <div class="event-card-comment-section-icon unactive-icon-send" *ngIf="commentText === ''">
+    <ion-icon name="icon-send" color="light"></ion-icon>
+  </div>
+</ion-footer>

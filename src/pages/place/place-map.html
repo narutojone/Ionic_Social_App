@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <pt-header></pt-header>
+  </ion-toolbar>
+  <ion-navbar #placeMapNavBar class="sub-header sub-header-place-map">
+    <pt-sub-bar-icon-title [icon]="place.activity_types[0].getIcon()" [title]="place.name"></pt-sub-bar-icon-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content text-center>
+
+  <div #placeMap id="placeMap" ></div>
+
+</ion-content>

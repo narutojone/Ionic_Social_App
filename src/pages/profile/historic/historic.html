@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <pt-header></pt-header>
+  </ion-toolbar>
+  <ion-navbar #profilNavBar class="profile-header sub-header-profile">
+    <ion-icon class="profile-header-icon-left" name="md-pt-historic" color="white"></ion-icon>
+    <img [src]="u.getProfilePicture()" />
+    <div class="profile-header-stats">
+      <span>
+        <b>{{ u.follows }}</b> {{ 'PROFILE.INSPIRATIONS' | translate }}
+        <br/>
+        <b>{{ u.followers }}</b> {{ 'PROFILE.INFLUENCES' | translate }}
+      </span>
+    </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content default-grey-background>
+
+  <div *ngIf="u.historic.length > 0">
+    <div *ngFor="let comment of u.historic;">
+      <!-- PATH-BEGIN-->
+      <pt-card-path *ngIf="comment.object.places" [path]="comment.object" [comment]="comment"></pt-card-path>
+      <!-- PATH-END-->
+
+      <!-- PLACE-BEGIN-->
+            <pt-card-place *ngIf="!comment.object.places" [place]="comment.object" [comment]="comment"></pt-card-place>
+      <!-- PLACE-END-->
+    </div>
+  </div>
+
+  <pt-page-empty *ngIf="u.historic.length === 0" page="HISTORIC" image="assets/img/comment-page.png"></pt-page-empty>
+
+
+</ion-content>

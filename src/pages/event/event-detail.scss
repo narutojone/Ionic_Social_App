@@ -1,0 +1,133 @@
+page-event-detail {
+  ion-navbar {
+    ion-title {
+      color: white;
+      .toolbar-title-ios {
+        color: white;
+      }
+    }
+  }
+  ion-content {
+    .event-details-main {
+      width: 100%;
+      height: 200px;
+      position: relative;
+      background-position: center;
+      background-size: cover;
+    }
+    .user-ion-item {
+      background-color: transparent !important;
+      text-align: center !important;
+    }
+    ion-col {
+      margin-top: -4px !important;
+      img {
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+      }
+    }
+    .comment-icon {
+      font-size: 50px !important;
+    }
+    .event-people {
+      display: inline-flex;
+      .event-people-display {
+        display: block;
+        color: black;
+        font-size: 12px;
+        img {
+          height: 50px;
+          width: 50px;
+          border-radius: 50%;
+          margin-right: 5px;
+        }
+        .event-people-interested {
+          border: solid 2px map-get($colors, secondary);
+        }
+        .event-people-not-interested {
+          border: solid 2px map-get($colors, primary);
+        }
+        .event-people-soso {
+          border: solid 2px darkgoldenrod;
+        }
+      }
+    }
+    // .event-comment-section {
+    //   border-top: solid map-get($colors, primary) 1px;
+    //   width: 100%;
+    // }
+  }
+  .details-location {
+    width: 95%;
+    margin-left: 2.5%;
+    height: 200px;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .event-card-comments {
+    height: auto;
+    margin-top: 10px;
+    img {
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+    }
+    h5 {
+      margin-left: -10px;
+      white-space: normal;
+      margin-top: 0!important;
+    }
+  }
+  .event-card-comment-section {
+    margin: 10px;
+    display: inline-flex;
+    ion-icon {
+      width: 30px !important;
+      height: 30px !important;
+    }
+    .active-icon-send {
+      background-color: map-get($colors, secondary) !important;
+      padding-top: 8px;
+    }
+    .unactive-icon-send {
+      background-color: map-get($colors, less-dark-text) !important;
+      padding-top: 8px;
+    }
+    .event-card-comment-section-icon {
+      width: 30px !important;
+      height: 30px !important;
+      margin: 0;
+      border-radius: 50%;
+      margin-top: 7px;
+      text-align: center;
+    }
+    .icon-normal-size {
+      background-color: map-get($colors, pt-gold);
+      padding-top: 8px;
+      font-size: 17px;
+    }
+    .icon-full-size {
+      font-size: 30px !important;
+    }
+    ion-input {
+      width: 60vw;
+      border: solid 1px map-get($colors, less-dark-text);
+      border-radius: 30px;
+      height: 30px;
+      margin-left: 12px;
+      margin-right: 12px;
+      input {
+        color: map-get($colors, less-dark-text);
+        height: 100%;
+        width: 90%;
+        font-size: 12px;
+        margin: auto;
+        padding: auto;
+        padding-left: 10px;
+      }
+    }
+  }
+}

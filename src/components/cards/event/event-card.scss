@@ -1,0 +1,350 @@
+pt-card-event {
+  .event-card-clock-section {
+    float: left;
+    border-right: solid grey 1px;
+    padding: 5px;
+    padding-top: 0;
+    padding-right: 8px;
+    ion-icon {
+      text-align: center;
+      margin-left: 10px;
+      font-size: 17px !important
+    }
+    h4 {
+      width: 40px;
+      margin: 0;
+      margin-right: 0;
+      font-size: 14px !important;
+      text-align: center;
+    }
+  }
+  .event-card-date-section {
+    display: inline-block;
+    padding: 5px;
+    padding-top: 3px;
+    padding-left: 11px;
+    h4 {
+      text-align: center;
+      font-size: 14px !important;
+      text-transform: uppercase;
+    }
+  }
+  .card-div-place-image {
+    position: relative;
+    img {
+      height: 230px;
+      border-radius: 5px;
+    }
+    p {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .card-place-select {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 12px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: map-get($colors, primary);
+      ion-icon {
+        font-size: 30px !important;
+        margin-top: 10px;
+        margin-left: 10px;
+        color: white;
+      }
+    }
+    .card-place-city {
+      color: white;
+      position: absolute;
+      bottom: 50px;
+      left: 13px;
+      font-size: 12px;
+      width: 60%;
+    }
+    .card-place-name {
+      color: white;
+      position: absolute;
+      bottom: 22px;
+      left: 12px;
+      font-weight: 800;
+      font-size: 20px;
+      width: 60%;
+    }
+    .card-place-category {
+      color: white;
+      position: absolute;
+      bottom: 5px;
+      left: 13px;
+      font-size: 12px;
+    }
+    .card-place-mood {
+      color: map-get($colors, secondary);
+      position: absolute;
+      bottom: 5px;
+      right: 12px;
+      font-size: 12px;
+      font-weight: 800;
+      padding-top: 3px;
+      ion-icon {
+        font-size: 18px !important;
+        vertical-align: middle;
+        margin-left: 7px;
+        margin-bottom: 3px;
+      }
+      .align-item {
+        vertical-align: middle;
+      }
+    }
+    .card-place-rating {
+      color: map-get($colors, rate-color);
+      position: absolute;
+      bottom: 25px;
+      right: 12px;
+      font-size: 18px;
+      ion-icon {
+        font-size: 21px;
+        margin-left: 5px;
+      }
+    }
+  }
+  .card-div-path-image {
+    position: relative;
+    img {
+      height: 230px;
+      border-radius: 5px;
+    }
+    p {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .card-path-city {
+      color: white;
+      position: absolute;
+      bottom: 111px;
+      left: 12px;
+      font-size: 12px;
+      width: 60%;
+    }
+    .card-path-name {
+      color: white;
+      position: absolute;
+      bottom: 82px;
+      left: 12px;
+      font-weight: 800;
+      font-size: 20px;
+      width: 60%;
+    }
+    .card-path-creator {
+      color: white;
+      position: absolute;
+      bottom: 65px;
+      left: 12px;
+      font-size: 12px;
+    }
+    .card-path-mood {
+      color: map-get($colors, secondary);
+      position: absolute;
+      bottom: 65px;
+      right: 12px;
+      font-size: 12px;
+      font-weight: 800;
+      ion-icon {
+        font-size: 18px !important;
+      }
+    }
+    .card-path-rating {
+      color: gold;
+      position: absolute;
+      bottom: 82px;
+      right: 12px;
+      font-size: 18px;
+    }
+    .card-path-logo {
+      color: white;
+      position: absolute;
+      bottom: 48px;
+      left: 12px;
+      font-size: 10px;
+      .logo-number {
+        border: solid 1px white;
+        text-align: center;
+        border-radius: 50%;
+        display: inline-block;
+        vertical-align: middle;
+        width: 14px;
+        height: 14px;
+      }
+    }
+    .card-path-place-info {
+      color: white;
+      font-size: 12px;
+      p {
+        color: white;
+        font-size: 10px;
+      }
+    }
+    .card-path-place-first-of-two {
+      position: absolute;
+      bottom: 5px;
+      left: 12px;
+      width: 120px;
+    }
+    .card-path-place-second-of-two {
+      position: absolute;
+      bottom: 5px;
+      left: 145px;
+      width: 160px;
+    }
+    .card-path-place-first-of-three {
+      position: absolute;
+      bottom: 5px;
+      left: 12px;
+      width: 80px;
+    }
+    .card-path-place-second-of-three {
+      position: absolute;
+      bottom: 5px;
+      left: 100px;
+      width: 80px;
+    }
+    .card-path-place-third-of-three {
+      position: absolute;
+      bottom: 5px;
+      left: 189px;
+      width: 110px;
+    }
+    .card-path-place-name {
+      font-weight: 600;
+    }
+    .card-separator-places {
+      height: 1px;
+      width: 114px;
+      display: inline-block;
+      vertical-align: middle;
+      background-color: white;
+    }
+    .card-small-separator-places {
+      height: 1px;
+      width: 70px;
+      display: inline-block;
+      vertical-align: middle;
+      background-color: white;
+    }
+    .card-path-select {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 12px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: map-get($colors, primary);
+      ion-icon {
+        font-size: 30px !important;
+        margin-top: 10px;
+        margin-left: 10px;
+        color: white;
+      }
+    }
+  }
+  .event-card-user {
+    margin-left: -10px;
+    white-space: normal;
+    margin-right: 10px;
+    padding-top: 2px;
+  }
+  .card-event-user-accept {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 5px 7px;
+    border-radius: 50px;
+    background-color: map-get($colors, light);
+    display: inline-flex;
+    ion-icon {
+      font-size: 18px !important;
+      margin: 0px;
+      vertical-align: middle;
+      height: 18px;
+      padding-top: 3px;
+      color: map-get($colors, dark-text);
+    }
+    h5 {
+      font-size: 18px !important;
+      margin: 0px;
+      vertical-align: middle;
+      padding-bottom: 2px;
+      strong {
+        letter-spacing: 3px;
+        padding-left: 5px;
+      }
+    }
+  }
+  .event-card-comments {
+    height: auto;
+    margin-top: 10px;
+    img {
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+    }
+    h5 {
+      margin-left: -10px;
+      white-space: normal;
+      margin-top: 0!important;
+    }
+  }
+  .event-card-comment-section {
+    margin: 10px;
+    display: inline-flex;
+    ion-icon {
+      width: 30px !important;
+      height: 30px !important;
+    }
+    .active-icon-send {
+      background-color: map-get($colors, secondary) !important;
+      padding-top: 8px;
+    }
+    .unactive-icon-send {
+      background-color: map-get($colors, less-dark-text) !important;
+      padding-top: 8px;
+    }
+    .event-card-comment-section-icon {
+      width: 30px !important;
+      height: 30px !important;
+      margin: 0;
+      border-radius: 50%;
+      margin-top: 7px;
+      text-align: center;
+    }
+    .icon-normal-size {
+      background-color: map-get($colors, pt-gold);
+      padding-top: 8px;
+      font-size: 17px;
+    }
+    .icon-full-size {
+      font-size: 30px !important;
+    }
+    ion-input {
+      width: 60vw;
+      border: solid 1px map-get($colors, less-dark-text);
+      border-radius: 30px;
+      height: 30px;
+      margin-left: 12px;
+      margin-right: 12px;
+      input {
+        color: map-get($colors, less-dark-text);
+        height: 100%;
+        width: 90%;
+        font-size: 12px;
+        margin: auto;
+        padding: auto;
+        padding-left: 10px;
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <pt-header></pt-header>
+  </ion-toolbar>
+  <ion-navbar class="profile-header sub-header-profile">
+    <ion-buttons start>
+      <button ion-button (tap)="back()">
+        <ion-icon name="md-arrow-back" color="white"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title text-wrap>{{path.name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <h2 double-margin-top>{{ 'COMMENT.TITLE' | translate }}</h2>
+   <form padding (ngSubmit)="sendComment()">
+      <div class="form-section"  padding-bottom>
+        <div class="creation-section-title">
+          <div class="creation-section-number">1</div>
+          <h3>{{ 'COMMENT.RATE' | translate }}</h3>
+        </div>
+        <pt-star-rating [editable]="true" [(rate)]="comment.rate"></pt-star-rating>
+      </div>
+      <div class="form-section" margin-top padding-bottom>
+        <div class="creation-section-title">
+          <div class="creation-section-number">2</div>
+          <h3>{{ 'COMMENT.COMMENT' | translate }}</h3>
+        </div>
+        <ion-item no-padding>
+        <ion-textarea autocorrect="true" fz-elastic [(ngModel)]="comment.text" name="comment"></ion-textarea>
+        </ion-item>
+      </div>
+      <button double-margin-top ion-button margin-bottom type="submit" class="validateButton" block>{{ 'COMMENT.VALIDATE' | translate }}</button>
+    </form>
+</ion-content>

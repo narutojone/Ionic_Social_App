@@ -1,0 +1,386 @@
+{
+  "LOGIN": {
+    "LOGIN": "Se connecter avec:",
+    "POLICY": "Politique de confidentialité",
+    "TITLE": "Bienvenue sur PathTime",
+    "TEXT": "Connectez-vous pour découvrir les activités qui vous correspondent !",
+    "FACEBOOK": "Connexion avec Facebook"
+  },
+  "TUTORIAL": {
+    "PREV": "Précédent",
+    "NEXT": "Suivant",
+    "LETSGO": "C'est parti !"
+  },
+  "CHATPAGE": {
+    "EMPTYTITLE": "Il n'y a pas encore de commentaire!"
+  },
+  "MENU": {
+    "LANGUAGE": "Langue: Français",
+    "POLICY": "Politique de Confidentialité",
+    "LOGOUT": "Déconnexion",
+    "TUTORIAL": "Tutoriel",
+    "RECOMMENDENDPATHER": "Pathers recommandés",
+    "TOPPATHER": "Top Pathers",
+    "NOTIFICATIONS": "Notifications"
+  },
+  "TABS": {
+    "NEWS_FEED": "Fil d'actualité",
+    "EXPLORATION": "Exploration",
+    "CREATION": "Création",
+    "GROUP": "Groupe" ,
+    "PROFILE": "Profil"
+  },
+  "COMMUNITY": {
+
+  },
+  "ACTIONS": {
+    "COMMENT": "Commentez",
+    "LIKE": "J'aime",
+    "DISLIKE": "Je n'aime plus",
+    "ADDTODO": "Ajouter à ma ToDo",
+    "REMOVETODO": "Supprimer de ma ToDo",
+    "GO": "Y aller",
+    "SHARE": "Partager à un groupe"
+  },
+  "NEWS_FEED": {
+    "TITLE": "Fil d'actualité",
+    "FOLLOWS": "Follows",
+    "FOLLOWERS": "Followers",
+    "FOLLOWACTION": "suit",
+    "PATH":{
+      "CREATED": "a créé un parcours.",
+      "LIKED": "a aimé un parcours.",
+      "RATED": "a noté un parcours.",
+      "COMMENTED": "a commenté un parcours."
+    },
+    "PLACE":{
+      "LIKED": "a aimé un lieu.",
+      "RATED": "a noté un lieu.",
+      "COMMENTED": "a commenté un lieu."
+    },
+    "FOLLOW": "suit désormais"
+  },
+  "PROFILE": {
+    "INSPIRATIONS": "Follows",
+    "INFLUENCES": "Followers",
+    "PATHLIST": "Ma Pathliste",
+    "PATHLISTOTHER": "Pathliste",
+    "PHOTOS": "Mes Photos",
+    "PHOTOSOTHER": "Photos",
+    "RECORDS": "Ma sélection",
+    "TODOS": "ToDo",
+    "COMMUNITY": "Communauté",
+    "COMMUNITYOTHER": "Communauté",
+    "FOLLOWS": "Mes Follows",
+    "FOLLOWSOTHER": "Follows",
+    "SPIDER": "Mon Araignée",
+    "HISTORIC": "Historique"
+  },
+  "EXPLORATION": {
+    "CITY": "Je suis à ... ?",
+    "CITY_PLACEHOLDER": "Près de ...",
+    "WHOS_IN": "Avec ... ?",
+    "PLANS": "Nous voulons faire ... ?",
+    "MOOD": "Nous sommes d'humeur ... ?",
+    "BUDGET": "Pour un budget de ... ?",
+    "WHOS": {
+      "PATHER": "Pathers",
+      "ADDPATHER": "Ajouter Pather",
+      "CANCEL": "Annuler",
+      "FRIEND": "Amis",
+      "SOLO": "Seul",
+      "COUPLE": "Couple",
+      "FAMILY": "Famille"
+    },
+    "INSPIRATION": "Trouver un Parcours",
+    "DISCOVER": "Composer un Parcours",
+    "WAIT": "Chargement...",
+    "ALERT": {
+      "TITLE": "Pas si vite!",
+      "TEXT": "Aucune nouveauté à afficher pour le moment. Utilise Pathtime et ton fil d'actualité suivra!. Tu peux aussi chercher tes amis avec la barre de recherche pour voir leurs activités dans PathTime!"
+    },
+    "ALERTMOOD": {
+      "TITLE": "Ajouter un mood",
+      "TEXT": "D'autres idées de mood ? Fais le nous savoir et nous l'ajouterons au plus vite !",
+      "NAME": "Nom du mood",
+      "CANCEL": "Annuler",
+      "VALIDATE": "Envoyer",
+      "DONETITLE": "Merci!",
+      "DONETEXT": "Nous avons bien recu ta proposition et nous la traiterons des que possible."
+    },
+    "ALERTCATEGORY": {
+      "TITLE": "Ajouter une catégorie",
+      "TEXT": "D'autres idées de catégories ? Fais le nous savoir et nous l'ajouterons au plus vite !",
+      "NAME": "Nom de la catégorie",
+      "CANCEL": "Annuler",
+      "VALIDATE": "Envoyer",
+      "DONETITLE": "Merci!",
+      "DONETEXT": "Nous avons bien recu ta proposition et nous la traiterons des que possible."
+    }
+  },
+  "PLANIFICATION": {
+    "WAIT": "Chargement...",
+    "PLACE": {
+      "ADDRESS": "Adresse: ",
+      "PHONE": "Téléphone: ",
+      "OPINION": {
+        "RATE": "Noter ce lieu",
+        "COMMENT": "Donner son avis",
+        "PLACEHOLDER": "Ecrire un commentaire...",
+        "SEND": "Envoyer"
+      }
+    },
+    "PLACES": {
+      "TITLE": "Choisis un lieu à ajouter dans ton parcours personnel!"
+    }
+  },
+  "INSPIRATION": {
+    "VALIDATE": "Voir ce parcours",
+    "EMPTY": {
+      "TITLE": "Oops",
+      "TEXT": "Nous n'avons trouvé aucun parcours correspondant à ta recherche. Essaie d'être moins spécifique pour augmenter tes chances."
+    }
+  },
+  "SETTING": {
+    "EVENT": {
+      "TITLE": "Modifier cet événement ?"
+    },
+    "VALIDATE": "Valider"
+  },
+  "CREATION": {
+    "WAIT": "Création...",
+    "MODAL": {
+      "TITLE": "Créer",
+      "CHOICE": {
+        "PLACE": "Un lieu",
+        "PATH": "Un parcours"
+      }
+    },
+    "MENU": {
+      "PATH": "CREER UN PARCOURS",
+      "PLACE": "CREER UN LIEU",
+      "AROUNDME": "AUTOUR DE MOI",
+      "GUIDELINES": "INSTRUCTIONS",
+      "GUIDELINE": {
+        "PLACE": {
+          "PARTONE": "En fonction de tes intérêts, Moods et habitudes, partage tes recommandations à des Pathers aux intérêts similaires.",
+          "PARTTWO": "Partage tes spots préférés et rejoins une communauté !"
+        },
+        "PATH": {
+          "PARTONE": "Si écrire ton histoire et partager tes aventures à une communauté qui te ressemble t'intéresse, tu es au bon endroit !",
+          "PARTTWO": "Partage tes parcours et montre à quoi ressemble une aventure selon toi !"
+        }
+      }
+    },
+    "TITLE": {
+      "CHOOSE": "Choisissez un lieu !",
+      "VALIDATE": "Ajouter ce lieu au parcours ?",
+      "CREATE": "Créer ce lieu ?"
+    },
+    "CREATE": {
+      "CATEGORY": "Choisissez une catégorie",
+      "MOOD": "Choisissez un mood",
+      "COMMENT": "Commentez ce lieu",
+      "PHOTO": "Ajoutez des photos à ce lieu",
+      "VALIDATION": "Qualifier ce lieu !"
+    },
+    "SEARCH": "Rechercher un lieu...",
+    "VALIDATE": {
+      "BUTTON": "Valider",
+      "SEARCH": "Ville Proche ?",
+      "PATH_NAME": "Nom du Parcours :",
+      "PLACES": "Lieux du Parcours :",
+      "MOODS": "Choisissez des Humeurs :",
+      "DESCRIPTION": "Décrivrez ce Parcours :",
+      "WHOS": "Un Parcours Pour Qui ?",
+      "EVENT_NAME": "Nomme ton événement (Optionnel)",
+      "EVENT_DATE": "Choisis une date :",
+      "EVENT_DESCRIPTION": "Un commentaire pour les autres ?",
+      "EVENT_TITLE": "Créer cet événement ?",
+      "DELETE": "Supprimer parcours"
+    },
+    "ADDPLACE": "Ajouter un lieu",
+    "CANCELADD": "Quitter l'ajout",
+    "VALIDATEPLACE": "Ajouter ce lieu",
+    "VALIDATEPATH": "Créer ce parcours"
+  },
+  "PLACE": {
+    "PLURIAL": "Lieux",
+    "NO_DESCRIPTION": "Description non disponible...",
+    "DETAILS": {
+      "CREATE": "Valider",
+      "ADD": "Ajouter ce lieu ?",
+      "PHONE": "Téléphone",
+      "WEBSITE": "Site",
+      "LOCATION": "Localisation",
+      "ADDRESS": "Adresse",
+      "COMMENTS": "Commentaires",
+      "PRICE": "Prix",
+      "COMMENTACTION": "Tu es déjà allé dans ce lieu ?",
+      "COMMENTACTIONTEXT": "Note et commente le !"
+    }
+  },
+  "PATH": {
+    "PLURIAL": "Parcours",
+    "NO_DESCRIPTION": "Description non disponible...",
+    "DETAILS": {
+      "CREATE": "Valider",
+      "LOCATION": "Localisation",
+      "COMMENTS": "Commentaires",
+      "CREATOR": "Créateur",
+      "STEPS": "Les Etapes",
+      "COMMENTACTION": "Tu as déjà fait ce parcours ?",
+      "COMMENTACTIONTEXT": "Note et commente le !",
+      "UNDONETEXT": "Ce parcours est un parcours personnel, pour créer un vrai parcours, donne nous ton avis sur ce parcours que tu as réalisé!",
+      "UNDONEBUTTON": "Créer ce parcours"
+    },
+    "SETTING": {
+      "TITLE": "Modifier ce parcours ?"
+    }
+  },
+  "EVENT": {
+    "NO_DESCRIPTION": "Description non disponible ...",
+    "DETAILS": {
+      "CREATE": "Valider",
+      "LOCATION": "Localisation",
+      "COMMENTS": "Commentaires",
+      "CREATOR": "Créateur",
+      "STEPS": "Les Etapes",
+      "COMMENTACTION": "Tu as déjà fait ce parcours ?",
+      "COMMENTACTIONTEXT": "Note et commente le !",
+      "UNDONETEXT": "Ce parcours est un parcours personnel, pour créer un vrai parcours, donne nous ton avis sur ce parcours que tu as réalisé!",
+      "UNDONEBUTTON": "Créer ce parcours",
+      "ORGANIZER": "Organisateur",
+      "PEOPLE": "Personnes"
+    },
+    "CREATION": {      
+      "TITLEMODAL": "Créer un nouvel événement",
+      "CHOICE": {
+        "PICKONE": "Piocher dans mes",
+        "CREATEONE": "Proposer un nouveau",
+        "PATH": "Un nouveau parcours",
+        "PLACE": "Chercher un Lieu",
+        "TODO": "ToDo",
+        "MYPATHS": "Mes Parcours",
+        "HISTORIC": "Historique"
+      },
+      "PICK": "Choisis une activité !"
+    },
+    "DELETE": "Supprimer cet évènement",
+    "TODO": "Ajouter au ToDo",
+    "FEEDBACKS": "Donne ton avis"
+  },
+  "COMMENT": {
+    "TITLE": "Donne ton avis !",
+    "RATE": "Note :",
+    "COMMENT": "Commentaire :",
+    "PICTURE": "Photos :",
+    "PICTUREACTION": "Ajouter une photo",
+    "YOUR_COMMENT": "Ton commentaire:",
+    "VALIDATE": "Valider"
+  },
+  "GROUP": {
+    "CREATION": {
+      "TITLE": "Nouveau Groupe",
+      "NAME": "Nom du groupe",
+      "DESCRIPTION": "Description",
+      "MEMBERS": "Membres du groupe",
+      "VALIDATE": "Valider",
+      "LEAVE": "Quitter ce groupe",
+      "DELETE": "Supprimer ce groupe"
+    }
+  },
+  "EMPTY": {
+    "FEED": {
+      "TITLE": "Fil d'actualités",
+      "TEXT": "Aucune nouveauté à afficher pour le moment. Utilise Pathtime et ton fil d'actualité suivra!. Tu peux aussi chercher tes amis avec la barre de recherche pour voir leurs activités dans PathTime!"
+    },
+    "FOLLOW": {
+      "TITLE": "Mes Follows",
+      "TEXT": "Pas d’amis pour le moment? Retrouve tes amis sur la barre de recherche du fil d’actualité :) !"
+    },
+    "FOLLOWOTHER": {
+      "TITLE": "Follows",
+      "TEXT": "Personne ne suit cet utilisateur pour l'instant."
+    },
+    "FOLLOWER": {
+      "TITLE": "Mes Followers",
+      "TEXT": "Pas d’amis pour le moment? Retrouve tes amis sur la barre de recherche du fil d’actualité :) !"
+    },
+    "FOLLOWEROTHER": {
+      "TITLE": "Followers",
+      "TEXT": "Cet utilisateur ne suit personne pour le moment."
+    },
+    "HISTORIC": {
+      "TITLE": "Mon Historique",
+      "TEXT": "Like, commente, crée, inspire et partage des lieux, parcours ou publications, ton Historique suivra."
+    },
+    "PATHLIST": {
+      "TITLE": "Ma PathListe",
+      "TEXT": "Crée un parcours, partage le sur la communauté et fais en profiter à des personnes qui partagent les mêmes intérêts que toi"
+    },
+    "PATHLISTOTHER": {
+      "TITLE": "PathListe Vide",
+      "TEXT": "Il n'y a aucun parcours ou lieu dans cette Pathliste."
+    },
+    "RECORDS": {
+      "TITLE": "Ma Sélection",
+      "TEXT": "Pas d’enregistrement ? Tu peux aimer et enregistrer tout parcours et lieu t'intéressant"
+    },
+    "TODOS": {
+      "TITLE": "Mes ToDo",
+      "TEXT": "Pas de ToDo ? tu peux aimer et ajouter à tes Todo tout parcours et lieu t'intéressant"
+    },
+    "PHOTO": {
+      "TITLE": "Mes Photos",
+      "TEXT": "Tu peux ajouter une photo lorsque tu crées un parcours ou un lieu!"
+    },
+    "PHOTOOTHER": {
+      "TITLE": "Photos",
+      "TEXT": "Aucune photo trouvée."
+    },
+    "FEEDLOADING": {
+      "TITLE": "Flux d'actualités",
+      "TEXT": "Chargement du flux d'actualité"
+    },
+    "GROUPSLOADING": {
+      "TITLE": "Mes Groupes",
+      "TEXT": "Chargement des groupes"
+    },
+    "GROUPS": {
+      "TITLE": "Mes Groupes",
+      "TEXT": "Tu n'as pas encore de groupe mais tu peux en créer via le bouton plus!"
+    },
+    "GROUPVOTING": {
+      "TITLE": "Evénements",
+      "TEXT": "Pas encore d'événement à voter? Propose une activité en utilisant le bouton situé en haut à droite de cette page :",
+      "SUBTITLE": "Bravo, ton groupe est prêt! Il ne te reste plus qu'à créer un événement?",
+      "ACTION": "Créer événement"
+    },
+    "GROUPTODO": {
+      "TITLE": "ToDo",
+      "TEXT": "Pas encore de ToDo? Valide un événement en utilisant le bouton qui apparaîtra lorsque tu swipes un événement :"
+    },
+    "GROUPDONE": {
+      "TITLE": "Done",
+      "TEXT": "Un événement de moins sur ta ToDo? Note cet événement et découvre une nouvelle activité pouvant te plaire !"
+    },
+    "GROUPS": {
+      "TITLE": "Mes Groupes",
+      "TEXT": "Tu n'as pas encore de groupe mais tu peux en créer via le bouton plus!"
+    },
+    "NOTIFICATIONS": {
+      "TITLE": "Mes Notifications",
+      "TEXT": "Tu n'as pas encore de notifications!"
+    },
+    "NORESULT": {
+      "TITLE": "Aucun résultat",
+      "TEXT": "Tu as trouvé quelques choses que nous n'avons pas encore, si tu connais un lieux n'hésite pas à l'ajouter :) !"
+    }
+  },
+  "PERFORM": {
+    "NEXT": "Suivant"
+  },
+  "ADD": "Ajouter",
+  "LOADMORE": "Charger plus"
+}

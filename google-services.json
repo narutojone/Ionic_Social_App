@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "874360001878",
+    "firebase_url": "https://pathtime-1360.firebaseio.com",
+    "project_id": "pathtime-1360",
+    "storage_bucket": "pathtime-1360.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:874360001878:android:47929d0c4659b454",
+        "android_client_info": {
+          "package_name": "fr.pathtime.PathTime"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "874360001878-aq8d13mv48dv1l58cpm31cac4l3arkmv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCww24oZiX5jumWdu5iLqrhogPmOg_UYCU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:874360001878:android:3cd68cf79283d968",
+        "android_client_info": {
+          "package_name": "fr.pathtime.PathTime.Dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "874360001878-aq8d13mv48dv1l58cpm31cac4l3arkmv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCww24oZiX5jumWdu5iLqrhogPmOg_UYCU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

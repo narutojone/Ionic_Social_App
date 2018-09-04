@@ -1,0 +1,104 @@
+page-creation2 {
+  #creation2Map {
+    height: 100%;
+    width: 100%
+  }
+
+  #creatio2Search{
+    position: absolute;
+    top: 16px;
+    z-index: 30;
+  }
+
+  .border-places {
+    border: solid white 1px;
+    padding: 0px 6px;
+    display: inline-block;
+    float: left;
+    min-height: 60px;
+    min-width: 60px;
+  }
+
+  .trash-creation {
+    position: absolute;
+    background: map-get($colors, primary);
+    top: 60px;
+    left: 16px;
+    border-radius: 50%;
+    z-index: 30;
+    width: 50px;
+    height: 50px;
+
+    ion-icon {
+      color: white;
+      font-size: 50px !important;
+    }
+  }
+
+  .sub-header-creation2 {
+    height: 70px !important;
+  }
+  .sub-header-places {
+    height: 70px !important;
+    margin-left: 16px !important;
+    white-space: nowrap;
+    ion-icon {
+      width: 50px;
+      height: 50px;
+      font-size: 50px !important;
+    }
+
+    .deletePlace{
+      position: absolute;
+      top: 5px;
+      left: 8px;
+      border-radius: 50%;
+      height: 45px;
+      width: 45px;
+      background: rgba(0, 0, 0, 0.60);
+
+      ion-icon {
+        padding-top: 0px !important;
+        padding-left: 0px;
+        width: 45px;
+      }
+    }
+
+    .place-header {
+      width: 60px;
+      height: 60px;
+      float: left;
+      position: relative;
+      text-align: center;
+      z-index: 1;
+
+      span {
+        font-size: xx-small;
+        color: white;
+        display: block;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        margin-top: -2px;
+        overflow: hidden;
+      }
+    }
+
+    .place-div {
+        ion-icon {
+          font-size: 45px !important;
+          padding-top: 5px;
+        }
+      }
+
+    .action-header {
+      width: 70px !important;
+    }
+  }
+  .validateButton {
+    position: absolute;
+    z-index: 10;
+    bottom: 25px;
+    margin-left: -80px;
+    min-width: 160px;
+  }
+}

@@ -1,0 +1,22 @@
+@import "assets/icon/PathTimeIcon/style";
+@import "assets/icon/PathTimeServerIcon/style";
+@import "assets/font/IconFont/scss/_variables";
+@import "assets/font/IconFont/scss/icons";
+@import "assets/font/IconFont/scss/pathtime";
+
+
+@mixin makeIcon($arg, $val) {
+ .ion-ios-#{$arg}:before ,
+ .ion-ios-#{$arg}-circle:before ,
+ .ion-ios-#{$arg}-circle-outline:before ,
+ .ion-ios-#{$arg}-outline:before ,
+ .ion-md-#{$arg}:before ,
+ .ion-md-#{$arg}-circle:before ,
+ .ion-md-#{$arg}-circle-outline:before ,
+ .ion-md-#{$arg}-outline:before  {
+   content: $val;
+   font-size: 26px;
+ }
+}
+
+@include makeIcon(logo-pathtime, '\e900')

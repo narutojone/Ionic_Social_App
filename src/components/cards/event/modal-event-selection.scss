@@ -1,0 +1,39 @@
+event-selection-modal {
+  padding: 12px;
+  background-color: white;
+  border-radius: 10px;
+  ion-row {
+    margin-top: 5px;
+  }
+  .event-selection-modal-icon {
+    width: 30px !important;
+    height: 30px !important;
+    margin: 0;
+    border-radius: 50%;
+    text-align: center;
+  }
+  .icon-normal-size {
+    background-color: map-get($colors, pt-gold);
+    padding-top: 8px;
+  }
+  .icon-full-size {
+    font-size: 30px;
+  }
+  h5 {
+    margin-top: 8px;
+    margin-left: 12px;
+  }
+}
+
+ion-modal.event-selection-modal ion-backdrop {
+  visibility: visible !important;
+  z-index: 0;
+}
+
+ion-modal.event-selection-modal .modal-wrapper {
+  top: 40vw !important;
+  left: 15vw !important;
+  width: 70vw !important;
+  height: 140px !important;
+  position: absolute;
+}

@@ -1,0 +1,36 @@
+<div class="filter-content">
+  <div class="filter-content-item"
+       tappable (touchstart)="touchStartPtTap($event)" (touchend)="touchEndPtTap($event) && chooseCategory(parent)">
+    <ion-icon *ngIf="result.indexOf(parent) == -1"
+               name="{{ parent.getIcon() }}"
+               color="light">
+    </ion-icon>
+    <ion-icon *ngIf="result.indexOf(parent) >= 0"
+                name="{{ parent.getIcon(true) }}"
+                color="light">
+    </ion-icon>
+    <span>{{ parent.name }}</span>
+  </div>
+
+  <div class="filter-content-item-division"></div>
+
+  <div class="filter-content-item"
+       *ngFor="let c of parent.children"
+       tappable (touchstart)="touchStartPtTap($event)" (touchend)="touchEndPtTap($event) && chooseCategory(c)">
+    <ion-icon *ngIf="result.indexOf(c) == -1"
+               name="{{ c.getIcon() }}"
+               color="light">
+    </ion-icon>
+    <ion-icon *ngIf="result.indexOf(c) >= 0"
+                name="{{ c.getIcon(true) }}"
+                color="light">
+    </ion-icon>
+    <span>{{ c.getName(translate.currentLang) }}</span>
+  </div>
+  <div class="filter-content-item"
+      tappable (touchstart)="touchStartPtTap($event)" (touchend)="touchEndPtTap($event) && addPendingCategory()">
+    <ion-icon name="icon-menu-dots" color="light">
+    </ion-icon>
+    <span>{{ 'More' | translate }}</span>
+  </div>
+</div>

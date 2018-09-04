@@ -1,0 +1,127 @@
+page-creation-group {
+  ion-content {
+    .item-inner {
+      padding-right: 0px!important;
+    }
+    .validateButton {
+      margin-left: calc(50% - 70px);
+      width: 140px;
+    }
+    .pop-over-search {
+      width: 100%;
+      .search-pather-creation {
+        display: block;
+        z-index: 10;
+        background: map-get($colors, primary);
+        padding: 12px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 6px;
+        /*ion-searchbar {
+          //margin-bottom: 12px;
+        }*/
+        .filter-content {
+          margin-top: 12px;
+          width: 100%;
+          white-space: nowrap;
+          display: inline-flex;
+          overflow: scroll;
+          .filter-content-item {
+            float: left;
+            margin-right: 10px;
+            width: 75px;
+            max-width: 75px;
+            text-align: center;
+            img {
+              width: 50px;
+              height: 50px;
+              border-radius: 50%;
+            }
+            span {
+              font-size: x-small;
+              display: block;
+              overflow: hidden;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+    .deletePlace {
+      position: absolute;
+      top: 0px;
+      left: 4px;
+      border-radius: 50%;
+      height: 56px;
+      width: 56px;
+      background: rgba(0, 0, 0, 0.60);
+      ion-icon {
+        padding-top: 0px !important;
+        padding-left: 0px;
+        width: 45px;
+      }
+    }
+
+    .filter-content {
+      display: flex;
+      flex-grow: 1;
+      overflow: scroll;
+      ion-searchbar {
+        padding-left: 0;
+      }
+      .filter-content-item {
+        margin-top: 12px;
+        max-width: 65px;
+        min-width: 65px;
+        position: relative;
+        overflow: scroll;
+        ion-icon {
+          font-size: 56px !important;
+        }
+        img {
+          height: 56px;
+          width: 56px;
+          border-radius: 50%;
+        }
+        text-align: center;
+        span {
+          font-size: x-small;
+          display: block;
+          overflow: hidden;
+        }
+      }
+    }
+
+    .group-images {
+      margin-left: 3vw;
+      position: relative;
+      width: 40vw;
+      float: left;
+      img {
+        width: 40vw;
+        height: 40vw;
+        background-color: map-get($colors, secondary);
+        padding:1px;
+        border:1px solid map-get($colors, secondary);
+        background-color: map-get($colors, primary);;
+        
+      }
+      .delete-icon{
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        z-index: 10;
+        color: white;
+        font-size: 30px;
+        background-color: rgba(0, 0, 0, 0.55);
+        width: 30px;
+        height: 30px;
+      }
+      ion-icon {
+        margin-left: 7.5px;
+        margin-top: -5px;
+      }
+    }
+
+  }
+}

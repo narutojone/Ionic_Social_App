@@ -1,0 +1,35 @@
+<!--<ion-slides pager="true">
+  <ion-slide *ngFor="let comment of event.comments;">
+    <div class="comment-user-info" (tap)="goProfile(comment.user)">
+      <img src="{{comment.user.getProfilePicture()}}" />
+    </div>
+    <div class="comment-text" (tap)="showFullComment(comment)">
+      <p>{{comment.text}}</p>
+    </div>
+  </ion-slide>
+</ion-slides>-->
+
+<!--<div class="comments-section">
+  <div class="comment-section" *ngFor="let comment of event.comments;">
+    <div class="comment-user-info" (tap)="goProfile(comment.user)">
+      <img src="{{comment.user.getProfilePicture()}}" />
+    </div>
+    <div class="comment-text" (tap)="showFullComment(comment)">
+      <span>{{comment.text}}</span>
+    </div>
+  </div>
+</div>-->
+
+<ion-list>
+  <ion-item class="item-avatar" *ngFor="let comment of event.comments;">
+    <img primary-border src="{{comment.user.getProfilePicture()}}">
+    <p two-lines-text (tap)="showFullComment(comment)">{{comment.text}}</p>
+  </ion-item>
+</ion-list>
+
+<ion-list class="new-comment-list">
+  <ion-item item-icon-right>
+    <ion-textarea autocorrect="true" fz-elastic class="comment-box-textarea" [(ngModel)]="commentText" placeholder="Feel free to comment" ></ion-textarea>
+    <ion-icon name="ios-send" class="icon-comment" (tap)="sendComment()" primary-border-circle color="primary" item-right></ion-icon>
+  </ion-item>
+</ion-list>

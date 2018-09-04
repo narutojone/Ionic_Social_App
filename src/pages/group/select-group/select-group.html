@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    <pt-header></pt-header>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content linear-bg>
+  <div class="red-content-navbar">
+    <h2>{{ 'EMPTY.GROUPS.TITLE' | translate }}</h2>
+    <button class="back-nav-button" ion-button (tap)="back()">
+        <ion-icon name="md-arrow-back" color="white"></ion-icon>
+  </button>
+  </div>
+
+  <ion-refresher (ionRefresh)="refresh$($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <pt-page-empty *ngIf="!groups" page="GROUPSLOADING" image="assets/img/user-search.png"></pt-page-empty>
+  <pt-page-empty *ngIf="groups && groups.length === 0" page="GROUPS" image="assets/img/user-search.png"></pt-page-empty>
+
+  <!--<div *ngIf="groups && groups.length > 0">
+    <div *ngFor="let gr of groups;">
+      <ion-card class="group-card">
+        <div class="group-left-content" image-border>
+          <img image-display [src]="gr?.getCover()">
+        </div>
+        <div class="card-middle-img">
+          {{gr?.getMembersCount()}}P
+        </div>
+        <div class="group-right-content">
+          <h2><strong>{{gr?.name}}</strong></h2>
+          <p margin-top>
+            {{gr?.updated_at | date: 'dd/MM/yyyy hh:mm' }}
+          </p>
+          <div class="group-members" *ngIf="gr.members.length > 0">
+            <div class="group-members-item" *ngFor="let p of gr.members">
+              <img [src]="p.getProfilePicture()">
+              <span>{{p.firstname}}</span>
+            </div>
+          </div>
+        </div>
+      </ion-card>
+      <button ion-button color="primary" class="button-group-card" (click)="selectGroup(gr)" pull-right>Choose this group</button>
+    </div>
+    <div style="width: 100%" text-center>
+      <button *ngIf="lastGroups.length > 0" margin-top margin-bottom text-center ion-button round outline color="primary" (tap)="getMoreGroups($event)">{{ 'LOADMORE' | translate }}</button>
+    </div>
+  </div>-->
+
+  <div *ngIf="groups && groups.length > 0">
+    <ion-slides spaceBetween="-100" class="group-slides" pager>
+      <ion-slide class="group-slide" *ngFor="let gr of groups;">
+        <pt-card-group [group]="gr" [needSelectionAction]="true" (selectAction)="selectGroup(gr)" ></pt-card-group>
+      </ion-slide>
+      <ion-slide class="group-slide" *ngIf="lastGroups.length > 0">
+        <div style="width: 100%" text-center>
+          <button margin-top margin-bottom text-center ion-button round outline class="load-more-button" color="primary" (tap)="getMoreGroups($event)">{{ 'LOADMORE' | translate }}</button>
+        </div>
+      </ion-slide>
+    </ion-slides>
+  </div>
+</ion-content>

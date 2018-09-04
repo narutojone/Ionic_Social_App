@@ -1,0 +1,29 @@
+<ion-scroll scrollY="true">
+  <div class="planification-popover-place"
+       *ngFor="let place of places"
+       (click)="onSelected.emit(place)">
+    <div class="planification-popover-place-image">
+      <img [src]="place.image" />
+    </div>
+    <div class="planification-popover-place-percent">
+      <span>{{place.compatibility}}</span>
+    </div>
+    <div class="planification-popover-place-details">
+      <h6>{{place.name}}</h6>
+      <p class="planification-popover-place-details-category">
+        <!--FIXME: Which category must we display ? the selected one or all of them -->
+        {{place.activity_types[0].name}}
+      </p>
+      <p class="planification-popover-place-details-mood"
+         *ngFor="let mood of place.moods">
+        {{mood.name}}
+      </p>
+      <p class="planification-popover-place-details-addr">
+        {{place.address}}
+      </p>
+    </div>
+    <ion-icon class="planification-popover-place-next"
+              name="ios-arrow-forward">
+    </ion-icon>
+  </div>
+</ion-scroll>

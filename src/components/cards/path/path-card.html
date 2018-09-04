@@ -1,0 +1,140 @@
+<ion-card class="card-v2" padding>
+
+  <ion-row low-padding-bottom *ngIf="news" (tap)="goProfile(u)">
+    <ion-col col-2 no-padding>
+      <ion-avatar>
+        <div class="user-icon-image">
+          <img [src]="u.getProfilePicture()">
+          <ion-icon *ngIf="news.newsType === 3" class="user-icon-info" name="icon-shape-star-2"></ion-icon>
+          <ion-icon *ngIf="news.newsType === 5" class="user-icon-info" name="icon-chat-2"></ion-icon>
+          <ion-icon *ngIf="news.newsType === 8" class="user-icon-info" name="icon-heart-2-2"></ion-icon>
+          <ion-icon *ngIf="news.newsType === 1" class="user-icon-info" name="icon-road"></ion-icon>
+        </div>
+      </ion-avatar>
+    </ion-col>
+    <ion-col col-10 class="path-card-user">
+      <h5 *ngIf="news.newsType === 3"><strong>{{u.firstname}} {{u.lastname}}</strong> {{ 'NEWS_FEED.PATH.RATED' | translate }}</h5>
+      <h5 *ngIf="news.newsType === 5"><strong>{{u.firstname}} {{u.lastname}}</strong> {{ 'NEWS_FEED.PATH.COMMENTED' | translate }}</h5>
+      <h5 *ngIf="news.newsType === 8"><strong>{{u.firstname}} {{u.lastname}}</strong> {{ 'NEWS_FEED.PATH.LIKED' | translate }}</h5>
+      <h5 *ngIf="news.newsType === 1"><strong>{{u.firstname}} {{u.lastname}}</strong> {{ 'NEWS_FEED.PATH.CREATED' | translate }}</h5>
+      <h6>{{news.date | date: 'dd/MM/yyyy hh:mm' }}</h6>
+    </ion-col>
+  </ion-row>
+
+  <ion-row low-padding-bottom *ngIf="comment && !news">
+    <ion-col col-2 no-padding>
+      <ion-avatar>
+        <div class="user-icon-image">
+          <img [src]="user.getProfilePicture()">
+          <ion-icon class="user-icon-info" name="icon-chat"></ion-icon>
+        </div>
+      </ion-avatar>
+    </ion-col>
+    <ion-col col-10 class="path-card-user">
+      <h5><strong>You</strong> {{ 'NEWS_FEED.PATH.COMMENTED' | translate }}</h5>
+    </ion-col>
+  </ion-row>
+
+  <ion-row low-padding-bottom class="path-card-comment-rating" *ngIf="comment && comment.rate">
+    <span><strong>{{comment.rate | number:'1.1-2' }}</strong></span>
+    <pt-star-rating [editable]="false" [newsCardSection]="true" [(rate)]="comment.rate"></pt-star-rating>
+  </ion-row>
+
+  <ion-row low-padding-bottom *ngIf="comment && comment.text">
+    <h5>{{comment.text}}</h5>
+  </ion-row>
+
+  <div class="card-div-image" (tap)="goPathDetail()">
+    <div class="bottom-image-overlay"></div>
+    <img [src]="path.getCover()">
+    <div *ngIf="needSelectionAction" (tap)="selectActivity()" class="card-path-select">
+      <ion-icon name="icon-pin-add" color="white"></ion-icon>
+    </div>
+    <p class="card-path-city">{{path.getCityName() | uppercase}}</p>
+    <p class="card-path-name">{{path.name}}</p>
+    <p class="card-path-creator">by {{path.getCreatorName()}}</p>
+    <p class="card-path-mood" *ngIf="path.hasMoods()">{{path.getFirstMood().getName() | uppercase}}
+      <ion-icon name="{{path.getFirstMood().getIcon(true)}}" color="secondary"></ion-icon>
+    </p>
+    <p class="card-path-rating">{{path.note | number:'1.0-2' }}
+      <ion-icon name="star"></ion-icon>
+    </p>
+    <div *ngIf="path.stepsNumber() === 2">
+      <div class="card-path-logo">
+        <div class="logo-number">
+          <span>1</span>
+        </div>
+        <div class="card-separator-places"></div>
+        <div class="logo-number">
+          <span>2</span>
+        </div>
+      </div>
+      <div class="card-path-place-info card-path-place-first-of-two">
+        <p class="card-path-place-name">{{path.places[0].name}}</p>
+        <p>{{path.places[0].getFirstActivityTypeName()}}</p>
+      </div>
+      <div class="card-path-place-info card-path-place-second-of-two">
+        <p class="card-path-place-name">{{path.places[1].name}}</p>
+        <p>{{path.places[1].getFirstActivityTypeName()}}</p>
+      </div>
+    </div>
+    <div *ngIf="path.stepsNumber() >= 3">
+      <div class="card-path-logo">
+        <div class="logo-number">
+          <span>1</span>
+        </div>
+        <div class="card-small-separator-places"></div>
+        <div class="logo-number">
+          <span>2</span>
+        </div>
+        <div class="card-small-separator-places"></div>
+        <div class="logo-number">
+          <span>3</span>
+        </div>
+      </div>
+      <div class="card-path-place-info card-path-place-first-of-three">
+        <p class="card-path-place-name">{{path.places[0].name}}</p>
+        <p>{{path.places[0].getFirstActivityTypeName()}}</p>
+      </div>
+      <div class="card-path-place-info card-path-place-second-of-three">
+        <p class="card-path-place-name">{{path.places[1].name}}</p>
+        <p>{{path.places[1].getFirstActivityTypeName()}}</p>
+      </div>
+      <div class="card-path-place-info card-path-place-third-of-three">
+        <p class="card-path-place-name">{{path.places[2].name}}</p>
+        <p>{{path.places[2].getFirstActivityTypeName()}}</p>
+      </div>
+    </div>
+  </div>
+
+  <!--<ion-card-content>
+  </ion-card-content>-->
+
+  <ion-row class="card-footer">
+    <ion-col>
+      <button ion-button center clear big (tap)="path.toggleLike()">
+        <ion-icon name="icon-heart-2-2" primary-color color="primary" *ngIf="path.isLiked()"></ion-icon>
+        <ion-icon name="icon-heart-2" *ngIf="!path.isLiked()"></ion-icon>
+        <div class="button-text">{{path.nb_likes}}</div>
+      </button>
+    </ion-col>
+    <ion-col>
+      <button ion-button center clear big (tap)="goChatPage()">
+        <ion-icon name="icon-chat"></ion-icon>
+        <div class="button-text">{{path.nb_chats}}</div>
+      </button>
+    </ion-col>
+    <ion-col>
+      <button ion-button center clear big (tap)="sharePath()">
+        <ion-icon name="icon-share-bold"></ion-icon>
+      </button>
+    </ion-col>
+    <ion-col>
+      <button ion-button center clear big (tap)="path.toggleFavorite()">
+        <ion-icon name="icon-bookmark-2-2" primary-color color="primary" *ngIf="path.isFavorite()"></ion-icon>
+        <ion-icon name="icon-bookmark-2" *ngIf="!path.isFavorite()"></ion-icon>
+      </button>
+    </ion-col>
+  </ion-row>
+
+</ion-card>

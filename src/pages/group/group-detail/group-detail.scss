@@ -1,0 +1,201 @@
+page-group-detail {
+  ion-navbar {
+    ion-title {
+      color: white;
+      .toolbar-title-ios {
+        color: white;
+      }
+    }
+  }
+  ion-content {
+    .fab ion-icon {
+      font-size: 60px !important;
+    }
+    .sliding-card-list {
+      padding: 0 !important;
+      margin: 0 !important;
+      ion-item {
+        padding-left: 0px !important;
+        background: transparent !important;
+      }
+      .item-inner {
+        padding-right: 0 !important;
+        border-bottom: none !important;
+      }
+      ion-item-options {
+        padding-top: 16px;
+        padding-bottom: 13px;
+        border: none !important;
+        button {
+          width: 100px;
+          ion-icon {
+            font-size: 40px !important;
+          }
+          span {
+            width: 80px;
+            white-space: normal;
+          }
+        }
+      }
+    }
+    .new-event-div {
+      z-index: 50;
+      position: absolute;
+      bottom: 16px;
+      right: 16px;
+      width: 60px;
+      height: 60px;
+      background-color: map-get($colors, 'primary');
+      border-radius: 50%;
+      ion-icon {
+        text-align: center;
+        font-size: 30px !important;
+        color: white;
+        padding-top: 15px;
+        padding-left: 15px;
+      }
+    }
+    .new-event-div-center {
+      z-index: 50;
+      position: relative;
+      margin-top: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      ion-icon {
+        z-index: 5;
+        text-align: center;
+        font-size: 25px !important;
+        color: white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+      }
+    }
+    .add-event-ion-fab {
+      top: 15px;
+      .add-event-main-button {
+        color: white;
+        background-color: map-get($colors, 'primary');
+        margin-right: 12px;
+      }
+      .add-event-fab {
+        margin-top: -5px;
+        color: white;
+        width: 80px;
+        height: 80px;
+        border-radius: 0;
+        margin-left: -14px;
+        span {
+          display: block;
+        }
+        ion-icon {
+          font-size: 30px !important;
+        }
+        p {
+          color: white;
+          text-align: center;
+          margin-top: -18px;
+          font-size: 10px;
+          line-height: 10px;
+          white-space: normal;
+        }
+      }
+      .pick-todo {
+        background-color: rgb(255, 148, 52);
+      }
+      .pick-historic {
+        background-color: map-get($colors, 'primary');
+      }
+      .pick-path {
+        background-color: map-get($colors, 'secondary');
+      }
+      .pick-place {
+        background-color: map-get($colors, around-me);
+      }
+    }
+    .group-buttons {
+      display: inline-flex;
+      .group-button {
+        width: 30vw;
+        margin-left: 3vw;
+        ion-icon {
+          margin-right: 12px;
+        }
+      }
+    }
+    .empty-voting {
+      text-align: center;
+      .damn-title {
+        font-weight: 600;
+        letter-spacing: 1px;
+        font-size: 22px;
+        width: 90%;
+        margin-left: 5%;
+        margin-bottom: 15px;
+        line-height: 30px;
+        margin-top: 20px;
+      }
+      button {
+        width: 160px;
+        margin-top: 16px;
+        margin-left: calc(50% - 80px);
+        height: 50px;
+        border-radius: 10px;
+      }
+      .empty-icon {
+        ion-icon {
+          font-size: 80px !important
+        }
+      }
+    }
+  }
+}
+
+.damn-rela {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  background-color: #f2f2f2;
+}
+
+.damn-abso {
+  position: absolute;
+  width: 1px;
+  height: 48px;
+  bottom: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: map-get($colors, 'primary');
+  z-index: 4;
+}
+
+.abso-1 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 95px;
+  height: 95px;
+  background-color: #f8f8f8;
+  border-radius: 100%;
+  box-shadow: 0px 0px 10px 0px rgba(196, 188, 196, 1);
+  z-index: 1;
+}
+
+.abso-2 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 60px;
+  height: 60px;
+  background-color: map-get($colors, 'primary');
+  border-radius: 100%;
+  box-shadow: 0px 0px 10px 0px rgba(196, 188, 196, 1);
+  z-index: 2;
+}

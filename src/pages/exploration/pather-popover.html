@@ -1,0 +1,10 @@
+<div>
+  <ng-template #userPather let-attrs="attrs">
+      <div class="filter-content-item"
+          (click)="addUser(attrs.data)">
+        <img src="{{attrs.data.getProfilePicture()}}" />
+        <span>{{attrs.data.firstname}} {{attrs.data.lastname}}</span>
+      </div>
+    </ng-template>
+  <ion-auto-complete [dataProvider]="completeFeedService"  [options]="{ placeholder : 'Search user' }" [template]="userPather" #searchPather></ion-auto-complete>
+</div>

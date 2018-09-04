@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <pt-header></pt-header>
+  </ion-toolbar>
+  <ion-navbar class="profile-header sub-header-profile">
+    <ion-title text-wrap>{{ 'SETTING.EVENT.TITLE' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <form padding (ngSubmit)="updateEvent()">
+      <div class="form-section"  padding-bottom>
+        <div class="creation-section-title optionnal">
+          <h3>{{ 'CREATION.VALIDATE.EVENT_NAME' | translate }}</h3>
+        </div>
+        <ion-item no-padding>
+          <ion-input margin-top type="text" [(ngModel)]="event.name" name="name"></ion-input>
+        </ion-item>
+      </div>
+
+      <div class="form-section" margin-top padding-bottom>
+        <div class="creation-section-title">
+          <div class="creation-section-number">2</div>
+          <h3>{{ 'CREATION.VALIDATE.EVENT_DATE' | translate }}</h3>
+        </div>
+        <ion-item>
+          <ion-datetime displayFormat="MM/DD/YYYY HH:mm" [(ngModel)]="event.date" name="date"></ion-datetime>
+        </ion-item>
+      </div>
+
+      <div class="form-section" margin-top padding-bottom>
+        <div class="creation-section-title">
+          <div class="creation-section-number">3</div>
+          <h3>{{ 'CREATION.VALIDATE.EVENT_DESCRIPTION' | translate }}</h3>
+        </div>
+        <ion-item no-padding>
+        <ion-textarea autocorrect="true" margin-top fz-elastic [(ngModel)]="event.description" name="description" placeholder="{{ 'CREATION.VALIDATE.DESCRIPTION' | translate }}"></ion-textarea>
+        </ion-item>
+      </div>
+
+      <button double-margin-top ion-button margin-bottom type="submit" class="validateButton" block>{{ 'SETTING.VALIDATE' | translate }}</button>
+    </form>
+</ion-content>

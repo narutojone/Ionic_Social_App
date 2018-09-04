@@ -1,0 +1,18 @@
+<div>
+  <div class="creation-close-modal">
+    <ion-icon name="close" (tap)="closeModal()" color="light"></ion-icon>
+  </div>
+  <h3 no-margin-top text-center>{{ 'CREATION.MODAL.TITLE' | translate }}</h3>
+  <ion-row (tap)="selectValue(1)">
+    <div margin-left class="creation-modal-icon">
+      <ion-icon name="icon-pin-search" color="light"></ion-icon>
+    </div>
+    <h5>{{ 'CREATION.MODAL.CHOICE.PLACE' | translate }}</h5>
+  </ion-row>
+  <ion-row (tap)="selectValue(2)">
+    <div margin-left class="creation-modal-icon">
+      <ion-icon name="icon-road" color="light"></ion-icon>
+    </div>
+    <h5>{{ 'CREATION.MODAL.CHOICE.PATH' | translate }}</h5>
+  </ion-row>
+</div>

@@ -1,0 +1,74 @@
+/********** HEADER **********/
+
+$header-profile-size: 40px;
+$header-logo-size: 40px;
+.header-menu {
+  float: left;
+}
+
+.header {
+  background-color: map-get($colors, primary);
+}
+
+.toolbar-background {
+  background: #f43a50;
+  /* Old browsers */
+  background: -moz-linear-gradient(left, #f43a50 0%, #f44c60 23%, #f43a50 44%, #f44c60 61%, #f43a50 77%, #f44c60 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #f43a50 0%, #f44c60 23%, #f43a50 44%, #f44c60 61%, #f43a50 77%, #f44c60 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #f43a50 0%, #f44c60 23%, #f43a50 44%, #f44c60 61%, #f43a50 77%, #f44c60 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.header-badge {
+  height: 15px;
+  width: 15px;
+  font-size: 10px;
+  padding-left: 4px;
+  margin-top: -10px;
+}
+
+.header-logo {
+  position: absolute;
+  left: 0;
+  font-size: $header-logo-size !important;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+}
+
+.header-profile {
+  float: right;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 100;
+}
+
+.header-profile-infos {
+  float: left;
+  max-width: calc(50vw - #{$header-logo-size} / 2 - #{$header-profile-size} - 10px);
+  margin-right: 5px;
+}
+
+.header-profile img {
+  width: $header-logo-size;
+  height: $header-profile-size;
+  border-radius: 50%;
+}
+
+.header-profile-infos span {
+  font-size: x-small;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  display: block;
+  color: map-get($colors, light);
+}
+
+.header-profile-info-points {
+  color: map-get($colors, light);
+  opacity: 0.65;
+  text-align: center;
+}

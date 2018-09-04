@@ -1,0 +1,82 @@
+page-login {
+
+  .login-content {
+    background-color: map-get($colors, primary);;
+  }
+
+  .login-top {
+    color: white;
+
+    h1 {
+      margin-bottom: 0;
+    }
+
+    h4 {
+      margin-top: 0;
+    }
+
+    img {
+      width: 30%;
+      margin-left: 35%;
+    }
+  }
+
+  .login-cover {
+    width: 100%;
+  }
+
+  .login-image {
+    width: 100%;
+    height: 40%;
+  }
+
+  .login-logo {
+    height: 30%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+
+  .login-button {
+    text-align: center;
+
+    ion-icon {
+      margin-right: 16px;
+      font-size: 30px !important;
+    }
+  }
+
+  .login-button button {
+    text-transform: none;
+  }
+
+  .login-text {
+    display: block;
+  }
+
+  .login-footer {
+    color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .app-name {
+    width: 25%;
+  }
+
+  .app-policy {
+  }
+
+  .app-version {
+    width: 25%;
+    text-align: right;
+  }
+
+}

@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <pt-header></pt-header>
+  </ion-toolbar>
+  <ion-navbar class="profile-header sub-header-profile">
+    <pt-sub-bar-icon-title [img]="path.user.getProfilePicture()" [path]="path" [title]="path.name"></pt-sub-bar-icon-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content overflow-scroll="true">
+  <div class="path-details-main" image-border>
+    <img image-display [src]="path.getCover()">
+  </div>
+
+  <h2 text-center margin-top> {{ 'PATH.DETAILS.CREATOR' | translate }} </h2>
+  <ion-item class="user-ion-item">
+    <div padding>
+      <ion-row>
+        <ion-col col-3 (click)="goProfile(path.user)">
+          <img src="{{path.user.getProfilePicture()}}" />
+        </ion-col>
+        <ion-col col-6 padding-top (click)="goProfile(path.user)">
+          <h3>{{path.user.firstname}} {{path.user.lastname}}</h3>
+          <p>{{path.user.rank}} | {{path.user.points}} Pts</p>
+        </ion-col>
+        <ion-col col-3>
+          <pt-follow [u]="path?.user" primary-color></pt-follow>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-item>
+
+  <h2 text-center margin-top> Location </h2>
+  <div padding (tap)="goPathMap()" class="path-details-location" [style.background-image]="'url(' + path.getMapImage() + ')'">
+  </div>
+
+  <h2 text-center margin-top> {{ 'PATH.DETAILS.STEPS' | translate }} </h2>
+  <div *ngFor="let p of path.places;" margin-top>
+    <pt-card-place [place]="p"></pt-card-place>
+  </div>
+
+  <div *ngIf="user.getUserId() === u.id">
+    <h2 text-center padding margin> {{ 'PATH.DETAILS.UNDONETEXT' | translate }} </h2>
+    <button ion-button (tap)="validatePath(path)" class="validateButton" block>{{ 'PATH.DETAILS.UNDONEBUTTON' | translate }}</button>
+  </div>
+
+</ion-content>

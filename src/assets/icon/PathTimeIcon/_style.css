@@ -1,0 +1,191 @@
+@font-face {
+  font-family: 'PathTimeIcon';
+  src:  url('../assets/icon/PathTimeIcon/fonts/PathTimeIcon.eot?g7re5w');
+  src:  url('../assets/icon/PathTimeIcon/fonts/PathTimeIcon.eot?g7re5w#iefix') format('embedded-opentype'),
+    url('../assets/icon/PathTimeIcon/fonts/PathTimeIcon.ttf?g7re5w') format('truetype'),
+    url('../assets/icon/PathTimeIcon/fonts/PathTimeIcon.woff?g7re5w') format('woff'),
+    url('../assets/icon/PathTimeIcon/fonts/PathTimeIcon.svg?g7re5w#PathTimeIcon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.ion-md-pt-circles,
+.ion-md-pt-circles-outline,
+.ion-md-pt-comment,
+.ion-md-pt-comment-outline,
+.ion-md-pt-couple,
+.ion-md-pt-couple-outline,
+.ion-md-pt-create,
+.ion-md-pt-create-outline,
+.ion-md-pt-create2,
+.ion-md-pt-create-outline2,
+.ion-md-pt-exploration,
+.ion-md-pt-exploration-outline,
+.ion-md-pt-followers,
+.ion-md-pt-followers-outline,
+.ion-md-pt-friends,
+.ion-md-pt-friends-outline,
+.ion-md-pt-historic,
+.ion-md-pt-historic-outline,
+.ion-md-pt-home,
+.ion-md-pt-home-outline,
+.ion-md-pt-like,
+.ion-md-pt-like-outline,
+.ion-md-pt-logo,
+.ion-md-pt-logo-outline,
+.ion-md-pt-mood,
+.ion-md-pt-pathlist,
+.ion-md-pt-pathlist-outline,
+.ion-md-pt-people,
+.ion-md-pt-photo,
+.ion-md-pt-photo-outline,
+.ion-md-pt-place,
+.ion-md-pt-plan,
+.ion-md-pt-price,
+.ion-md-pt-rate,
+.ion-md-pt-rate-outline,
+.ion-md-pt-record,
+.ion-md-pt-record-outline,
+.ion-md-pt-solo,
+.ion-md-pt-solo-outline,
+.ion-md-pt-spider,
+.ion-md-pt-spider-outline
+{
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'PathTimeIcon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ion-md-pt-circles:before {
+  content: "\e901";
+}
+.ion-md-pt-circles-outline:before {
+  content: "\e902";
+}
+.ion-md-pt-comment:before {
+  content: "\e903";
+}
+.ion-md-pt-comment-outline:before {
+  content: "\e904";
+}
+.ion-md-pt-couple:before {
+  content: "\e905";
+}
+.ion-md-pt-couple-outline:before {
+  content: "\e906";
+}
+.ion-md-pt-create:before {
+  content: "\e907";
+}
+.ion-md-pt-create-outline:before {
+  content: "\e908";
+}
+.ion-md-pt-create-outline2:before {
+  content: "\e909";
+}
+.ion-md-pt-create2:before {
+  content: "\e90a";
+}
+.ion-md-pt-exploration:before {
+  content: "\e90b";
+}
+.ion-md-pt-exploration-outline:before {
+  content: "\e90c";
+}
+.ion-md-pt-followers:before {
+  content: "\e90d";
+}
+.ion-md-pt-followers-outline:before {
+  content: "\e90e";
+}
+.ion-md-pt-friends:before {
+  content: "\e90f";
+}
+.ion-md-pt-friends-outline:before {
+  content: "\e910";
+}
+.ion-md-pt-historic:before {
+  content: "\e911";
+}
+.ion-md-pt-historic-outline:before {
+  content: "\e912";
+}
+.ion-md-pt-home:before {
+  content: "\e913";
+}
+.ion-md-pt-home-outline:before {
+  content: "\e914";
+}
+.ion-md-pt-like:before {
+  content: "\e915";
+}
+.ion-md-pt-like-outline:before {
+  content: "\e916";
+}
+.ion-md-pt-logo:before {
+  content: "\e917";
+}
+.ion-md-pt-logo-outline:before {
+  content: "\e918";
+}
+.ion-md-pt-mood:before {
+  content: "\e919";
+}
+.ion-md-pt-pathlist:before {
+  content: "\e91a";
+}
+.ion-md-pt-pathlist-outline:before {
+  content: "\e91b";
+}
+.ion-md-pt-people:before {
+  content: "\e91c";
+}
+.ion-md-pt-photo:before {
+  content: "\e91d";
+}
+.ion-md-pt-photo-outline:before {
+  content: "\e91e";
+}
+.ion-md-pt-place:before {
+  content: "\e91f";
+}
+.ion-md-pt-plan:before {
+  content: "\e920";
+}
+.ion-md-pt-price:before {
+  content: "\e921";
+}
+.ion-md-pt-rate:before {
+  content: "\e922";
+}
+.ion-md-pt-rate-outline:before {
+  content: "\e923";
+}
+.ion-md-pt-record:before {
+  content: "\e924";
+}
+.ion-md-pt-record-outline:before {
+  content: "\e925";
+}
+.ion-md-pt-solo:before {
+  content: "\e926";
+}
+.ion-md-pt-solo-outline:before {
+  content: "\e927";
+}
+.ion-md-pt-spider:before {
+  content: "\e928";
+}
+.ion-md-pt-spider-outline:before {
+  content: "\e929";
+}

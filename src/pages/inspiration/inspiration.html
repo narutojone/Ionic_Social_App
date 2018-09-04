@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <pt-header></pt-header>
+  </ion-toolbar>
+  <ion-navbar #inspirationNavBar class="sub-header sub-header-inspiration">
+    <ion-scroll scrollX="true" class="sub-header-users">
+      <div *ngFor="let path of inspiration.paths" class="path-user-header" tappable (touchstart)="touchStartPtTap($event)" (touchend)="touchEndPtTap($event) && selectPath(path)">
+        <img [src]="path.user.getProfilePicture()"/>
+        <div *ngIf="selected.id !== path.id" class="not-selected"></div>
+        <div *ngIf="selected.id === path.id" class="selected"></div>
+      </div>
+    </ion-scroll>
+  </ion-navbar>
+</ion-header>
+
+<ion-content text-center>
+
+  <div #inspirationMap id="inspirationMap" ></div>
+  <button ion-button class="validateButton" color="primary" (tap)="goPathDetail()">{{ 'INSPIRATION.VALIDATE' | translate }}</button>
+
+</ion-content>

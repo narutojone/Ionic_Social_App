@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <pt-header></pt-header>
+  </ion-toolbar>
+  <ion-navbar #profilNavBar class="profile-header sub-header-profile">
+    <ion-icon class="profile-header-icon-left" name="md-pt-photo" color="white"></ion-icon>
+    <img [src]="u.getProfilePicture()"/>
+    <div class="profile-header-stats">
+      <span>
+        <b>{{ u.follows }}</b> {{ 'PROFILE.INSPIRATIONS' | translate }}
+        <br/>
+        <b>{{ u.followers }}</b> {{ 'PROFILE.INFLUENCES' | translate }}
+      </span>
+    </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content default-grey-background>
+  <ion-grid *ngIf="u.photoList.length > 0">
+	<ion-row *ngFor="let col of rows">
+	  <ion-col width-33 *ngFor="let item of col" [style.background-image]="'url(' + item.url + ')'" class="col-photo" (tap)="goPlaceDetail(item.place)">
+	  </ion-col>
+	</ion-row>
+</ion-grid>
+
+<pt-page-empty *ngIf="u.facebook_id === user.getFBID() && u.photoList.length === 0" page="PHOTO" image="assets/img/comment-page.png"></pt-page-empty>
+<pt-page-empty *ngIf="u.facebook_id !== user.getFBID() && u.photoList.length === 0" page="PHOTOOTHER" image="assets/img/comment-page.png"></pt-page-empty>
+
+
+</ion-content>

@@ -1,0 +1,141 @@
+<ion-card class="card-v2" padding no-padding-bottom>
+
+  <ion-row low-padding-bottom (tap)="goEventDetail()">
+    <ion-col col-2 no-padding>
+      <ion-avatar>
+        <div class="user-icon-image">
+          <img [src]="event.user.getProfilePicture()">
+        </div>
+      </ion-avatar>
+    </ion-col>
+    <ion-col col-7 class="event-card-user">
+      <h5><strong>{{event.user.firstname}} {{event.user.lastname}}</strong> is offering an event : {{event.name}}</h5>
+    </ion-col>
+    <ion-col col-3 no-padding *ngIf="event.date">
+      <div class="event-card-clock-section">
+        <ion-icon name="icon-time-3"></ion-icon>
+        <h4>{{event.date | date:'HH.mm' : timezone}}</h4>
+      </div>
+      <div class="event-card-date-section">
+        <h4>{{event.date | date:'dd'}}</h4>
+        <h4>{{event.date | date:'MMM'}}</h4>
+      </div>
+    </ion-col>
+  </ion-row>
+
+  <div *ngIf="!event.activity.places" class="card-div-place-image" (tap)="goEventDetail()">
+    <div class="bottom-image-overlay"></div>
+    <div class="card-event-user-accept">
+      <ion-icon name="icon-check-circle-07"></ion-icon>
+      <h5><strong>{{event.getInterestedPeople()}}/{{event.getGroupMembersCount()}}</strong></h5>
+    </div>
+    <img [src]="event.activity.getCover()">
+    <p class="card-place-city">{{event.activity.getCityName() | uppercase}}</p>
+    <p class="card-place-name">{{event.activity.name}}</p>
+    <p class="card-place-category">{{event.activity.getFirstActivityTypeName()}}</p>
+    <p class="card-place-mood" *ngIf="event.activity.hasMoods()">{{event.activity.getFirstMood().getName() | uppercase}}
+      <ion-icon name="{{event.activity.getFirstMood().getIcon(true)}}" color="secondary"></ion-icon>
+    </p>
+    <p class="card-place-rating">{{event.activity.note | number:'1.0-2' }}
+      <ion-icon name="star"></ion-icon>
+    </p>
+  </div>
+
+  <div *ngIf="event.activity.places" class="card-div-path-image" (tap)="goEventDetail()">
+    <div class="bottom-image-overlay"></div>
+    <div class="card-event-user-accept">
+      <ion-icon name="icon-check-circle-07"></ion-icon>
+      <h5><strong>{{event.getInterestedPeople()}}/{{event.getGroupMembersCount()}}</strong></h5>
+    </div>
+    <img [src]="event.activity.getCover()">
+    <p class="card-path-city">{{event.activity.getCityName() | uppercase}}</p>
+    <p class="card-path-name">{{event.activity.name}}</p>
+    <p class="card-path-creator">by {{event.activity.getCreatorName()}}</p>
+    <p class="card-path-mood" *ngIf="event.activity.hasMoods()">{{event.activity.getFirstMood().getName() | uppercase}}
+      <ion-icon name="{{event.activity.getFirstMood().getIcon(true)}}" color="secondary"></ion-icon>
+    </p>
+    <p class="card-path-rating">{{event.activity.note | number:'1.0-2' }}
+      <ion-icon name="star"></ion-icon>
+    </p>
+    <div *ngIf="event.activity.stepsNumber() === 2">
+      <div class="card-path-logo">
+        <div class="logo-number">
+          <span>1</span>
+        </div>
+        <div class="card-separator-places"></div>
+        <div class="logo-number">
+          <span>2</span>
+        </div>
+      </div>
+      <div class="card-path-place-info card-path-place-first-of-two">
+        <p class="card-path-place-name">{{event.activity.places[0].name}}</p>
+        <p>{{event.activity.places[0].getFirstActivityTypeName()}}</p>
+      </div>
+      <div class="card-path-place-info card-path-place-second-of-two">
+        <p class="card-path-place-name">{{event.activity.places[1].name}}</p>
+        <p>{{event.activity.places[1].getFirstActivityTypeName()}}</p>
+      </div>
+    </div>
+    <div *ngIf="event.activity.stepsNumber() >= 3">
+      <div class="card-path-logo">
+        <div class="logo-number">
+          <span>1</span>
+        </div>
+        <div class="card-small-separator-places"></div>
+        <div class="logo-number">
+          <span>2</span>
+        </div>
+        <div class="card-small-separator-places"></div>
+        <div class="logo-number">
+          <span>3</span>
+        </div>
+      </div>
+      <div class="card-path-place-info card-path-place-first-of-three">
+        <p class="card-path-place-name">{{event.activity.places[0].name}}</p>
+        <p>{{event.activity.places[0].getFirstActivityTypeName()}}</p>
+      </div>
+      <div class="card-path-place-info card-path-place-second-of-three">
+        <p class="card-path-place-name">{{event.activity.places[1].name}}</p>
+        <p>{{event.activity.places[1].getFirstActivityTypeName()}}</p>
+      </div>
+      <div class="card-path-place-info card-path-place-third-of-three">
+        <p class="card-path-place-name">{{event.activity.places[2].name}}</p>
+        <p>{{event.activity.places[2].getFirstActivityTypeName()}}</p>
+      </div>
+    </div>
+  </div>
+
+  <ion-row *ngFor="let comment of event.comments" class="event-card-comments" (tap)="showFullComment(comment)">
+    <ion-col col-2>
+      <img [src]="comment.user.getProfilePicture()">
+    </ion-col>
+    <ion-col col-10>
+      <h5 two-lines-text><strong>{{comment.user.firstname}} {{comment.user.lastname}}</strong> {{comment.text}}</h5>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <div class="event-card-comment-section">
+      <div class="event-card-comment-section-icon icon-normal-size" *ngIf="event.user_response === 0 || event.user_response === 2" (tap)="changeOpinionModal()">
+        <ion-icon name="icon-ic_hourglass_full_24px" color="light"></ion-icon>
+      </div>
+      <div class="event-card-comment-section-icon icon-full-size" *ngIf="event.user_response === 1" (tap)="changeOpinionModal()">
+        <ion-icon name="icon-circle-remove" color="primary"></ion-icon>
+      </div>
+      <div class="event-card-comment-section-icon icon-full-size" *ngIf="event.user_response === 3" (tap)="changeOpinionModal()">
+        <ion-icon name="icon-check-circle-08" color="secondary"></ion-icon>
+      </div>
+
+      <ion-item>
+        <ion-input autocorrect="true" type="text" [(ngModel)]="commentText" placeholder="Leave a comment..." name="comment"></ion-input>
+      </ion-item>
+      <div class="event-card-comment-section-icon active-icon-send" *ngIf="commentText !== ''" (tap)="sendComment()">
+        <ion-icon name="icon-send" color="light"></ion-icon>
+      </div>
+      <div class="event-card-comment-section-icon unactive-icon-send" *ngIf="commentText === ''">
+        <ion-icon name="icon-send" color="light"></ion-icon>
+      </div>
+    </div>
+  </ion-row>
+
+</ion-card>

@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <pt-header></pt-header>
+  </ion-toolbar>
+  <ion-navbar #planificationNavBar class="sub-header sub-header-planification">
+    <ion-buttons start>
+      <button ion-button (tap)="back()">
+        <ion-icon name="md-arrow-back" color="white"></ion-icon>
+      </button>
+    </ion-buttons>
+    <pt-sub-bar-icon-title [icon]="planification.activity_type.getIcon()" [title]="planification.activity_type.name"></pt-sub-bar-icon-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <h2 margin-top margin-bottom text-center text-wrap primary-color padding *ngIf="planification.steps.length > 0">{{ 'PLANIFICATION.PLACES.TITLE' | translate }}</h2>
+  <div *ngFor="let place of planification.steps">
+    <!-- PLACE-BEGIN-->
+    <pt-card-place [place]="place" [needSelection]="true" (goActivityDetails)="goPlaceDetail(place)"></pt-card-place>
+    <!-- PLACE-END-->
+  </div>
+  <pt-page-empty *ngIf="planification.steps.length === 0" page="NORESULT" image="assets/img/path-details-page.png"></pt-page-empty>
+
+</ion-content>

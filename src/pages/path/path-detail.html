@@ -1,0 +1,202 @@
+<ion-header>
+  <ion-toolbar>
+    <pt-header></pt-header>
+  </ion-toolbar>
+  <!--<ion-navbar class="profile-header sub-header-profile">
+    <div class="header-nav-title">
+      <div class="info-section">
+        <img [src]="path.user.getProfilePicture()" *ngIf="path.user.getProfilePicture()" />
+        <h2 two-lines-text margin-left underline-text *ngIf="path.user.id == user.getUser().id && parentPage" (tap)="goToPathSetting()" style="-webkit-box-orient: vertical">{{path.name}}</h2>
+        <h2 two-lines-text margin-left *ngIf="path.user.id != user.getUser().id || !parentPage" style="-webkit-box-orient: vertical">{{path.name}}</h2>
+      </div>
+      <div class="go-section" (tap)="goPath()" *ngIf="path && !path.user_comment && ((path.undone && path.user.facebook_id === user.getFBID()) || (!path.undone && path.user.facebook_id !== user.getFBID()))">
+        <ion-icon name="ios-send" color="white"></ion-icon>
+        <span>Go</span>
+      </div>
+    </div>
+  </ion-navbar>-->
+</ion-header>
+
+<ion-content overflow-scroll="true">
+
+  <div class="red-content-navbar">
+    <button class="back-nav-button" ion-button (tap)="back()">
+        <ion-icon name="md-arrow-back" color="white"></ion-icon>
+      </button>
+    <h2 underline-text *ngIf="path.user.id == user.getUser().id && parentPage" (tap)="goToPathSetting()">{{path.name}}
+      <ion-icon name="ios-information-circle" class="information-icon-title"></ion-icon>
+    </h2>
+    <h2 *ngIf="path.user.id != user.getUser().id || !parentPage">{{path.name}}</h2>
+  </div>
+  <!--<div class="add-section">
+    <ion-fab top right class="add-event-ion-fab" #fab>
+      <button class="add-event-main-button" ion-fab><ion-icon name="ios-arrow-dropdown-circle" color="white"></ion-icon></button>
+      <ion-fab-list side="bottom">
+        <button ion-fab class="add-event-fab pick-todo" (click)="path.toggleLike() ; closeFab(fab) ; showLikedAlert()">
+            <ion-icon *ngIf="!path.isLiked()" name="ios-heart-outline" color="light">
+            </ion-icon>
+            <ion-icon *ngIf="path.isLiked()" name="ios-heart" color="light">
+            </ion-icon>
+            <p *ngIf="path.isLiked()">{{ 'ACTIONS.DISLIKE' | translate }}</p>
+            <p *ngIf="!path.isLiked()">{{ 'ACTIONS.LIKE' | translate }}</p>
+          </button>
+        <button ion-fab class="add-event-fab pick-historic" (click)="path.toggleFavorite() ; closeFab(fab) ; showFavoriteAlert()">
+            <ion-icon *ngIf="path.isFavorite()" name="md-pt-record" color="light"></ion-icon>
+            <ion-icon *ngIf="!path.isFavorite()" name="md-pt-record-outline" color="light"></ion-icon>
+            <p *ngIf="path.isFavorite()">{{ 'ACTIONS.REMOVETODO' | translate }}</p>
+            <p *ngIf="!path.isFavorite()">{{ 'ACTIONS.ADDTODO' | translate }}</p>
+          </button>
+        <button ion-fab class="add-event-fab pick-place" (click)="sharePath() ; closeFab(fab)">
+            <ion-icon name="md-share" color="white"></ion-icon>
+            <p>{{ 'ACTIONS.SHARE' | translate }}</p>
+        </button>
+        <button ion-fab class="add-event-fab pick-path" *ngIf="path && !path.user_comment && ((path.undone && path.user.facebook_id === user.getFBID()) || (!path.undone && path.user.facebook_id !== user.getFBID()))"
+          (click)="goPath() ; closeFab(fab)">
+            <ion-icon name="walk" color="white"></ion-icon>
+            <p>{{ 'ACTIONS.GO' | translate }}</p>
+        </button>
+      </ion-fab-list>
+    </ion-fab>
+  </div>-->
+
+
+  <div class="path-details-main" image-border>
+    <img image-display [src]="path.getCover()">
+    <!--<div class="path-nb-likes" *ngIf="path.nb_likes >= 0">
+      <p>{{path.nb_likes}} </p>
+      <ion-icon name="ios-heart" color="light"></ion-icon>
+    </div>-->
+  </div>
+  <ion-row class="card-footer">
+    <ion-col>
+      <button ion-button center clear big (tap)="path.toggleLike()">
+        <ion-icon name="icon-heart-2-2" primary-color color="primary" *ngIf="path.isLiked()"></ion-icon>
+        <ion-icon name="icon-heart-2" *ngIf="!path.isLiked()"></ion-icon>
+        <div class="button-text">{{path.nb_likes}}</div>
+      </button>
+    </ion-col>
+    <ion-col>
+      <button ion-button center clear big (tap)="goChatPage()">
+        <ion-icon name="icon-chat"></ion-icon>
+        <div class="button-text">{{path.nb_chats}}</div>
+      </button>
+    </ion-col>
+    <ion-col>
+      <button ion-button center clear big (tap)="sharePath()">
+        <ion-icon name="icon-share-bold"></ion-icon>
+      </button>
+    </ion-col>
+    <ion-col>
+      <button ion-button center clear big (tap)="path.toggleFavorite()">
+        <ion-icon name="icon-bookmark-2-2" primary-color color="primary" *ngIf="path.isFavorite()"></ion-icon>
+        <ion-icon name="icon-bookmark-2" *ngIf="!path.isFavorite()"></ion-icon>
+      </button>
+    </ion-col>
+  </ion-row>
+
+  <h2 text-center margin-top> {{ 'PATH.DETAILS.CREATOR' | translate }} </h2>
+  <ion-item class="user-ion-item">
+    <div padding>
+      <ion-row>
+        <ion-col col-3 (click)="goProfile(path.user)">
+          <img src="{{path.user.getProfilePicture()}}" />
+        </ion-col>
+        <ion-col col-6 padding-top (click)="goProfile(path.user)">
+          <h3>{{path.user.firstname}} {{path.user.lastname}}</h3>
+          <p>{{path.user.rank}} | {{path.user.points}} Pts</p>
+        </ion-col>
+        <ion-col col-3>
+          <pt-follow [u]="path.user" primary-color></pt-follow>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-item>
+
+  <h2 text-center margin-top> Informations </h2>
+  <ion-item>
+    <div padding>
+      <h3 text-center> Moods </h3>
+      <p text-wrap text-center *ngFor="let m of path.moods">
+        {{m.getName(translate.currentLang)}}
+      </p>
+    </div>
+  </ion-item>
+  <ion-item *ngIf="path.description">
+    <div padding>
+      <h3 text-center> Description </h3>
+      <p text-wrap text-center>{{path.description}}</p>
+    </div>
+  </ion-item>
+
+  <ion-item *ngIf="path.nb_notes && path.nb_notes > 0">
+    <div padding>
+      <h3 text-center> {{path.nb_notes}} Notes </h3>
+      <pt-star-rating star-center [editable]="false" [(rate)]="path.note"></pt-star-rating>
+    </div>
+  </ion-item>
+
+  <h2 text-center margin-top> Location </h2>
+  <div padding (tap)="goPathMap()" class="path-details-location" [style.background-image]="'url(' + path.getMapImage() + ')'">
+  </div>
+
+  <h2 text-center margin-top> {{ 'PATH.DETAILS.STEPS' | translate }} </h2>
+  <div *ngFor="let p of path.places;" margin-top>
+    <pt-card-place [place]="p"></pt-card-place>
+  </div>
+
+  <div>
+    <h2 text-center margin-top> {{ 'PATH.DETAILS.COMMENTS' | translate }} </h2>
+    <ion-item>
+      <div *ngFor="let c of path.comments" padding>
+        <ion-icon *ngIf="c.user.facebook_id === user.getFBID()" name="ios-create-outline" (tap)="editComment(c, path)" color="primary"></ion-icon>
+        <ion-row>
+          <ion-col col-3>
+            <img style="float: left;" (tap)="goProfile(c.user)" src="{{c.user.getProfilePicture()}}" class="profile-picture" />
+          </ion-col>
+          <ion-col col-9>
+            <h4 text-wrap>
+              {{c.user.firstname}} {{c.user.lastname}}
+            </h4>
+            <p text-wrap *ngIf="c.text && c.text != ''">
+              {{c.text}}
+            </p>
+            <pt-star-rating star-center *ngIf="!c.text || c.text == ''" [editable]="false" [(rate)]="c.rate"></pt-star-rating>
+          </ion-col>
+        </ion-row>
+      </div>
+      <div *ngIf="userComment.id && !includeComment(userComment, path.comments)" padding>
+        <ion-icon *ngIf="userComment.user.facebook_id === user.getFBID()" name="ios-create-outline" (tap)="editComment(userComment, path)"
+          color="primary"></ion-icon>
+        <ion-row>
+          <ion-col col-3>
+            <img style="float: left;" src="{{userComment.user.getProfilePicture()}}" class="profile-picture" />
+          </ion-col>
+          <ion-col col-9>
+            <h4 text-wrap>
+              {{userComment.user.firstname}} {{userComment.user.lastname}}
+            </h4>
+            <p text-wrap *ngIf="userComment.text && userComment.text != ''">
+              {{userComment.text}}
+            </p>
+            <pt-star-rating star-center *ngIf="!userComment.text || userComment.text == ''" [editable]="false" [(rate)]="userComment.rate"></pt-star-rating>
+          </ion-col>
+        </ion-row>
+      </div>
+      <div *ngIf="!userComment.id && !includeComment(userComment, path.comments)" padding>
+        <ion-row (tap)="editComment(userComment, path)">
+          <ion-col col-3 class="comment-icon">
+            <ion-icon name="ios-create-outline" color="primary"></ion-icon>
+          </ion-col>
+          <ion-col col-9 padding-top>
+            <h4 text-wrap primary-color>
+              {{ 'PATH.DETAILS.COMMENTACTION' | translate }}
+            </h4>
+            <p>
+              {{ 'PATH.DETAILS.COMMENTACTIONTEXT' | translate }}
+            </p>
+          </ion-col>
+        </ion-row>
+      </div>
+    </ion-item>
+  </div>
+</ion-content>

@@ -1,0 +1,164 @@
+pt-card-path {
+  .bottom-image-overlay {
+    height: 130px !important;
+  }
+  .card-div-image {
+    position: relative;
+    img {
+      height: 230px;
+      border-radius: 5px;
+    }
+    p {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .card-path-city {
+      color: white;
+      position: absolute;
+      bottom: 111px;
+      left: 12px;
+      font-size: 12px;
+      width: 60%;
+    }
+    .card-path-name {
+      color: white;
+      position: absolute;
+      bottom: 82px;
+      left: 12px;
+      font-weight: 800;
+      font-size: 20px;
+      width: 60%;
+    }
+    .card-path-creator {
+      color: white;
+      position: absolute;
+      bottom: 65px;
+      left: 12px;
+      font-size: 12px;
+    }
+    .card-path-mood {
+      color: map-get($colors, secondary);
+      position: absolute;
+      bottom: 65px;
+      right: 12px;
+      font-size: 12px;
+      font-weight: 800;
+      ion-icon {
+        font-size: 18px !important;
+      }
+    }
+    .card-path-rating {
+      color: gold;
+      position: absolute;
+      bottom: 82px;
+      right: 12px;
+      font-size: 18px;
+    }
+    .card-path-logo {
+      color: white;
+      position: absolute;
+      bottom: 48px;
+      left: 12px;
+      font-size: 10px;
+      .logo-number {
+        border: solid 1px white;
+        text-align: center;
+        border-radius: 50%;
+        display: inline-block;
+        vertical-align: middle;
+        width: 14px;
+        height: 14px;
+      }
+    }
+    .card-path-place-info {
+      color: white;
+      font-size: 12px;
+      p {
+        color: white;
+        font-size: 10px;
+      }
+    }
+    .card-path-place-first-of-two {
+      position: absolute;
+      bottom: 5px;
+      left: 12px;
+      width: 120px;
+    }
+    .card-path-place-second-of-two {
+      position: absolute;
+      bottom: 5px;
+      left: 145px;
+      width: 160px;
+    }
+    .card-path-place-first-of-three {
+      position: absolute;
+      bottom: 5px;
+      left: 12px;
+      width: 80px;
+    }
+    .card-path-place-second-of-three {
+      position: absolute;
+      bottom: 5px;
+      left: 100px;
+      width: 80px;
+    }
+    .card-path-place-third-of-three {
+      position: absolute;
+      bottom: 5px;
+      left: 189px;
+      width: 110px;
+    }
+    .card-path-place-name {
+      font-weight: 600;
+    }
+    .card-separator-places {
+      height: 1px;
+      width: 114px;
+      display: inline-block;
+      vertical-align: middle;
+      background-color: white;
+    }
+    .card-small-separator-places {
+      height: 1px;
+      width: 70px;
+      display: inline-block;
+      vertical-align: middle;
+      background-color: white;
+    }
+    .card-path-select {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 12px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: map-get($colors, primary);
+      ion-icon {
+        font-size: 30px !important;
+        margin-top: 10px;
+        margin-left: 10px;
+        color: white;
+      }
+    }
+  }
+  .path-card-user {
+    margin-left: -10px;
+    h5 {
+      margin-bottom: 8px;
+    }
+  }
+  .path-card-comment-rating {
+    pt-star-rating {
+      margin-left: 8px;
+      font-size: 15px;
+      margin-top: -3px;
+    }
+    span {
+      font-size: 15px;
+      color: map-get($colors, dark-text);
+      margin-top: 4px;
+    }
+  }
+}

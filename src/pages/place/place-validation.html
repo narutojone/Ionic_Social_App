@@ -1,0 +1,65 @@
+<ion-header>
+  <!-- <ion-toolbar>
+    <pt-header></pt-header>
+  </ion-toolbar> -->
+  <ion-navbar class="profile-header sub-header-profile">
+    <ion-buttons start>
+      <button ion-button (tap)="back()">
+        <ion-icon name="md-arrow-back" color="white"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title text-wrap>{{place.name}}</ion-title>
+    <ion-buttons end *ngIf="showReset()">
+      <button ion-button solid (tap)="reset()" color="white">
+        Reset
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <h2> {{ 'CREATION.CREATE.NEW_VALIDATION' | translate }}</h2>
+  <!-- Place Category -->
+  <div class="creation-section" margin-top margin-bottom [ngClass]="{ 'place-creation-category-selected': selected_category }">
+
+  <div class="creation-section-title">
+    <ion-icon name="md-icon-funnel-39" color="primary"></ion-icon>
+    <h3>{{ 'CREATION.CREATE.TYPE' | translate }}</h3>
+  </div>
+
+  <ion-scroll scrollX="true" margin-left margin-top class="place-creation-section-content">
+    <div *ngFor="let category of filter.categories" class="place-creation-filter">
+      <span *ngIf="categoryActive(category)" class="active">{{ category.getName(translate.currentLang) }}</span>
+      <span *ngIf="!categoryActive(category)">{{ category.getName(translate.currentLang) }}</span>
+      <ion-icon *ngIf="!categoryActive(category)" (tap)="selectCategory(category)" name="{{ category.getIcon(true) }}" color="light_grey">
+      </ion-icon>
+      <ion-icon *ngIf="categoryActive(category)" (tap)="selectActiveCategory(category)" name="{{ category.getIcon(true) }}" color="primary">
+      </ion-icon>
+    </div>
+  </ion-scroll>
+  <pt-popover-category [parent]="selected_category" [result]="place.getCategories()" *ngIf="selected_category">
+  </pt-popover-category>
+</div>
+
+
+<!-- Place Mood -->
+<div class="creation-section section-comment">
+  <div class="creation-section-title">
+      <ion-icon name="md-icon-photo-editor" color="primary"></ion-icon>
+    <h3>{{ 'CREATION.CREATE.MOOD' | translate }}</h3>
+  </div>
+
+  <ion-scroll margin-left margin-top scrollX="true" class="place-creation-section-content">
+    <div *ngFor="let mood of filter.moods" class="place-creation-filter">
+      <span *ngIf="place.hasMood(mood)" class="active">{{ mood.getName(translate.currentLang) }}</span>
+      <span *ngIf="!place.hasMood(mood)">{{ mood.getName(translate.currentLang) }}</span>
+      <ion-icon *ngIf="!place.hasMood(mood)" (tap)="addMood(mood)" name="{{ mood.getIcon(true) }}" color="light_grey">
+      </ion-icon>
+      <ion-icon *ngIf="place.hasMood(mood)" (tap)="removeMood(mood)" name="{{ mood.getIcon(true) }}" color="primary">
+      </ion-icon>
+    </div>
+  </ion-scroll>
+</div>
+<page-comment-place [place]="place" [resetComment]="resetComment" (onChangeComment)="onChangeComment($event)">
+</page-comment-place>
+</ion-content>

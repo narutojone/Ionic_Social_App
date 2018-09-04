@@ -1,0 +1,25 @@
+page-event-setting {
+  ion-navbar {
+    ion-title {
+      color: white;
+      .toolbar-title-ios {
+        color: white;
+      }
+    }
+  }
+  ion-content {
+    h2 {
+      text-align: center;
+      color: map-get($colors, primary);
+    }
+
+    .item-inner {
+      padding-right: 0px!important;
+    } 
+
+    .validateButton {
+      margin-left: calc(50% - 70px);
+      width: 140px;
+    }
+  } 
+}

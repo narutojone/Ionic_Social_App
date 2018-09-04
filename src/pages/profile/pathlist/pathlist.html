@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <pt-header></pt-header>
+  </ion-toolbar>
+  <ion-navbar #profilNavBar class="profile-header sub-header-profile">
+    <ion-icon class="profile-header-icon-left" name="md-pt-pathlist" color="white"></ion-icon>
+    <img [src]="u.getProfilePicture()" />
+    <div class="profile-header-stats">
+      <span>
+        <b>{{ u.follows }}</b> {{ 'PROFILE.INSPIRATIONS' | translate }}
+        <br/>
+        <b>{{ u.followers }}</b> {{ 'PROFILE.INFLUENCES' | translate }}
+      </span>
+    </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content default-grey-background>
+
+  <div text-center>
+    <button ion-button primary class="pathsbutton" [outline]="!isPathActive" (click)="isPathActive = true">{{ 'PATH.PLURIAL' | translate }}</button>
+    <button ion-button primary class="placesbutton" [outline]="isPathActive" (click)="isPathActive = false">{{ 'PLACE.PLURIAL' | translate }}</button>
+  </div>
+
+  <div *ngIf="isPathActive && u.pathList.length > 0">
+    <div *ngFor="let path of u.pathList;">
+      <!-- PATH-BEGIN-->
+      <pt-card-path [path]="path"></pt-card-path>
+      <!-- PATH-END-->
+    </div>
+  </div>
+
+  <div *ngIf="!isPathActive && u.placeList.length > 0">
+    <div *ngFor="let pto of u.placeList;">
+      <!-- PLACE-BEGIN-->
+      <pt-card-place [place]="pto"></pt-card-place>
+      <!-- PLACE-END-->
+    </div>
+  </div>
+
+  <pt-page-empty *ngIf="isPathActive && u.pathList.length === 0 && u.facebook_id === user.getFBID()" page="PATHLIST" image="assets/img/path-details-page.png"></pt-page-empty>
+  <pt-page-empty *ngIf="isPathActive &&  u.pathList.length === 0 && u.facebook_id !== user.getFBID()" page="PATHLISTOTHER" image="assets/img/path-details-page.png"></pt-page-empty>
+  <pt-page-empty *ngIf="!isPathActive && u.placeList.length === 0 && u.facebook_id === user.getFBID()" page="PATHLIST" image="assets/img/path-details-page.png"></pt-page-empty>
+  <pt-page-empty *ngIf="!isPathActive &&  u.placeList.length === 0 && u.facebook_id !== user.getFBID()" page="PATHLISTOTHER" image="assets/img/path-details-page.png"></pt-page-empty>
+
+
+</ion-content>

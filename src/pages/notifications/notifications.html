@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <pt-header></pt-header>
+  </ion-toolbar>
+  <ion-navbar class="profile-header sub-header-profile">
+    <ion-title>{{'MENU.NOTIFICATIONS' | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher (ionRefresh)="refresh$($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+    <ion-list *ngIf="user.getNotifications().length > 0" margin-top margin-bottom>
+        <ion-item *ngFor="let n of user.getNotifications();" [ngClass]="{'unread-background': !n.read}">
+            <ion-row (click)="openNotif(n)">
+              <ion-col col-3 padding-top>
+                <img *ngIf="n.image" [src]="n.image"/>
+              </ion-col>
+                <ion-col col-9 padding-top>
+                    <h3>{{n.getTitle()}}</h3>
+                    <p>{{n.getMessage()}}</p>
+                </ion-col>
+            </ion-row>
+        </ion-item>
+    </ion-list>
+
+    <pt-page-empty *ngIf="user.getNotifications().length === 0" page="NOTIFICATIONS" image="assets/img/user-search.png"></pt-page-empty>
+
+
+</ion-content>

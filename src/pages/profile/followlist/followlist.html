@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <pt-header></pt-header>
+  </ion-toolbar>
+  <ion-navbar #profilNavBar class="profile-header sub-header-profile">
+    <ion-icon class="profile-header-icon-left" name="md-pt-followers" color="white"></ion-icon>
+    <img [src]="u.getProfilePicture()"/>
+    <div class="profile-header-stats">
+      <span>
+        <b>{{ u.follows }}</b> {{ 'PROFILE.INSPIRATIONS' | translate }}
+        <br/>
+        <b>{{ u.followers }}</b> {{ 'PROFILE.INFLUENCES' | translate }}
+      </span>
+    </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content default-grey-background>
+
+  <div text-center>
+    <button ion-button primary class="followbutton" [outline]="!isFollowActive" (click)="isFollowActive = true" >Follows</button>
+    <button ion-button primary class="followerbutton" [outline]="isFollowActive" (click)="isFollowActive = false" >Followers</button>
+  </div>
+
+    <ion-list *ngIf="isFollowActive && u.followList.length > 0" margin-top margin-bottom>
+        <ion-item *ngFor="let us of u.followList;">
+            <ion-row padding-top padding-bottom>
+                <ion-col col-3 (click)="goProfile(us)">
+                    <img src="{{us.getProfilePicture()}}"/>
+                </ion-col>
+                <ion-col col-6 padding-top (click)="goProfile(us)">
+                    <h3>{{us.firstname}} {{us.lastname}}</h3>
+                    <p>{{us.rank}} | {{us.points}} Pts</p>
+                </ion-col>
+                <ion-col col-3>
+                    <pt-follow [u]="us" primary-color></pt-follow>
+                </ion-col>
+            </ion-row>
+        </ion-item>
+    </ion-list>
+    <ion-list *ngIf="!isFollowActive && u.followerList.length > 0" margin-top margin-bottom>
+        <ion-item *ngFor="let us of u.followerList;">
+            <ion-row padding-top padding-bottom>
+                <ion-col col-3 (click)="goProfile(us)">
+                    <img src="{{us.getProfilePicture()}}"/>
+                </ion-col>
+                <ion-col col-6 padding-top (click)="goProfile(us)">
+                    <h3>{{us.firstname}} {{us.lastname}}</h3>
+                    <p>{{us.rank}} | {{us.points}} Pts</p>
+                </ion-col>
+                <ion-col col-3>
+                    <pt-follow [u]="us" primary-color></pt-follow>
+                </ion-col>
+            </ion-row>
+        </ion-item>
+    </ion-list>
+
+    <pt-page-empty *ngIf="u.facebook_id === user.getFBID() && isFollowActive && u.followList.length === 0" page="FOLLOW" image="assets/img/user-search.png"></pt-page-empty>
+    <pt-page-empty *ngIf="u.facebook_id !== user.getFBID() && isFollowActive && u.followList.length === 0" page="FOLLOWOTHER" image="assets/img/user-search.png"></pt-page-empty>
+
+    <pt-page-empty *ngIf="u.facebook_id === user.getFBID() && !isFollowActive && u.followerList.length === 0" page="FOLLOWER" image="assets/img/user-search.png"></pt-page-empty>
+    <pt-page-empty *ngIf="u.facebook_id !== user.getFBID() && !isFollowActive && u.followerList.length === 0" page="FOLLOWEROTHER" image="assets/img/user-search.png"></pt-page-empty>
+
+
+</ion-content>

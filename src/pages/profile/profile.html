@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar>
+    <pt-header></pt-header>
+  </ion-toolbar>
+  <ion-navbar class="profile-header sub-header-profile">
+   <pt-follow [u]="u" light-color margin-left></pt-follow>
+   <img [src]="u.getProfilePicture()"/>
+    <div class="profile-header-stats">
+      <span>
+        <b>{{ u.follows }}</b> {{ 'PROFILE.INSPIRATIONS' | translate }}
+        <br/>
+        <b>{{ u.followers }}</b> {{ 'PROFILE.INFLUENCES' | translate }}
+      </span>
+    </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="profile-content">
+  <ion-grid no-padding-top>
+
+    <ion-row *ngIf="u.facebook_id !== user.getFBID()">
+      <ion-col col-12>
+        <div class="profile-content-grid-item">
+          <h2>
+            {{u.firstname}} {{u.lastname}}
+          </h2>
+          <h4>
+            {{u.rank}} | {{u.points}} Pts
+          </h4>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-6>
+        <div class="profile-content-grid-item" (tap)="goToPathList()">
+          <ion-icon name="md-pt-pathlist" color="primary"></ion-icon>
+          <span *ngIf="u.facebook_id === user.getFBID()" margin-top>{{ 'PROFILE.PATHLIST' | translate }}</span>
+          <span *ngIf="u.facebook_id !== user.getFBID()" margin-top>{{ 'PROFILE.PATHLISTOTHER' | translate }}</span>
+        </div>
+      </ion-col>
+      <ion-col col-6>
+        <div class="profile-content-grid-item" (tap)="goToPhotoList()">
+          <ion-icon name="md-pt-photo" color="primary"></ion-icon>
+          <span *ngIf="u.facebook_id === user.getFBID()" margin-top>{{ 'PROFILE.PHOTOS' | translate }}</span>
+          <span *ngIf="u.facebook_id !== user.getFBID()" margin-top>{{ 'PROFILE.PHOTOSOTHER' | translate }}</span>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-6>
+        <div class="profile-content-grid-item" (tap)="goToFollowList()">
+          <ion-icon name="md-pt-followers" color="primary"></ion-icon>
+          <span *ngIf="u.facebook_id === user.getFBID()" margin-top>{{ 'PROFILE.FOLLOWS' | translate }}</span>
+          <span *ngIf="u.facebook_id !== user.getFBID()" margin-top>{{ 'PROFILE.FOLLOWSOTHER' | translate }}</span>
+        </div>
+      </ion-col>
+      <ion-col col-6>
+        <div class="profile-content-grid-item" (tap)="goToGroupList()">
+          <ion-icon name="ios-people" class="group-icon" color="white"></ion-icon>
+          <span *ngIf="u.facebook_id === user.getFBID()" margin-top>{{ 'PROFILE.COMMUNITY' | translate }}</span>
+          <span *ngIf="u.facebook_id !== user.getFBID()" margin-top>{{ 'PROFILE.COMMUNITYOTHER' | translate }}</span>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="u.facebook_id === user.getFBID()">
+      <ion-col col-6>
+        <div class="profile-content-grid-item" (tap)="goToTodos()">
+          <ion-icon name="md-pt-record" color="primary"></ion-icon>
+          <span margin-top>{{ 'PROFILE.TODOS' | translate }}</span>
+        </div>
+      </ion-col>
+      <ion-col col-6>
+        <div class="profile-content-grid-item" (tap)="goToHistoric()">
+          <ion-icon name="md-pt-historic" color="primary"></ion-icon>
+          <span margin-top>{{ 'PROFILE.HISTORIC' | translate }}</span>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

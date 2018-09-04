@@ -1,0 +1,36 @@
+<div>
+  <div class="new-event-close-modal">
+    <ion-icon name="close" (tap)="closeModal()" color="light"></ion-icon>
+  </div>
+  <h3 no-margin-top text-center>{{ 'EVENT.CREATION.TITLEMODAL' | translate }}</h3>
+  <ion-row (tap)="selectValue(1)">
+    <div margin-left class="new-event-modal-icon">
+      <ion-icon name="icon-pin-search" color="light"></ion-icon>
+    </div>
+    <h5>{{ 'EVENT.CREATION.CHOICE.PLACE' | translate }}</h5>
+  </ion-row>
+  <ion-row (tap)="selectValue(2)">
+    <div margin-left class="new-event-modal-icon">
+      <ion-icon name="icon-bookmark-2" color="light"></ion-icon>
+    </div>
+    <h5>{{ 'EVENT.CREATION.CHOICE.TODO' | translate }}</h5>
+  </ion-row>
+  <ion-row (tap)="selectValue(3)">
+    <div margin-left class="new-event-modal-icon">
+      <ion-icon name="icon-restore" color="light"></ion-icon>
+    </div>
+    <h5>{{ 'EVENT.CREATION.CHOICE.HISTORIC' | translate }}</h5>
+  </ion-row>
+  <ion-row (tap)="selectValue(4)">
+    <div margin-left class="new-event-modal-icon">
+      <ion-icon name="icon-road" color="light"></ion-icon>
+    </div>
+    <h5>{{ 'EVENT.CREATION.CHOICE.MYPATHS' | translate }}</h5>
+  </ion-row>
+  <ion-row (tap)="selectValue(5)">
+    <div margin-left class="new-event-modal-icon">
+      <ion-icon name="icon-circle-add" color="light"></ion-icon>
+    </div>
+    <h5>{{ 'EVENT.CREATION.CHOICE.PATH' | translate }}</h5>
+  </ion-row>
+</div>

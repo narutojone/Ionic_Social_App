@@ -1,0 +1,59 @@
+<ion-card class="group-card" no-margin-top (tap)="goGroupDetail()">
+
+  <div class="card-div-image">
+    <img class="group-img-anim" width-100 [src]="group.getCover()">
+    <div class="border-group">
+      <img src="assets/img/bordure-groupe.png"/>
+    </div>
+    <div class="card-group-user-number">
+      <ion-icon name="icon-single-02-2" color="white"></ion-icon>
+      <p>{{group.getMembersCount()}}</p>
+    </div>
+    <div *ngIf="needSelectionAction" (tap)="selectGroup()" class="card-group-select">
+      <ion-icon name="icon-pin-add" color="white"></ion-icon>
+    </div>
+  </div>
+
+  <ion-row margin-top>
+    <h4 class="damn-weight" text-center width-100>{{group.name}}</h4>
+  </ion-row>
+
+  <ion-row margin-top>
+    <h6 class="damn-grey" text-center width-100>{{group.updated_at | date: 'dd/MM/yyyy' }}</h6>
+  </ion-row>
+
+  <ion-row margin-top>
+    <ion-col>
+      <h4 class="damn-weight" text-center>{{group.nb_voting}}</h4>
+    </ion-col>
+    <ion-col>
+      <h4 class="damn-weight" text-center>{{group.nb_todo}}</h4>
+    </ion-col>
+    <ion-col>
+      <h4 class="damn-weight" text-center>{{group.nb_done}}</h4>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <h6 class="damn-grey" text-center>VOTING</h6>
+    </ion-col>
+    <ion-col>
+      <h6 class="damn-grey" text-center>TODO</h6>
+    </ion-col>
+    <ion-col>
+      <h6 class="damn-grey" text-center>DONE</h6>
+    </ion-col>
+  </ion-row>
+
+  <ion-row margin>
+    <ion-col col-9>
+      <h6>{{group.getMembersText()}}</h6>
+    </ion-col>
+    <ion-col col-3 class="card-group-members-image">
+      <img [src]="group.members[0].getProfilePicture()">
+      <img *ngIf="group.members.length >= 2" [src]="group.members[1].getProfilePicture()">
+      <img *ngIf="group.members.length >= 3" [src]="group.members[2].getProfilePicture()">
+    </ion-col>
+  </ion-row>
+
+</ion-card>

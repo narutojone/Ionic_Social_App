@@ -1,0 +1,232 @@
+<ion-header>
+  <ion-toolbar>
+    <pt-header></pt-header>
+  </ion-toolbar>
+  <!--<ion-navbar class="profile-header sub-header-profile">
+    <ion-buttons start *ngIf="createSection">
+      <button ion-button (tap)="back()">
+        <ion-icon name="md-arrow-back" color="white"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title text-wrap>{{place.name}}</ion-title>
+    <ion-icon *ngIf="place.created && place.isFavorite()" class="place-detail-icons" name="md-pt-record" color="light" (tap)="place.toggleFavorite()">
+    </ion-icon>
+    <ion-icon *ngIf="place.created && !place.isFavorite()" class="place-detail-icons" name="md-pt-record-outline" color="light" (tap)="place.toggleFavorite()">
+    </ion-icon>
+    <ion-icon *ngIf="place.created && !place.isLiked()" class="place-detail-icons" name="ios-heart-outline" color="light" (tap)="place.toggleLike()">
+    </ion-icon>
+    <ion-icon *ngIf="place.created && place.isLiked()" class="place-detail-icons" name="ios-heart" color="light" (tap)="place.toggleLike()">
+    </ion-icon>
+  </ion-navbar>-->
+</ion-header>
+
+<ion-content overflow-scroll="true">
+
+  <div class="red-content-navbar">
+    <button class="back-nav-button" ion-button (tap)="back()">
+        <ion-icon name="md-arrow-back" color="white"></ion-icon>
+      </button>
+    <h2 text-wrap>{{place.name}}</h2>
+  </div>
+  <!--<div class="add-section" *ngIf="place.created">
+    <ion-fab top right class="add-event-ion-fab" #fab>
+      <button class="add-event-main-button" ion-fab><ion-icon name="ios-arrow-dropdown-circle" color="white"></ion-icon></button>
+      <ion-fab-list side="bottom">
+        <button ion-fab class="add-event-fab pick-todo" (click)="place.toggleLike() ; closeFab(fab) ; showLikedAlert()">
+            <ion-icon *ngIf="!place.isLiked()" name="ios-heart-outline" color="light">
+            </ion-icon>
+            <ion-icon *ngIf="place.isLiked()" name="ios-heart" color="light">
+            </ion-icon>
+            <p *ngIf="place.isLiked()">{{ 'ACTIONS.DISLIKE' | translate }}</p>
+            <p *ngIf="!place.isLiked()">{{ 'ACTIONS.LIKE' | translate }}</p>
+          </button>
+        <button ion-fab class="add-event-fab pick-historic" (click)="place.toggleFavorite() ; closeFab(fab) ; showFavoriteAlert()">
+            <ion-icon *ngIf="place.isFavorite()" name="md-pt-record" color="light"></ion-icon>
+            <ion-icon *ngIf="!place.isFavorite()" name="md-pt-record-outline" color="light"></ion-icon>
+            <p *ngIf="place.isFavorite()">{{ 'ACTIONS.REMOVETODO' | translate }}</p>
+            <p *ngIf="!place.isFavorite()">{{ 'ACTIONS.ADDTODO' | translate }}</p>
+          </button>
+        <button ion-fab class="add-event-fab pick-place" (click)="sharePlace() ; closeFab(fab)">
+            <ion-icon name="md-share" color="white"></ion-icon>
+            <p>{{ 'ACTIONS.SHARE' | translate }}</p>
+        </button>
+      </ion-fab-list>
+    </ion-fab>
+  </div>-->
+
+
+  <h2 double-margin-top margin-bottom *ngIf="createSection && !place.created" class="page-title">{{ 'PLACE.DETAILS.CREATE' | translate }}</h2>
+  <h2 double-margin-top margin-bottom *ngIf="createSection && place.created" class="page-title">{{ 'PLACE.DETAILS.ADD' | translate }}</h2>
+
+  <div class="place-images">
+    <ion-slides pager>
+      <ion-slide *ngFor="let img of place.images">
+        <div class="place-details-main" image-border>
+          <img image-display [src]="img">
+        </div>
+      </ion-slide>
+    </ion-slides>
+    <!--<div class="place-nb-likes" *ngIf="place.created && place.nb_likes >= 0">
+      <p>{{place.nb_likes}} </p>
+      <ion-icon name="ios-heart" color="light"></ion-icon>
+    </div>-->
+  </div>
+  <ion-row class="card-footer" *ngIf="place.created">
+    <ion-col>
+      <button ion-button center clear big (tap)="place.toggleLike()">
+        <ion-icon name="icon-heart-2-2" primary-color color="primary" *ngIf="place.isLiked()"></ion-icon>
+        <ion-icon name="icon-heart-2" *ngIf="!place.isLiked()"></ion-icon>
+        <div class="button-text">{{place.nb_likes}}</div>
+      </button>
+    </ion-col>
+    <ion-col>
+      <button ion-button center clear big (tap)="goChatPage()">
+        <ion-icon name="icon-chat"></ion-icon>
+        <div class="button-text">{{place.nb_chats}}</div>
+      </button>
+    </ion-col>
+    <ion-col>
+      <button ion-button center clear big (tap)="sharePlace()">
+        <ion-icon name="icon-share-bold"></ion-icon>
+      </button>
+    </ion-col>
+    <ion-col>
+      <button ion-button center clear big (tap)="place.toggleFavorite()">
+        <ion-icon name="icon-bookmark-2-2" primary-color color="primary" *ngIf="place.isFavorite()"></ion-icon>
+        <ion-icon name="icon-bookmark-2" *ngIf="!place.isFavorite()"></ion-icon>
+      </button>
+    </ion-col>
+  </ion-row>
+
+  <ion-icon margin-left class="place-details-clock" name="clock" color="info" *ngIf="place.opening_hours" (click)="timetableClick()">
+  </ion-icon>
+
+  <div class="place-details-schedule" *ngIf="timetable">
+    <ion-icon name="ios-arrow-up" color="info" (click)="timetable = false">
+    </ion-icon>
+    <p>{{place.getTimetable()}}</p>
+  </div>
+
+  <h2 text-center margin-top> Informations </h2>
+  <ion-item *ngIf="place.created && place.hasCategories()">
+    <div padding>
+      <h3 text-center> Categories </h3>
+      <p text-wrap text-center *ngFor="let at of place.activity_types">
+        {{at.name}}
+      </p>
+    </div>
+  </ion-item>
+  <ion-item *ngIf="place.created && place.hasMoods()">
+    <div padding>
+      <h3 text-center> Moods </h3>
+      <p text-wrap text-center *ngFor="let m of place.moods">
+        {{m.name}}
+      </p>
+    </div>
+  </ion-item>
+  <ion-item *ngIf="place.getPhone()">
+    <div padding>
+      <h3 text-center> {{ 'PLACE.DETAILS.PHONE' | translate }} </h3>
+      <a text-center class="action-link" href="tel:{{place.getPhone()}}">
+        <ion-icon name="call"></ion-icon>
+        <p text-wrap text-center>
+          {{ place.getPhone() }}
+        </p>
+      </a>
+    </div>
+  </ion-item>
+  <ion-item *ngIf="place.website">
+    <div padding>
+      <h3 text-center> {{ 'PLACE.DETAILS.WEBSITE' | translate }} </h3>
+      <p text-wrap text-center>{{ place.website }}</p>
+    </div>
+  </ion-item>
+  <ion-item *ngIf="place.price">
+    <div padding>
+      <h3 text-center> {{ 'PLACE.DETAILS.PRICE' | translate }} </h3>
+      <p text-wrap text-center>{{ place.price }}</p>
+    </div>
+  </ion-item>
+  <ion-item *ngIf="place.description">
+    <div padding>
+      <h3 text-center> Description </h3>
+      <p text-wrap text-center>{{place.description}}</p>
+    </div>
+  </ion-item>
+
+  <ion-item *ngIf="place.nb_notes > 0">
+    <div padding>
+      <h3 text-center> {{place.nb_notes}} Notes </h3>
+      <pt-star-rating star-center [editable]="false" [(rate)]="place.note"></pt-star-rating>
+    </div>
+  </ion-item>
+
+  <h2 text-center margin-top> {{ 'PLACE.DETAILS.LOCATION' | translate }} </h2>
+  <ion-item>
+    <div padding>
+      <h3 text-center> {{ 'PLACE.DETAILS.ADDRESS' | translate }} </h3>
+      <p text-wrap text-center>{{place.address}}</p>
+    </div>
+  </ion-item>
+  <div padding class="place-details-location" (tap)="goPlaceMap()" [style.background-image]="'url(' + place.getMapImage() + ')'">
+  </div>
+
+  <div *ngIf="place.created">
+    <h2 text-center margin-top> {{ 'PLACE.DETAILS.COMMENTS' | translate }} </h2>
+    <ion-item>
+      <div *ngFor="let c of place.comments" padding>
+        <ion-icon *ngIf="c.user.facebook_id === user.getFBID()" name="ios-create-outline" (tap)="editComment(c, place)" color="primary"></ion-icon>
+        <ion-row>
+          <ion-col col-3>
+            <img style="float: left;" (tap)="goProfile(c.user)" src="{{c.user.getProfilePicture()}}" class="profile-picture" />
+          </ion-col>
+          <ion-col col-9>
+            <h4 text-wrap>
+              {{c.user.firstname}} {{c.user.lastname}}
+            </h4>
+            <p text-wrap *ngIf="c.text && c.text != ''">
+              {{c.text}}
+            </p>
+            <pt-star-rating star-center *ngIf="!c.text || c.text == ''" [editable]="false" [(rate)]="c.rate"></pt-star-rating>
+          </ion-col>
+        </ion-row>
+      </div>
+      <div *ngIf="userComment.id && !includeComment(userComment, place.comments)" padding>
+        <ion-icon *ngIf="userComment.user.facebook_id === user.getFBID()" name="ios-create-outline" (tap)="editComment(userComment, place)"
+          color="primary"></ion-icon>
+        <ion-row>
+          <ion-col col-3>
+            <img style="float: left;" src="{{userComment.user.getProfilePicture()}}" class="profile-picture" />
+          </ion-col>
+          <ion-col col-9>
+            <h4 text-wrap>
+              {{userComment.user.firstname}} {{userComment.user.lastname}}
+            </h4>
+            <p text-wrap *ngIf="userComment.text && userComment.text != ''">
+              {{userComment.text}}
+            </p>
+            <pt-star-rating star-center *ngIf="!userComment.text || userComment.text == ''" [editable]="false" [(rate)]="userComment.rate"></pt-star-rating>
+          </ion-col>
+        </ion-row>
+      </div>
+      <div *ngIf="!userComment.id && !includeComment(userComment, place.comments)" padding>
+        <ion-row (tap)="editComment(userComment, place)">
+          <ion-col class="comment-icon" col-3>
+            <ion-icon name="ios-create-outline" color="primary"></ion-icon>
+          </ion-col>
+          <ion-col col-9 padding-top>
+            <h4 text-wrap primary-color>
+              {{ 'PLACE.DETAILS.COMMENTACTION' | translate }}
+            </h4>
+            <p>
+              {{ 'PLACE.DETAILS.COMMENTACTIONTEXT' | translate }}
+            </p>
+          </ion-col>
+        </ion-row>
+      </div>
+    </ion-item>
+  </div>
+
+  <button ion-button margin-top margin-bottom class="validateButton" color="primary" *ngIf="createSection" (tap)="dismiss()">{{ 'PLACE.DETAILS.CREATE' | translate }}</button>
+
+</ion-content>

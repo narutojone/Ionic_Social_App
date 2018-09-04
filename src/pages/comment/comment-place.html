@@ -1,0 +1,43 @@
+   <form padding-top (ngSubmit)="sendComment()" class="page-comment-place">
+      <div padding-top padding-bottom>
+        <div class="creation-section-title">
+            <ion-icon name="md-icon-shape-star" color="primary"></ion-icon>
+          <h3>{{ 'COMMENT.RATING' | translate }}</h3>
+        </div>
+        <div class="creation-section-title">
+          <pt-star-rating [editable]="true" [(rate)]="comment.rate" (rateChange)="onRateChange($event)"></pt-star-rating>
+        </div>
+      </div>
+      <div margin-top padding-bottom>
+        <div class="creation-section-title">
+            <ion-icon name="md-icon-chat-content" color="primary"></ion-icon>
+          <h3>{{ 'COMMENT.COMMENTS' | translate }}</h3>
+        </div>
+        <div class="creation-section-content" margin-top margin-left margin-right>
+          <ion-textarea autocorrect="true" fz-elastic [(ngModel)]="comment.text" name="comment" (input)="onCommentTextChange()"></ion-textarea>
+        </div>
+      </div>
+      <div style="border: none;" margin-top>
+        <div class="creation-section-content">
+            <button type="button" ion-button (click)="presentConfirm()" class="full-width-button" round icon-start outline color="info">
+              <ion-icon name="md-image"></ion-icon>
+              <span>{{ 'COMMENT.UPLOADIMAGE' | translate }}</span>
+            </button>
+        </div>
+        <div margin-top>
+          <div *ngFor="let img of comment.images" class="comment-images">
+              <img [src]="img"/>
+              <div class="delete-icon">
+                <ion-icon name="close" (tap)="AddImageToRemove(img)"></ion-icon>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="creation-section-content">
+        <button type="submit" ion-button margin-bottom class="full-width-button" round icon-start>
+          <ion-icon name="md-icon-position-pin-2"></ion-icon>
+          <span>{{ 'COMMENT.CREATE' | translate }}</span>
+        </button>
+      </div>
+    </form>
+<!-- </ion-content> -->

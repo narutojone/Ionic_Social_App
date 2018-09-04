@@ -1,0 +1,100 @@
+page-creation {
+  ion-content {
+
+    .guideline-text {
+      font-size: 16px;
+    }
+
+    .creation-menu {
+      width: 100%;
+      text-align: center;
+      border-left: solid 10px white;
+      border-right: solid 10px white;
+      border-top: solid 10px white;
+
+      p {
+        color: white;
+        font-size: 7vw;
+        font-weight: 900;
+      }
+
+      ion-icon {
+        font-size: 30vw !important;
+        color: white;
+      }
+    }
+
+    .around-me-menu {
+      background-color: map-get($colors, around-me);
+      position: relative;
+      height: 33vh;
+
+      ion-icon {
+        margin-top: -4vw;
+      }
+    }
+
+    .guide-line-menu {
+      background-color: map-get($colors, around-me);
+      position: relative;
+      height: 33vh;
+
+      ion-icon {
+        width: 30vw;
+        height: 30vw;
+        border-radius: 50%;
+        background-color: white;
+        color: map-get($colors, around-me);
+        margin-top: -4vw;
+        font-size: 25vw !important;
+        padding-top: 2.5vw
+      }
+    }
+
+    .creation-create-menu {
+      height: 47vh;
+      position: relative;
+      border-bottom: solid 10px white;
+
+      p {
+        word-spacing:9999px
+      }
+
+      .creation-create-menu-path {
+        background-color: map-get($colors, secondary);
+      }
+
+      .creation-create-menu-place {
+        background-color: map-get($colors, primary);
+        border-right: solid 10px white;
+      }
+
+    }
+
+    .creation-create-menu-guideline {
+      height: 27vh;
+      position: relative;
+      border-bottom: solid 10px white;
+
+      p {
+        word-spacing:9999px
+      }
+
+      ion-icon {
+        margin: auto;
+      }
+
+      .creation-create-menu-path-guideline {
+        background-color: map-get($colors, secondary);
+        display: flex;
+      }
+
+      .creation-create-menu-place-guideline {
+        background-color: map-get($colors, primary);
+        display: flex;
+      }
+
+    }
+    
+  }
+}

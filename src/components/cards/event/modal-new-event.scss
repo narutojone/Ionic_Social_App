@@ -1,0 +1,43 @@
+new-event-modal {
+  padding: 12px;
+  background-color: map-get($colors, primary);
+  border-radius: 10px;
+  h3 {
+    color: white;
+  }
+
+
+  ion-row {
+    margin-top: 12px;
+  }
+  ion-icon {
+    color: white;
+    font-size: 30px !important;
+  }
+
+  h5 {
+    color: white;
+    margin-top: 8px;
+    margin-left: 12px;
+  }
+
+  .new-event-close-modal {
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    z-index: 50;
+  }
+}
+
+ion-modal.new-event-modal ion-backdrop {
+  visibility: visible !important;
+  z-index: 0;
+}
+
+ion-modal.new-event-modal .modal-wrapper {
+  bottom: 65px !important;
+  right: 16px !important;
+  width: 70vw !important;
+  height: 300px !important;
+  position: absolute;
+}

@@ -1,0 +1,27 @@
+<div class="add-event-modal-pick">
+  <div class="add-event-modal-title">
+    <h2 text-center>{{ 'EVENT.CREATION.CHOICE.PICKONE' | translate }}</h2>
+  </div>
+    <div class="add-event-modal-choice" (click)="closeModal('todos')">
+      <ion-icon name="md-pt-record" color="white"></ion-icon>
+      <p>{{ 'EVENT.CREATION.CHOICE.TODO' | translate }}</p>
+    </div>
+    <div class="add-event-modal-choice" (click)="closeModal('historic')">
+      <ion-icon name="md-pt-historic" color="white"></ion-icon>
+      <p>{{ 'EVENT.CREATION.CHOICE.HISTORIC' | translate }}</p>
+    </div>
+</div>
+
+<div class="add-event-modal-create">
+    <div class="add-event-modal-title">
+      <h2 text-center>{{ 'EVENT.CREATION.CHOICE.CREATEONE' | translate }}</h2>
+    </div>
+    <div class="add-event-modal-choice" (click)="closeModal('create-path')">
+      <ion-icon name="md-pt-plan" color="white"></ion-icon>
+      <p>{{ 'EVENT.CREATION.CHOICE.PATH' | translate }}</p>
+    </div>
+    <div class="add-event-modal-choice" (click)="closeModal('create-place')">
+      <ion-icon name="md-pt-place" color="white"></ion-icon>
+      <p>{{ 'EVENT.CREATION.CHOICE.PLACE' | translate }}</p>
+    </div>
+</div>

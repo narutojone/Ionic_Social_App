@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <pt-header></pt-header>
+  </ion-toolbar>
+  <ion-navbar #creation2NavBar class="sub-header sub-header-creation2">
+    <ion-scroll scrollX="true" class="sub-header-places">
+      <ion-list no-margin [dragula]='"my-places"' class="border-places" [dragulaModel]="path.places">
+        <div *ngFor="let place of path.places" class="place-header place-div" (tap)="selectPlace(place)">
+          <ion-icon name="{{place.activity_types[0].getIcon()}}" color="white"></ion-icon>
+          <!--<div class="deletePlace" [class.hide]="!placeView">
+            <ion-icon name="close" color="white"></ion-icon>
+          </div>-->
+          <span>{{place.name}}</span>
+        </div>
+      </ion-list>
+      <div class="place-header action-header" [class.hide]="placeView" (tap)="addPlaceView()">
+        <ion-icon name="ios-add-circle-outline" color="white"></ion-icon>
+        <span>{{ 'CREATION.ADDPLACE' | translate }}</span>
+      </div>
+      <div class="place-header action-header" [class.hide]="!placeView" (tap)="deletePlaceView()">
+        <ion-icon name="ios-remove-circle-outline" color="white"></ion-icon>
+        <span>{{ 'CREATION.CANCELADD' | translate }}</span>
+      </div>
+    </ion-scroll>
+  </ion-navbar>
+</ion-header>
+
+<ion-content text-center>
+  <ion-searchbar [class.hide]="!placeView" #creation2Search
+                 id="creatio2Search"
+                 placeholder="{{ 'CREATION.SEARCH' | translate }}" >
+  </ion-searchbar>
+  <div #creation2Map id="creation2Map" ></div>
+  <div class="trash-creation" [hidden]="!activeDrag" [dragula]='"my-places"' [dragulaModel]="deletedPlace">
+    <ion-icon name="ios-trash-outline" color="white"></ion-icon>
+  </div>
+  <button ion-button class="validateButton" color="primary" *ngIf="!placeView" (tap)="createPath()">{{ 'CREATION.VALIDATEPATH' | translate }}</button>
+  <button ion-button class="validateButton" color="secondary" *ngIf="placeView" (tap)="addPlace(tempPlace)">{{ 'CREATION.VALIDATEPLACE' | translate }}</button>
+
+</ion-content>

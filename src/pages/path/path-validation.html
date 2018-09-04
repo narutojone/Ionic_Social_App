@@ -1,0 +1,100 @@
+<ion-header>
+  <ion-toolbar>
+    <pt-header></pt-header>
+  </ion-toolbar>
+  <ion-navbar class="profile-header sub-header-profile">
+    <ion-buttons start>
+      <button ion-button (tap)="back()">
+        <ion-icon name="md-arrow-back" color="white"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title text-wrap>Create this path ?</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <form padding (ngSubmit)="createPath()">
+      <div class="form-section"  padding-bottom>
+        <div class="creation-section-title">
+          <div class="creation-section-number">1</div>
+          <h3>{{ 'CREATION.VALIDATE.PATH_NAME' | translate }}</h3>
+        </div>
+        <ion-item no-padding>
+          <ion-input margin-top type="text" [(ngModel)]="path.name" name="name"></ion-input>
+        </ion-item>
+      </div>
+
+      <div class="form-section" margin-top padding-bottom>
+        <div class="creation-section-title">
+          <div class="creation-section-number">2</div>
+          <h3>{{ 'CREATION.VALIDATE.PLACES' | translate }}</h3>
+        </div>
+        <ion-scroll scrollX="true" class="validate-steps">
+          <div class="validate-steps-container" *ngFor='let step of path.places; last as isLast'>
+            <div class="validate-step" (tap)="goPlaceDetail(step)">
+              <img [src]='step.getCover()'/>
+              <span class="validate-step-name">{{ step.name }}</span>
+              <span class="validate-step-category">{{ step.getCategory(0).name }}</span>
+            </div>
+            <div class="validate-step-dash" *ngIf="!isLast"></div>
+          </div>
+        </ion-scroll>
+      </div>
+
+      <div class="form-section" *ngIf="!uniqueSection" margin-top padding-bottom>
+        <div class="creation-section-title">
+          <div class="creation-section-number">3</div>
+          <h3>{{ 'CREATION.VALIDATE.DESCRIPTION' | translate }}</h3>
+        </div>
+        <ion-item no-padding>
+        <ion-textarea autocorrect="true" margin-top fz-elastic [(ngModel)]="path.description" name="description" placeholder="{{ 'CREATION.VALIDATE.DESCRIPTION' | translate }}"></ion-textarea>
+        </ion-item>
+      </div>
+
+      <div class="form-section" *ngIf="!uniqueSection" margin-top padding-bottom>
+        <div class="creation-section-title">
+          <div class="creation-section-number">4</div>
+          <h3>{{ 'CREATION.VALIDATE.MOODS' | translate }}</h3>
+        </div>
+        <ion-scroll scrollX="true" class="validate-section-scroll">
+          <div *ngFor="let mood of filter.moods" class="validate-scroll-container">
+            <ion-icon *ngIf="!path.hasMood(mood)" (tap)="addMood(mood)" name="{{ mood.getIcon() }}" color="info">
+            </ion-icon>
+            <ion-icon *ngIf="path.hasMood(mood)" (tap)="removeMood(mood)" name="{{ mood.getIcon(true) }}" color="secondary">
+            </ion-icon>
+            <span>{{ mood.name }}</span>
+          </div>
+        </ion-scroll>
+      </div>
+
+      <div class="form-section"  *ngIf="!uniqueSection" margin-top padding-bottom>
+        <div class="creation-section-title">
+          <div class="creation-section-number">5</div>
+          <h3>{{ 'CREATION.VALIDATE.WHOS' | translate }}</h3>
+        </div>
+        <ion-scroll scrollX="true" class="validate-section-scroll">
+          <div *ngFor="let who of filter.whosWithoutPather" class="validate-scroll-container">
+            <ion-icon *ngIf="!path.hasWith(who)" (tap)="addWith(who)" name="{{ who.getIcon() }}" color="info">
+            </ion-icon>
+            <ion-icon *ngIf="path.hasWith(who)" (tap)="removeWith(who)" name="{{ who.getIcon(true) }}" color="secondary">
+            </ion-icon>
+            <span>{{ who.value + '' | translate }}</span>
+          </div>
+        </ion-scroll>
+      </div>
+
+      <button double-margin-top ion-button margin-bottom type="submit" class="validateButton" block>{{ 'CREATION.VALIDATE.BUTTON' | translate }}</button>
+    </form>
+    <!--<div>
+        <div class="validate-section-title">
+          <div class="validate-section-number">2</div>
+          <span>{{ 'CREATION.VALIDATE.SEARCH' | translate }}</span>
+        </div>
+        <ion-searchbar #validationSearch
+                      id="validationSearch"
+                      class="validate-section-search"
+                      placeholder="{{ 'CREATION.VALIDATE.SEARCH' | translate }}" >
+        </ion-searchbar>
+      </div>-->
+</ion-content>

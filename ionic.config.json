@@ -1,0 +1,14 @@
+{
+  "name": "pathtime-front",
+  "app_id": "0ce0bec2",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  },
+  "proxies": [
+    {
+      "path": "/",
+      "proxyUrl": "https://pathtime.herokuapp.com"
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+<ion-header>
+  <ion-toolbar>
+    <pt-header></pt-header>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content overflow-scroll="true" default-grey-background>
+  <div class="red-content-navbar">
+    <button class="back-nav-button" ion-button (tap)="back()">
+        <ion-icon name="md-arrow-back" color="white"></ion-icon>
+      </button>
+    <h2 underline-text (tap)="goToGroupSettings()">{{ group.name }}
+      <ion-icon name="ios-information-circle" class="information-icon-title"></ion-icon>
+    </h2>
+  </div>
+  <!--<div class="add-section">
+    <ion-fab top right class="add-event-ion-fab">
+      <button class="add-event-main-button" ion-fab><ion-icon name="md-add-circle" color="white"></ion-icon></button>
+      <ion-fab-list side="bottom">
+        <button ion-fab class="add-event-fab pick-todo" (click)="pickInTodos()">
+            <ion-icon name="md-pt-record" color="white"></ion-icon>
+            <p>{{ 'EVENT.CREATION.CHOICE.TODO' | translate }}</p>
+          </button>
+        <button ion-fab class="add-event-fab pick-historic" (click)="pickInHistoric()">
+            <ion-icon name="md-pt-historic" color="white"></ion-icon>
+            <p>{{ 'EVENT.CREATION.CHOICE.HISTORIC' | translate }}</p>
+          </button>
+        <button ion-fab class="add-event-fab pick-path" (click)="createPath()">
+            <ion-icon name="md-pt-plan" color="white"></ion-icon>
+            <p>{{ 'EVENT.CREATION.CHOICE.PATH' | translate }}</p>
+          </button>
+        <button ion-fab class="add-event-fab pick-place" (click)="createPlace()">
+            <ion-icon name="md-pt-place" color="white"></ion-icon>
+            <p>{{ 'EVENT.CREATION.CHOICE.PLACE' | translate }}</p>
+          </button>
+      </ion-fab-list>
+    </ion-fab>
+  </div>-->
+  <div pull-right class="new-event-div" *ngIf="!(eventMode == 'voting' && events && events.length === 0)" ion-fixed>
+    <ion-icon name="icon-centralize" (tap)="openNewEventModal()" color="light"></ion-icon>
+  </div>
+
+  <!--<div class="group-images">
+    <ion-slides pager>
+      <ion-slide *ngFor="let img of group.getImages()">
+        <div class="group-details-main" image-border>
+          <img image-display [src]="img">
+        </div>
+      </ion-slide>
+    </ion-slides>
+  </div>-->
+
+  <div padding no-margin linear-bg>
+    <ion-segment [(ngModel)]="eventMode" color="light">
+      <ion-segment-button value="voting">
+        Voting
+      </ion-segment-button>
+      <ion-segment-button value="todo">
+        ToDo
+      </ion-segment-button>
+      <ion-segment-button value="done">
+        Done
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <ion-refresher (ionRefresh)="refresh$($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <div *ngIf="eventMode == 'voting' && events && events.length > 0">
+    <ion-list class="sliding-card-list">
+      <ion-item-sliding #item default-grey-background *ngFor="let event of events;">
+        <ion-item>
+          <pt-card-event [event]="event"></pt-card-event>
+        </ion-item>
+        <ion-item-options side="left">
+          <button ion-button *ngIf="event.user.id === user.getUserId()" color="secondary" (click)="deleteEvent(event)">
+            <ion-icon name="ios-trash-outline" color="white"></ion-icon>
+            {{ 'EVENT.DELETE' | translate }}
+          </button>
+        </ion-item-options>
+
+        <ion-item-options side="right">
+          <button ion-button *ngIf="event.user.id === user.getUserId()" color="primary" (click)="validateEvent(event)">
+            <ion-icon name="ios-clipboard-outline" color="white"></ion-icon>
+            {{ 'EVENT.TODO' | translate }}
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+    <div style="width: 100%" text-center>
+      <button *ngIf="lastEvents.length > 0" margin-top margin-bottom text-center ion-button round outline color="primary" (tap)="getMoreEvents($event)">{{ 'LOADMORE' | translate }}</button>
+    </div>
+  </div>
+
+  <div *ngIf="eventMode == 'todo' && todos && todos.length > 0">
+    <ion-list class="sliding-card-list">
+      <ion-item-sliding #item *ngFor="let event of todos;">
+        <ion-item>
+          <pt-card-event [event]="event"></pt-card-event>
+        </ion-item>
+        <ion-item-options side="left">
+          <button ion-button *ngIf="event.user.id === user.getUserId()" color="secondary" (click)="deleteEvent(event)">
+            <ion-icon name="ios-trash-outline" color="white"></ion-icon>
+            {{ 'EVENT.DELETE' | translate }}
+          </button>
+        </ion-item-options>
+
+        <ion-item-options side="right">
+          <button ion-button *ngIf="event.user.id === user.getUserId()" color="primary" (click)="goToCommentPage(event)">
+            <ion-icon name="ios-create-outline" color="white"></ion-icon>
+            {{ 'EVENT.FEEDBACKS' | translate }}
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+    <div style="width: 100%" text-center>
+      <button *ngIf="lastEvents.length > 0" margin-top margin-bottom text-center ion-button round outline color="primary" (tap)="getMoreEvents($event)">{{ 'LOADMORE' | translate }}</button>
+    </div>
+  </div>
+
+  <div *ngIf="eventMode == 'done' && eventsDone && eventsDone.length > 0">
+    <ion-list class="sliding-card-list">
+      <ion-item-sliding #item *ngFor="let event of eventsDone;">
+        <ion-item>
+          <pt-card-event [event]="event"></pt-card-event>
+        </ion-item>
+        <ion-item-options side="left">
+          <button ion-button *ngIf="event.user.id === user.getUserId()" color="secondary" (click)="deleteEvent(event)">
+            <ion-icon name="ios-trash-outline" color="white"></ion-icon>
+            {{ 'EVENT.DELETE' | translate }}
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+    <div style="width: 100%" text-center>
+      <button *ngIf="lastEvents.length > 0" margin-top margin-bottom text-center ion-button round outline color="primary" (tap)="getMoreEvents($event)">{{ 'LOADMORE' | translate }}</button>
+    </div>
+  </div>
+
+  <div *ngIf="eventMode == 'voting' && events && events.length === 0" class="empty-voting">
+    <!--<pt-page-empty page="GROUPVOTING" icon="md-add-circle" image="assets/img/path-details-page.png"></pt-page-empty>-->
+    <h2 text-center class="damn-title">{{ 'EMPTY.GROUPVOTING.SUBTITLE' | translate }}</h2>
+    <div class="empty-icon">
+      <ion-icon name="icon-calendar-60"></ion-icon>
+    </div>
+    <button ion-button block outline (tap)="openNewEventModal()" color="primary">{{ 'EMPTY.GROUPVOTING.ACTION' | translate }}</button>
+    <div class="new-event-div-center">
+      <div class="damn-rela">
+        <div class="damn-abso"></div>
+        <div class="abso-1"></div>
+        <div class="abso-2"></div>
+        <ion-icon name="icon-centralize" (tap)="openNewEventModal()" color="light"></ion-icon>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="eventMode == 'todo' && todos && todos.length === 0">
+    <pt-page-empty page="GROUPTODO" icon="md-clipboard" image="assets/img/path-details-page.png"></pt-page-empty>
+  </div>
+
+  <div *ngIf="eventMode == 'done' && eventsDone && eventsDone.length === 0">
+    <pt-page-empty page="GROUPDONE" image="assets/img/path-details-page.png"></pt-page-empty>
+  </div>
+
+</ion-content>

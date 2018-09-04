@@ -1,0 +1,49 @@
+
+pt-popover-category {
+
+  .filter-content {
+    display: flex;
+    // flex-grow: 1;
+    // overflow: scroll;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: 'space-between';
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 10px;
+    margin-left: 16px;
+    box-shadow: 4px 4px 10px map-get($colors, info);
+    margin-right: 16px;
+    background-image: linear-gradient(to right bottom, #f65d6e, #f65464, #f54a5b, #f43f50, #f23346);
+    border-radius: 0.5em;
+
+
+    .filter-content-item-division {
+      border-left: 1px solid map-get($colors, info);
+      align-self: center;
+      flex-grow: 1;
+      margin: 0 5px;
+    }
+
+    .filter-content-item {
+      float: left;
+      margin-right: 10px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      width: 75px;
+      max-width: 75px;
+      text-align: center;
+
+      ion-icon {
+        font-size: 60px !important;
+      }
+
+      span {
+        font-size: x-small;
+        display: block;
+        overflow: hidden;
+        color: white;
+      }
+    }
+  }
+}

@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <pt-header></pt-header>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!--<div col-12 class="creation-menu around-me-menu" (tap)='goAroundMe()'>
+      <p>{{ 'CREATION.MENU.AROUNDME' | translate }}</p>
+      <ion-icon name="md-pt-place" color="white"></ion-icon>
+  </div>-->
+  <div col-12 margin-top class="creation-menu guide-line-menu" (tap)='guidelineActive = !guidelineActive;'>
+      <p>{{ 'CREATION.MENU.GUIDELINES' | translate }}</p>
+      <ion-icon name="ios-bookmarks" color="white"></ion-icon>
+  </div>
+  <ion-row class="creation-menu creation-create-menu" *ngIf="!guidelineActive">
+    <ion-col col-6 class="creation-create-menu-place" (tap)='goCreationPlace()'>
+      <p>{{ 'CREATION.MENU.PLACE' | translate }}</p>
+      <ion-icon name="md-pt-place" color="white"></ion-icon>
+    </ion-col>
+    <ion-col col-6 class="creation-create-menu-path" (tap)='goCreationPath()'>
+      <p>{{ 'CREATION.MENU.PATH' | translate }}</p>
+      <ion-icon name="md-pt-plan" color="white"></ion-icon>
+    </ion-col>
+  </ion-row>
+  <div *ngIf="guidelineActive">
+    <ion-row class="creation-menu creation-create-menu-guideline" (tap)='goCreationPlace()'>
+      <ion-col col-5 class="creation-create-menu-place-guideline">
+        <ion-icon name="md-pt-place" color="white"></ion-icon>
+      </ion-col>
+      <ion-col col-7 class="creation-create-menu-place-guideline">
+        <p>{{ 'CREATION.MENU.PLACE' | translate }}</p>
+      </ion-col>
+    </ion-row>
+    <div margin class="guideline-text">
+      <p no-margin>
+        {{ 'CREATION.MENU.GUIDELINE.PLACE.PARTONE' | translate }}
+      </p>
+      <p no-margin>
+        —————————
+      </p>
+      <p no-margin>
+        {{ 'CREATION.MENU.GUIDELINE.PLACE.PARTTWO' | translate }}
+      </p>
+    </div>
+    <ion-row class="creation-menu creation-create-menu-guideline" (tap)='goCreationPath()'>
+      <ion-col col-5 class="creation-create-menu-path-guideline">
+        <ion-icon name="md-pt-plan" color="white"></ion-icon>
+      </ion-col>
+      <ion-col col-7 class="creation-create-menu-path-guideline">
+        <p>{{ 'CREATION.MENU.PATH' | translate }}</p>
+      </ion-col>
+    </ion-row>
+    <div margin class="guideline-text">
+      <p no-margin>
+        {{ 'CREATION.MENU.GUIDELINE.PATH.PARTONE' | translate }}
+      </p>
+      <p no-margin>
+        —————————
+      </p>
+      <p no-margin>
+        {{ 'CREATION.MENU.GUIDELINE.PATH.PARTTWO' | translate }}
+      </p>
+    </div>
+  </div>
+</ion-content>

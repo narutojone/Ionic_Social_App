@@ -1,0 +1,102 @@
+pt-card-group {
+  .group-card {
+    width: 70vw;
+    border-radius: 9px;
+    .border-group {
+      width: 107%;
+      position: absolute;
+      bottom: -100%;
+      left: -3%;
+      img {
+        height: auto;
+      }
+    }
+    .row:last-child {
+      border-top: 1px solid #868383;
+      padding-top: 8px;
+    }
+    .damn-weight {
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .damn-grey {
+      color: grey;
+    }
+  }
+  .card-div-image {
+    position: relative;
+    overflow: hidden;
+    img {
+      height: 200px;
+      width: 100%;
+      border-radius: 5px;
+    }
+    p {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .card-group-user-number {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      width: 50px;
+      height: 30px;
+      border-radius: 50px;
+      background-color: map-get($colors, primary);
+      display: inline-flex;
+      ion-icon {
+        font-size: 18px !important;
+        margin: auto;
+        color: white;
+      }
+      p {
+        color: white;
+        font-size: 18px;
+        margin: auto;
+        margin-left: -5px;
+      }
+    }
+    .card-group-select {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 12px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: map-get($colors, primary);
+      ion-icon {
+        font-size: 30px !important;
+        margin-top: 10px;
+        color: white;
+      }
+    }
+  }
+  .card-group-members-image {
+    padding: 0px;
+    height: 30px;
+    white-space: nowrap;
+    overflow-x: hidden;
+    img {
+      width: 30px;
+      height: 30px;
+      display: inline;
+      border-radius: 50%;
+      border: solid white 2px;
+      position: relative;
+    }
+    img:nth-of-type(1) {
+      z-index: 3;
+    }
+    img:nth-of-type(2) {
+      z-index: 2;
+      margin-left: -20px;
+    }
+    img:nth-of-type(3) {
+      z-index: 1;
+      margin-left: -20px;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <pt-header></pt-header>
+  </ion-toolbar>
+  <ion-navbar #planificationNavBar class="sub-header sub-header-planification">
+    <div class="sub-header-full">
+      <ion-scroll scrollX="true" class="sub-header-plans">
+        <div *ngFor="let place of path.places" class="plan-header plan-div" tappable (touchstart)="touchStartPtTap($event)" (touchend)="touchEndPtTap($event) && deletePlace(place)">
+          <ion-icon name="{{place.activity_types[0].getIcon(true)}}" color="white"></ion-icon>
+          <div class="deletePlace" [class.hide]="!placeView">
+            <ion-icon name="close" color="white"></ion-icon>
+          </div>
+          <span>{{place.name}}</span>
+        </div>
+        <div class="plan-header action-header" [class.hide]="!placeView" tappable (touchstart)="touchStartPtTap($event)" (touchend)="touchEndPtTap($event) && deletePlaceView()">
+          <ion-icon name="ios-remove-circle-outline" color="white"></ion-icon>
+          <span>{{ 'CREATION.CANCELADD' | translate }}</span>
+        </div>
+        <div *ngFor="let plan of planifications" class="plan-header plan-div" tappable (touchstart)="touchStartPtTap($event)" (touchend)="touchEndPtTap($event) && selectPlan(plan)">
+          <ion-icon name="{{plan.activity_type.getIcon()}}" color="white"></ion-icon>
+          <span>{{plan.activity_type.name}}</span>
+        </div>
+      </ion-scroll>
+      <div class="go-section" (tap)="goPath()">
+        <ion-icon name="ios-send" color="white"></ion-icon>
+        <span>Go</span>
+      </div>
+    </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content text-center>
+  <div #planificationMap id="planificationMap" ></div>
+  <button ion-button class="validateButton" color="primary" (tap)="createPath()">{{ 'CREATION.VALIDATEPATH' | translate }}</button>
+
+</ion-content>

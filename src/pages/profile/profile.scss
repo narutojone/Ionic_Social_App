@@ -1,0 +1,100 @@
+$profile-header-img-size: 50px;
+$profile-content-grid-item-height-md : calc((100vh - 74px - #{$toolbar-md-height}
+/* Header + sub-header height */
+
+- #{$tabs-md-tab-min-height}
+/* Tabs height */
+
+- #{$grid-padding-width}
+/* Grid main padding size */
+
+) / 3
+/* 3 rows */
+
+- #{$grid-padding-width}
+/* Row padding size */
+
+);
+
+$profile-content-grid-item-height-ios : calc((100vh - 74px - #{$toolbar-ios-height} - #{$tabs-ios-tab-min-height} - #{$grid-padding-width}) / 3 - #{$grid-padding-width});
+
+page-profile {
+  ion-navbar {
+     ion-icon {
+        color: white;
+        font-size: 50px !important;
+        border-radius: 50%;
+      }
+  }
+  .profile-header img {
+    width: $profile-header-img-size;
+    height: $profile-header-img-size;
+    border-radius: 50%;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+
+  .profile-header-icon-left {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 2 * $profile-header-img-size + $margin-length;
+    top: 0;
+    width: $profile-header-img-size;
+    height: $profile-header-img-size;
+    bottom: 0;
+  }
+
+  .profile-header-stats {
+    float: right;
+    font-size: small;
+    color: map-get($colors, light);
+  }
+  .profile-content-grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h2 {
+      color: map-get($colors, primary);
+    }
+    h4 {
+      color: map-get($colors, info);
+    }
+  }
+  .profile-content-grid-item ion-icon {
+    display: block;
+    font-size: 60px !important;
+  }
+  .profile-content-grid-item span {
+    font-size: small;
+    color: map-get($colors, primary);
+  }
+
+  pt-follow {
+    margin-top: 5px !important;
+  }
+}
+
+ion-app.md .profile-content-grid-item {
+  height: $profile-content-grid-item-height-md;
+}
+
+ion-app.ios .profile-content-grid-item {
+  height: $profile-content-grid-item-height-ios;
+}
+
+.group-icon {
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      padding-left: 4px;
+      background-color: map-get($colors, primary);
+      color: white;
+}
+
